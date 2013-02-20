@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- The definition of the Root Spring Container shared by all Servlets 
+		and Filters -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:com/vmware/vfra/batch/report/web/root-context.xml</param-value>
+	</context-param>
+
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- Spring Data REST requests -->
+	<servlet>
+		<servlet-name>exporter</servlet-name>
+		<servlet-class>org.springframework.data.rest.webmvc.RepositoryRestExporterServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>exporter</servlet-name>
+		<url-pattern>/orderx/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- Processes rest requests for custom repository queries -->
+	<!-- Necessary because Spring Data REST not supporting custom repository 
+		queries yet: -->
+	<!-- https://github.com/SpringSource/spring-data-rest/issues/19 -->
+	<!-- See RestOrderController for testing rest shell -->
+	<servlet>
+		<servlet-name>restServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:com/vmware/vfra/batch/report/web/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>restServlet</servlet-name>
+		<url-pattern>/order/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- Disables Servlet Container welcome file handling. Needed for compatibility 
+		with Servlet 3.0 and Tomcat 7.0 -->
+	<welcome-file-list>
+		<welcome-file></welcome-file>
+	</welcome-file-list>
+
+</web-app>

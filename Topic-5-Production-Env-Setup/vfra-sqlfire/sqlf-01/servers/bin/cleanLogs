@@ -1,0 +1,34 @@
+#!/bin/sh
+
+for f in `find .. -name sqlf*.log` 
+do
+	rm $f
+done
+
+for f in `find .. -name start_*.log` 
+do
+	rm $f
+done
+
+for f in `find .. -name gc.log` 
+do
+	rm $f
+done
+
+for f in `find .. -name agent-*.log` 
+do
+	rm $f
+done
+
+for f in `find .. -name *.gfs`
+do
+	rm $f
+done
+
+if [ "x$1" = "x-data" ];
+then
+	for f in `find .. -name datadictionary`
+	do
+		rm -r $f
+	done
+fi

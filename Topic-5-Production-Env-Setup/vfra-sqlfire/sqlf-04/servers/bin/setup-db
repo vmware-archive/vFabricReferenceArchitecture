@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# ---------------------------------------------------------------------------
+# chkconfig:
+# description: 	Setup SQLFire schema
+
+# Source function library.
+ENV=`dirname $0`
+. "$ENV/common.env"
+
+cd $ENV
+
+if [ -x "$GF_BIN" ];
+then
+    echo "Creating SQLFire User"
+    $GF_BIN run -client-bind-address=${SQLFIRE_NODES[0]} -client-port=$CLIENT_PORT -file="../scripts/create-user.sql"
+    RETVAL=$?
+	
+    echo "Creating SQLFire Tables for user "
+    $GF_BIN run -client-bind-address=${SQLFIRE_NODES[0]} -client-port=$CLIENT_PORT -file="../scripts/sqlf-tables.ddl" --ignore-errors
+    RETVAL=$?
+
+    echo "Populating SQLFire tables"
+    $GF_BIN run -client-bind-address=${SQLFIRE_NODES[0]} -client-port=$CLIENT_PORT -file="../scripts/initdb-sqlf.sql" --ignore-errors
+    RETVAL=$?
+	
+else
+    echo "Startup script $GF_BIN doesn't exist or is not executable."
+    RETVAL=255
+fi
+
+exit $RETVAL

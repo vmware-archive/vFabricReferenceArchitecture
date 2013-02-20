@@ -1,0 +1,118 @@
+#!/bin/sh
+#
+# ---------------------------------------------------------------------------
+# chkconfig:
+# description: 	Start up the SQLFire server cache node
+
+# Source function library.
+ENV=`dirname $0`
+. "$ENV/common.env"
+
+#The name of the instance we want to stop/start
+INSTANCE_NAME=$2
+mkdir -p $GF_SERVER_HOME/servers/$INSTANCE_NAME
+cp -f $GF_SERVER_HOME/servers/sqlfire.properties $GF_SERVER_HOME/servers/$INSTANCE_NAME/sqlfire.properties
+
+JMX=""
+# JMX for server g01
+if [ "x$INSTANCE_NAME" = "xg01" ];
+then
+	JMX="-J-Dcom.sun.management.jmxremote\
+ -J-Dcom.sun.management.jmxremote.port=10199\
+ -J-Dcom.sun.management.jmxremote.ssl=false\
+ -J-Dcom.sun.management.jmxremote.authenticate=false"
+
+	# disabled
+	JMX=""
+fi 
+
+# random port as SQLFire -client-port=0 does not work yet
+port=`dd if=/dev/urandom count=1 2> /dev/null | cksum | cut -f1 -d" "`
+port=`expr $port % 50000`
+port=`expr 1528 + $port`
+
+INSTANCE_OPTS="$JMX -J-Xmx$DATANODE_HEAPSIZE -J-Xms$DATANODE_HEAPSIZE\
+ -J-XX:+UseParNewGC -J-XX:+UseConcMarkSweepGC\
+ -J-XX:CMSInitiatingOccupancyFraction=85\
+ -J-XX:+UseCMSInitiatingOccupancyOnly\
+ -J-XX:ParallelGCThreads=2\
+ -J-XX:+DoEscapeAnalysis\
+ -J-Dgemfire.statistic-archive-file=$GF_SERVER_HOME/servers/$INSTANCE_NAME/$INSTANCE_NAME.gfs\
+ -J-verbose:gc -J-XX:+PrintGCDetails -J-XX:+PrintGCDateStamps\
+ -J-Xloggc:$GF_SERVER_HOME/servers/$INSTANCE_NAME/gc.log\
+ -name=SpringOne-$BIND_IP-$INSTANCE_NAME -bind-address=$BIND_IP\
+ -rebalance\
+ -locators=$LOCATORS\
+ -license-serial-number=$LICENSE_KEY\
+ -client-port=$port
+"
+
+if [ "x$EXTRA_OPTS" != "x" ]
+then
+	INSTANCE_OPTS="$INSTANCE_OPTS $EXTRA_OPTS"
+	#echo $INSTANCE_OPTS
+fi
+
+stop() {
+    if [ -x "$GF_BIN" ];
+    then
+        echo "Stopping SQLFire $INSTANCE_NAME"
+        $GF_BIN server stop -dir=$GF_SERVER_HOME/servers/$INSTANCE_NAME
+        RETVAL=$?
+    else
+        echo "Startup script $GF_BIN doesn't exist or is not executable."
+        RETVAL=255
+    fi
+}
+
+status() {
+    if [ -x "$GF_BIN" ];
+    then
+        echo "Status-ing SQLFire $INSTANCE_NAME"
+        $GF_BIN server status -dir=$GF_SERVER_HOME/servers/$INSTANCE_NAME
+        RETVAL=$?
+    else
+        echo "Startup script $GF_BIN doesn't exist or is not executable."
+        RETVAL=255
+    fi
+}
+
+
+start() {
+    if [ -x "$GF_BIN" ];
+    then
+        echo "Starting SQLFire $INSTANCE_NAME"
+		
+		export CLASSPATH=$CLASSPATH:/opt/postgresql/postgresql-9.2-1000.jdbc4.jar
+        $GF_BIN server start $INSTANCE_OPTS -dir=$GF_SERVER_HOME/servers/$INSTANCE_NAME
+        RETVAL=$?
+	tail $GF_SERVER_HOME/servers/$INSTANCE_NAME/sqlfserver.log
+    else
+        echo "Startup script $GF_BIN doesn't exist or is not executable."
+        RETVAL=255
+    fi
+}
+
+
+case "$1" in
+ start)
+        start
+	;;
+ stop)
+        stop
+ 	;;
+ restart)
+        stop
+	sleep 3
+        start
+        ;;
+ status)
+        status
+        ;;
+ *)
+ 	echo $"Usage: $0 {start|stop|restart|status} NAME"
+	exit 1
+	;;
+esac
+
+exit $RETVAL

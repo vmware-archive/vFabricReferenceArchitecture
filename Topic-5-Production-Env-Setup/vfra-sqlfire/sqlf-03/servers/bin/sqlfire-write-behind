@@ -1,0 +1,11 @@
+#!/bin/sh
+ENV=`dirname $0`
+. "$ENV/common.env"
+
+cd $ENV
+
+export CLASSPATH=$CLASSPATH:/opt/postgresql/postgresql-9.2-1000.jdbc4.jar
+
+OPTS="-client-bind-address=${SQLFIRE_NODES[0]} -client-port=${CLIENT_PORT}"
+
+$GF_BIN run $OPTS -file ../scripts/sqlfire_configure_write_behind.sql 

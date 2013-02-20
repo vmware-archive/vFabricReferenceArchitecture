@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:batch="http://www.springframework.org/schema/batch"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-2.1.xsd">
+
+	<import
+		resource="classpath:/com/vmware/vfra/batch/inttest/TestSpringBatchInfrastructure-context.xml" />
+
+	<batch:job id="copyOrdersJob">
+		<batch:step id="partitionedStep">
+			<batch:partition partitioner="partitioner" handler="partitionHandler" />
+		</batch:step>
+	</batch:job>
+
+	<bean id="partitionHandler"
+		class="org.springframework.batch.core.partition.support.TaskExecutorPartitionHandler">
+		<property name="taskExecutor" ref="taskExecutor" />
+		<property name="step" ref="partitionedReadWrite" />
+		<property name="gridSize" value="2" />
+	</bean>
+
+	<batch:step id="partitionedReadWrite">
+		<batch:tasklet transaction-manager="reportingTxManager">
+			<batch:chunk reader="orderItemReader" writer="orderItemWriter"
+				commit-interval="10" />
+		</batch:tasklet>
+	</batch:step>
+
+	<bean id="orderItemReader" scope="step"
+		class="org.springframework.batch.item.database.JdbcCursorItemReader">
+		<property name="dataSource" ref="stagingDataSource" />
+		<property name="sql"
+			value="select account_accountid, completiondate, holding_holdingid, opendate, orderfee, orderid, orderstatus, ordertype, price, quantity, quote_symbol from app.orders where orderid&gt;=#{stepExecutionContext[minValue]} and orderid&lt;=#{stepExecutionContext[maxValue]}" />
+		<property name="rowMapper" ref="orderRowMapper" />
+	</bean>
+
+	<bean id="orderRowMapper" class="com.vmware.vfra.batch.OrderRowMapper" />
+
+	<bean id="orderItemWriter" scope="step"
+		class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+		<property name="assertUpdates" value="true" />
+		<property name="itemSqlParameterSourceProvider">
+			<bean
+				class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+		</property>
+		<property name="sql"
+			value="insert into reporting.orders (order_fee, completion_date, order_type, order_status, price, quantity, open_date, order_id, account_id, quote_symbol, holding_id, job_time_stamp) values (:orderFee, :completionDate, :orderType, :orderStatus, :price, :quantity, :openDate, :orderId, :accountId, :quoteSymbol, :holdingId, :jobTimeStamp)" />
+		<property name="dataSource" ref="reportingDataSource" />
+	</bean>
+
+	<bean id="partitioner" class="com.vmware.vfra.batch.ColumnRangePartitioner">
+		<property name="dataSource" ref="stagingDataSource" />
+		<property name="table" value="app.orders" />
+		<property name="column" value="orderid" />
+	</bean>
+
+	<bean id="taskExecutor"
+		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="5" />
+		<property name="maxPoolSize" value="5" />
+	</bean>
+</beans>

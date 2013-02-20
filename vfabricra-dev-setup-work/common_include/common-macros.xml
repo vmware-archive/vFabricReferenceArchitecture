@@ -1,0 +1,360 @@
+<antlib xmlns:current="ant:current">
+	
+	<!-- This method allows the use of centralized printing / formatting for User-oriented information TBD. -->
+	<macrodef name="user-log">
+		<attribute name="URL" />
+		<sequential>
+			<echo>--> Working on steps in @{URL}</echo>
+		</sequential> 
+	</macrodef>
+
+	<macrodef name="artifact-locator" description="Locates an artifact in the repo and sets property for file path in the form @{artifact-prefix}.">
+		<attribute name="repo-path" description="Location of the artifact repo directory." />
+		<attribute name="artifact-prefix" description="specify the prefix of the artifact. Indeterminate for multiple matches." />
+		<attribute name="suffix" description="specify the prefix of the artifact. Indeterminate for multiple matches." />
+		<attribute name="file-location-property" description="Property that is set to file location of matching artifact in the repo." />
+		<attribute name="file-version-property" description="Property that is set to version of matching artifact in the repo." />
+		<sequential>
+			<path id="@{artifact-prefix}-path-finder">
+				<fileset dir="@{repo-path}">
+					<include name="@{artifact-prefix}*" />
+				</fileset>
+			</path>
+			<var name="@{file-location-property}" unset="true" />
+ 			<property name="@{file-location-property}" refid="@{artifact-prefix}-path-finder" />
+			<var name="artifact.locator.input" unset="true" />
+			<propertycopy name="artifact.locator.input" from="@{file-location-property}" />			
+			<var name="artifact-locator.input" value="${artifact.locator.input}" />
+			<var name="artifact-locator.regex" value="@{artifact-prefix}(.*)@{suffix}" />
+			<var name="artifact-locator.version.property" value="@{file-version-property}" />
+			<propertyregex property="${artifact-locator.version.property}" input="${artifact-locator.input}" 
+				regexp="${artifact-locator.regex}" select="\1" />
+			<echo>@{file-location-property} == ${@{file-location-property}}</echo>
+			<if>
+				<or>
+					<not>
+						<available file="${@{file-location-property}}" />
+					</not>
+					<equals arg1="${@{file-location-property}}" arg2="" />
+				</or>
+				<then>
+					<fail>Unable to find a file matching @{artifact-prefix}*@{suffix} - please download the appropriate file and place it into @{repo-path} </fail>
+				</then>
+			</if>			
+		</sequential>
+	</macrodef>
+
+	<macrodef name="installation-locator" description="Locates an artifact in the repo and sets property for file path in the form @{artifact-prefix}.">
+		<attribute name="install-root-path" description="Location of the installation root directory." />
+		<attribute name="install-prefix" description="specify the prefix of the service. Indeterminate for multiple matches." />
+		<attribute name="install-location-property" description="Property that is set to component location of matching artifact in the repo." />
+		<attribute name="install-version-property" description="Property that is set to component version of matching artifact in the repo." />
+		<sequential>
+			<var name="@{install-prefix}-path-finder" unset="true" />
+			<path id="@{install-prefix}-path-finder">
+				<dirset dir="@{install-root-path}" includes="@{install-prefix}*" /> 
+			</path>
+			<var name="found" unset="true" />
+			<property name="found" refid="@{install-prefix}-path-finder" />
+			<var name="install-locator.regex" unset="true" />
+			<property name="install-locator.regex" value="@{install-prefix}(.*)" />
+			<var name="install-locator.version.property" unset="true" />
+			<property name="install-locator.version.property" value="@{install-version-property}" />
+			<propertycopy name="@{install-location-property}" from="found" />
+			<dirset dir="@{install-root-path}" includes="@{install-prefix}*" id="dirset.id" />
+			<var name="flat-dirset" unset="true" />
+			<property name="flat-dirset" refid="dirset.id" /> 
+			<propertyregex property="${install-locator.version.property}" input="${flat-dirset}" 
+				regexp="${install-locator.regex}" select="\1" />
+<!--
+			<echo>install-prefix: @{install-prefix}</echo>
+			<echo>path: ${@{install-location-property}}</echo>
+			<echo>install-locator.regex: ${install-locator.regex}</echo>
+			<echo>install-location-property: @{install-location-property}</echo>
+			<echo>install-version-property: @{install-version-property}</echo>
+			<echo>flat-dirset: ${flat-dirset}</echo>
+-->
+			<if>
+				<equals arg1="${@{install-location-property}}" arg2="" />
+				<then>
+					<fail>Could not find @{install-prefix} within @{install-root-path} - one of the params is probably wrong.</fail>
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="set-installed" description="Drops a file that marks this component as installed and contains the metadata / properties for the component installation.">
+		<attribute name="component-name" description="Name of the component to set as installed, works with 'check-installed' macrodef." />
+		<attribute name="component-version" description="Name of the component version to set as installed, works with 'check-installed' macrodef." />
+		<attribute name="install-path" description="The path to the component binary installation." />
+		<sequential>
+			<pathconvert targetos="unix" property="install-path" >
+				<path location="@{install-path}" />
+			</pathconvert>
+			<propertyregex property="rooted-install-path" 
+				input="${install-path}"
+				regexp="${base.deploy.root}(.*)" 
+				select="\1" />
+			<echo>install-path = ${install-path}</echo>
+			<echo>base.deploy.root = ${base.deploy.root}</echo>
+			<echo>rooted-install-path = ${rooted-install-path}</echo>
+
+			<echo file="${install.dir}/@{component-name}.installed">installed.@{component-name}.path=@{install-path}${line.separator}installed.@{component-name}.version=@{component-version}${line.separator}is.@{component-name}.installed=true</echo>
+			<echo file="${install.dir}/@{component-name}.installed">installed.@{component-name}.path=$${base.deploy.root}${rooted-install-path}${line.separator}installed.@{component-name}.version=@{component-version}${line.separator}is.@{component-name}.installed=true</echo>
+			<var name="rooted-install-path" unset="true" />
+			<var name="install-path" unset="true" />
+ 			<property file="${install.dir}/@{component-name}.installed" />
+		</sequential>
+	</macrodef>
+
+	<macrodef name="load-installed" description="Checks that a component is installed by checking the metadata file existence and then loading the properties within.">
+		<attribute name="component-name" description="Name of the component to set as installed, works with 'check-installed' macrodef." />
+		<attribute name="installed-property" description="Sets this property if this component is installed." />
+		<sequential>
+			<echo>Checking for installed-property == @{installed-property}</echo>
+			<echo>component-name == @{component-name}</echo>			
+			<var name="@{component-name}.installed.file" value="@{component-name}.installed" />
+			<available file="${install.dir}/${@{component-name}.installed.file}" type="file" property="@{installed-property}" />
+			<property file="${install.dir}/${@{component-name}.installed.file}" />
+		</sequential>
+	</macrodef>
+
+	<macrodef name="install-tcserver-template" description="Creates a tc server instance.">
+		<attribute name="tcserver-root" description="The tc server installation path." />
+		<attribute name="template-dir" description="Specify the source template directory to be copied." />
+		<attribute name="template-name" description="Specify the template to be used." />		
+		<sequential>
+			<echo>Copying @{template-dir} to @{tcserver-root}/templates</echo>
+			<mkdir dir="@{tcserver-root}/templates/@{template-name}" />
+  			<copy todir="@{tcserver-root}/templates/@{template-name}">
+    			<fileset dir="@{template-dir}" includes="**/*"/>
+ 	 		</copy>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="create-tcserver-instance" description="Creates a tc server instance.">
+		<attribute name="tcserver-root" description="The tc server installation path." />
+		<attribute name="instance-name" description="The name of the tc server instance to create. " />
+		<attribute name="root-install-path" description="The root path of the tc server instance to create. " />
+		<attribute name="base-template" description="Specify the base template to be used." />
+		<attribute name="template" description="Specify the template to be used." />
+		<attribute name="base-jmx-port" description="Specify the JMX port to be used." />
+		<attribute name="bio-http-port" description="Specify the HTTP port to be used." />
+		<attribute name="bio-https-port" description="Specify the HTTPS port to be used." />
+		<attribute name="template-properties-file" description="Properties for instance creation, injected into the template." />		
+		<sequential>
+			<echo>Creating tc server with properties: @{tcserver-root}${line.separator} 
+				template: @{template}${line.separator}
+				base.jmx.port=@{base-jmx-port}${line.separator}
+				bio.http.port=@{bio-http-port}${line.separator}
+				bio.https.port=@{bio-https-port}
+			</echo>
+			<if>
+				<equals arg1="${os-family}" arg2="windows" />
+				<then>
+					<current:checkJavaHome />
+					<pathconvert targetos="windows" property="tcserver-root.windows_dir" >
+						<path location="@{tcserver-root}" />
+					</pathconvert>
+					<pathconvert targetos="windows" property="root-install-path.windows_dir" >
+						<path location="@{root-install-path}" />
+					</pathconvert>
+					<install-exec executable="cmd" dir="@{tcserver-root}" >
+						<arg value="/c" />
+						<arg value="${tcserver-root.windows_dir}/tcruntime-instance.bat" />
+						<arg value="create" />
+						<arg value="-i" />
+						<arg value="${root-install-path.windows_dir}" />
+						<arg value="-t" />
+						<arg value="@{base-template}" />
+						<arg value="-t" />
+						<arg value="@{template}" />
+						<arg value="-p" />
+						<arg value="base.jmx.port=@{base-jmx-port}" />
+						<arg value="-p" />
+						<arg value="bio.http.port=@{bio-http-port}" />
+						<arg value="-p" />
+						<arg value="bio.https.port=@{bio-https-port}" />
+						<arg value="-f" />
+						<arg value="@{template-properties-file}" />				
+						<arg value="@{instance-name}" />
+					</install-exec>
+					<var name="tcserver-root.windows_dir" unset="true" />
+					<var name="root-install-path.windows_dir" unset="true" />					
+				</then>
+				<elseif>
+					<equals arg1="${os-family}" arg2="unix" />
+					<then>
+						<install-exec executable="@{tcserver-root}/tcruntime-instance.sh" dir="@{tcserver-root}" >
+							<arg value="create" />
+							<arg value="-i" />
+							<arg value="@{root-install-path}" />
+							<arg value="-t" />
+							<arg value="@{base-template}" />
+							<arg value="-t" />
+							<arg value="@{template}" />
+							<arg value="-p" />
+							<arg value="base.jmx.port=@{base-jmx-port}" />
+							<arg value="-p" />
+							<arg value="bio.http.port=@{bio-http-port}" />
+							<arg value="-p" />
+							<arg value="bio.https.port=@{bio-https-port}" />
+							<arg value="-f" />
+							<arg value="@{template-properties-file}" />				
+							<arg value="@{instance-name}" />
+						</install-exec>
+					</then>
+				</elseif>
+				<else>
+					<fail>The installation does not support ${os-family}.</fail>
+				</else>
+			</if>
+			
+		</sequential>
+	</macrodef>
+
+	<macrodef name="checkJavaHome">
+		<sequential>
+			<echo>JAVA_HOME: ${env.JAVA_HOME}</echo>
+			<if>
+				<not>
+					<isset property="env.JAVA_HOME" />
+				</not>
+				<then>
+					<fail>The JAVA_HOME (case sensitive) system property is required before the build can continue. On Windows this is done by 'set JAVA_HOME=(the path to the JDK)' and on Linux by 'export JAVA_HOME=(the patch to the JDK)'.</fail>
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="tcserver-ctl-command" description="" >
+		<attribute name="tcserver-root" description="The tc server installation path." />
+		<attribute name="instance-base-path" description="The tc server instance base path." />
+		<attribute name="instance-name" description="The tc server instance name." />
+		<attribute name="command" description="The tc server ctl command to exec." />
+		<sequential>
+			<if>
+				<equals arg1="${os-family}" arg2="windows" />
+				<then>
+					<current:checkJavaHome />
+					<pathconvert targetos="windows" property="tcserver-root.windows_dir" >
+						<path location="@{tcserver-root}" />
+					</pathconvert>
+					<pathconvert targetos="windows" property="instance-base-path.windows_dir" >
+						<path location="@{instance-base-path}" />
+					</pathconvert>
+					<install-exec executable="cmd" dir="@{tcserver-root}" spawn="true" failonerror="false">
+						<arg value="/c" />
+						<arg value="${tcserver-root.windows_dir}\tcruntime-ctl.bat" />
+						<arg value="@{instance-name}" />
+						<arg value="@{command}" />
+						<arg value="-n" />
+						<arg value="${instance-base-path.windows_dir}" />
+					</install-exec>
+					<var name="tcserver-root.windows_dir" unset="true" />
+					<var name="instance-base-path.windows_dir" unset="true" />					
+				</then>
+				<elseif>
+					<equals arg1="${os-family}" arg2="unix" />
+					<then>
+						<install-exec failonerror="false" executable="@{tcserver-root}/tcruntime-ctl.sh" dir="@{tcserver-root}" >
+							<arg value="-n" />
+							<arg value="@{instance-base-path}" />
+							<arg value="@{instance-name}" />
+							<arg value="@{command}" />
+						</install-exec>				
+					</then>
+				</elseif>
+				<else>
+					<fail>The installation does not support ${os-family}.</fail>
+				</else>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="update-prop-file" description="" >
+		<attribute name="property-file" description="The property file to be updated." />
+		<attribute name="property-key" description="The property key to change." />
+		<attribute name="property-value" description="The value to which the key will be set." />
+		<sequential>
+			<echo>Updating @{property-file} key=value, @{property-key}=@{property-value}</echo>
+			<if>
+				<not><available file="@{property-file}.orig" /></not>
+				<then>
+					<echo>Saving original file to @{property-file}.orig</echo>
+					<copy file="@{property-file}" tofile="@{property-file}.orig" />					
+				</then>
+			</if>
+			<propertyfile file="@{property-file}" >
+				<entry  key="@{property-key}" value="@{property-value}"/>		
+			</propertyfile>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="reset-prop-file" description="Checks that a component is installed by checking the metadata file existence and then loading the properties within.">
+		<attribute name="file" description="The property file to be reset." />
+		<sequential>
+			<if>
+				<available file="@{file}.orig" />
+				<then>
+					<copy file="@{file}.orig" tofile="@{file}" overwrite="true" />
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="update-file" description="Wrapper macrodef that updates lines within a text file. Supports file restore with macrodef 'reset-file'." >
+		<attribute name="file-path" description="" />
+		<attribute name="match" description="The regex to match." />
+		<attribute name="replace" description="Replacement contents" />
+		<sequential>
+			<echo>Updating @{file-path} match / replace, @{match} / @{replace}</echo>
+			<if>
+				<not><available file="@{file-path}.orig" /></not>
+				<then>
+					<echo>Saving original file to @{file-path}.orig</echo>
+					<copy file="@{file-path}" tofile="@{file-path}.orig" />					
+				</then>
+			</if>
+			<replaceregexp file="@{file-path}" match="@{match}" replace="@{replace}" byline="false" />
+		</sequential>
+	</macrodef>
+
+	<macrodef name="reset-file" description="">
+		<attribute name="file-path" description="The tc server installation path." />
+		<sequential>
+			<if>
+				<available file="@{file-path}.orig" />
+				<then>
+					<copy file="@{file-path}.orig" tofile="@{file-path}" overwrite="true" />
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="processKill">
+		<attribute name="pid" /> 
+		<sequential>
+			<if>
+				<equals arg1="${os-family}" arg2="windows" />
+				<then>
+					<exec executable="C:/Windows/System32/taskkill.exe" failonerror="false">
+						<arg value="/F" />
+						<arg value="/T" />
+						<arg value="/PID" />
+						<arg value="@{pid}" />
+					</exec>
+				</then>
+				<else>
+					<echo> killing processes not implemented on ${os-family} </echo>
+				</else>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="check-installed" description="Check if deploy was run.">
+		<sequential>
+			<fail unless="is.${component}.installed" message="You must run 'deploy' first." />
+		</sequential>
+	</macrodef>
+</antlib>

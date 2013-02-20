@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Context>
+	<add:ResourceLink type="javax.sql.DataSource"
+                  name="jdbc/batchdbstg"
+                  global="jdbc/batchdbstg"/>
+	<add:ResourceLink type="javax.sql.DataSource"
+                  name="jdbc/batchdbrpt"
+                  global="jdbc/batchdbrpt"/>
+	<add:ResourceLink type="javax.sql.DataSource"
+                  name="jdbc/batchdbjob"
+                  global="jdbc/batchdbjob"/>
+</Context>

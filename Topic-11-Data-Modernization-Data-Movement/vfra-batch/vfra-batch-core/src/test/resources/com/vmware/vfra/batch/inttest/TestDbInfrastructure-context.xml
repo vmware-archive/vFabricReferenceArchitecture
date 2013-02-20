@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:batch="http://www.springframework.org/schema/batch"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd">
+
+	<!-- To change between H2 and Postgres for integration tests: 1. uncomment 
+		one of these context files 2. update src/test/resources/vfra-batch.properties 
+		to use correct DB settings (see <dbtype>.jdbc.properties) -->
+	<!-- <import resource="classpath:com/vmware/vfra/batch/inttest/TestPostgresInfrastructure-context.xml"/> -->
+	<import
+		resource="classpath:/com/vmware/vfra/batch/inttest/TestH2Infrastructure-context.xml" />
+
+	<beans profile="dev">
+		<bean id="reportingJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+			<constructor-arg ref="reportingDataSource" />
+		</bean>
+
+		<bean id="jobJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+			<constructor-arg ref="jobDataSource" />
+		</bean>
+	</beans>
+
+</beans>

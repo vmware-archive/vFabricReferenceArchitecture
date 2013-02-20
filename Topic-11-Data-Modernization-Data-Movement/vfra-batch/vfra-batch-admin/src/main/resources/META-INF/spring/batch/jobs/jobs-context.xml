@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+	<!-- spring.profiles.active not being recognized when vfra-batch-core context loaded -->
+	<!-- so replicating beans under property-datasource profile from JdbcInfrastructure-context.xml -->
+	<bean id="jobDataSource" class="${batch.db.job.dataSourceClass}">
+		<property name="driverClassName" value="${batch.db.job.driverClassName}" />
+		<property name="url" value="${batch.db.job.url}" />
+		<property name="username" value="${batch.db.job.username}" />
+		<property name="password" value="${batch.db.job.password}" />
+	</bean>
+
+ 	<bean id="stagingDataSource" class="${batch.db.stg.dataSourceClass}">
+		<property name="driverClassName" value="${batch.db.stg.driverClassName}" />
+		<property name="url" value="${batch.db.stg.url}" />
+		<property name="username" value="${batch.db.stg.username}" />
+		<property name="password" value="${batch.db.stg.password}" />
+	</bean>
+
+	<bean id="reportingDataSource" class="${batch.db.rpt.dataSourceClass}">
+		<property name="driverClassName" value="${batch.db.rpt.driverClassName}" />
+		<property name="url" value="${batch.db.rpt.url}" />
+		<property name="username" value="${batch.db.rpt.username}" />
+		<property name="password" value="${batch.db.rpt.password}" />
+	</bean>
+	
+	<import resource="classpath:com/vmware/vfra/batch/CopyOrders-context.xml" />
+
+	<context:mbean-export default-domain="spring.application"
+		server="mbeanServer" />
+
+</beans>

@@ -1,0 +1,9 @@
+#!/bin/sh
+ENV=`dirname $0`
+. "$ENV/common.env"
+
+cd $ENV
+
+OPTS="-client-bind-address=${SQLFIRE_NODES[0]} -client-port=${CLIENT_PORT}"
+
+$GF_BIN run $OPTS -file ../scripts/create-disk-stores.sql 

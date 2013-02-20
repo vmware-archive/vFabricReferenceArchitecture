@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:batch="http://www.springframework.org/schema/batch"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- if running this for first time drop will fail, so you'll have to comment 
+		out the drop script. Probably a good precaution in case you're pointing to 
+		wrong db -->
+
+	<beans profile="dev">
+		<jdbc:initialize-database data-source="jobDataSource">
+			<jdbc:script
+				location="classpath:/org/springframework/batch/core/schema-drop-postgresql.sql" />
+			<jdbc:script
+				location="classpath:/org/springframework/batch/core/schema-postgresql.sql" />
+		</jdbc:initialize-database>
+
+		<jdbc:initialize-database data-source="stagingDataSource">
+			<jdbc:script location="classpath:scripts/app-schema-drop-postgres.sql" />
+			<jdbc:script location="classpath:scripts/app-schema-src.sql" />
+		</jdbc:initialize-database>
+
+		<jdbc:initialize-database data-source="reportingDataSource">
+			<jdbc:script location="classpath:scripts/app-schema-drop-postgres.sql" />
+			<jdbc:script location="classpath:scripts/app-schema-rpt.sql" />
+		</jdbc:initialize-database>
+	</beans>
+</beans>

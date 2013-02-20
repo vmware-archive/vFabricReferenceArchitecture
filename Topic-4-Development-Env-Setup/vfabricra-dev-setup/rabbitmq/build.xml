@@ -1,0 +1,313 @@
+<?xml version="1.0" ?>
+<project name="rabbitmq-deploy" default="deploy" basedir="." xmlns:common="uri://vmware.com/common_include/common-macros">
+
+	<import file="${basedir}/../common_include/common-deploy.xml" />
+
+	<property name="erlang.component" value="erlang" />
+	<property name="rabbitmq.component" value="rabbitmq_server" />
+	
+	<target name="init-props" depends="common-deploy.init-props">
+		<common:load-installed component-name="${erlang.component}" installed-property="is.erlang.installed" />
+		<common:load-installed component-name="${rabbitmq.component}" installed-property="is.rabbitmq.installed" />
+		<propertycopy name="erlang.home.prop" from="erlang.${os-family}.home" />
+		<property name="erlang.home" location="${erlang.home.prop}" />
+	</target>
+	
+	<target name="deploy-erlang" depends="init-props" unless="${is.erlang.installed}">
+		<if> 
+			<equals arg1="${os-family}" arg2="windows" />
+			<then>
+				<property name="artifact.prefix" value="otp_win${arch}_" /> 
+				<common:artifact-locator repo-path="${vfra.repo}" artifact-prefix="${artifact.prefix}" suffix="_with_MSVCR100_installer_fix.exe" 
+					file-location-property="erlang.file" 
+					file-version-property="erlang.version" />
+				<if>
+					<not>
+						<available file="${erlang.home}" />
+					</not>
+					<then>
+						<echo>Installing erlang... </echo>
+						<cmd-exec failonerror="false" dir="${install.dir}" executable="${erlang.file}">
+							<args>
+								<arg value="/S" />
+								<arg value="/D=${erlang.home}" />
+							</args>
+							<envs />
+						</cmd-exec>
+						<echo>Waiting for Erlang ${erlang.version} to finish... this may take a minute or more.</echo>
+						<waitfor maxwait="120" maxwaitunit="second">
+						        <available file="${erlang.home}/bin/erl.exe"/>
+						</waitfor>
+					</then>
+					<else>
+						<echo>Erlang already installed at ${erlang.home} - using this location. To override system installed 
+							erlang and reinstall, please pass in the '-Derlang.home=[ location ]' on the command line. 
+						</echo>
+					</else>
+				</if>
+				<common:set-installed component-name="${erlang.component}" component-version="${erlang.version}" install-path="${erlang.home}" />
+			</then>
+			<elseif>
+				<equals arg1="${os-family}" arg2="unix" />
+				<then>
+					<common:artifact-locator repo-path="${vfra.repo}" artifact-prefix="otp_src_" suffix=".tar.gz" 
+						file-location-property="erlang.file" 
+						file-version-property="erlang.version" />
+					<property name="erlang.unzip.dir" value="${temp.dir}/otp_src_${erlang.version}" />
+					<exec dir="${temp.dir}" executable="tar" logerror="erlang.untar.error">
+						<arg value="-zxf" />
+						<arg value="${erlang.file}" />
+					</exec>
+					<echo>erlang unzip directory: ${erlang.unzip.dir}</echo>
+					<echo>Configuring erlang source for build... </echo>
+					<exec dir="${erlang.unzip.dir}" executable="./configure" logerror="configure.error" failifexecutionfails="true" failonerror="true">
+						<arg value="--prefix=${install.dir}" />
+					</exec>
+					<echo>Building erlang... </echo>
+					<exec dir="${erlang.unzip.dir}" executable="make" logerror="make.error" failifexecutionfails="true" failonerror="true">
+						<arg value="-j2" />
+					</exec>
+					<echo>Installing erlang... </echo>
+					<exec dir="${erlang.unzip.dir}" executable="make" logerror="make-install.error" failifexecutionfails="true" failonerror="">
+						<arg value="install" />
+					</exec>
+					<common:set-installed component-name="${erlang.component}" component-version="${erlang.version}" install-path="${install.dir}" />
+				</then>
+			</elseif>
+			<else>
+				<fail>The installation does not support ${os-family}.</fail>				
+			</else>
+		</if>
+	</target>
+
+	<target name="undeploy-erlang" depends="init-props">
+		<if> 
+			<equals arg1="${os-family}" arg2="windows" />
+			<then>
+				<if>
+					<available file="${erlang.home}" type="dir"/>
+					<then>
+						<echo>Exec'ing erlang at ${erlang.home}\Uninstall.exe </echo>
+						<exec failonerror="false" dir="${erlang.home}" executable="${erlang.home}/Uninstall.exe">
+								<arg value="/S" />
+						</exec>
+						<echo>Waiting for Erlang Uninstall.exe to finish... this may take a minute or more.</echo>
+						<waitfor maxwait="120" maxwaitunit="second">
+							<not>
+						        <available file="${erlang.home}/Uninstall.exe"/>
+							</not>
+						</waitfor>
+					</then>
+					<else>
+						<echo>Did not find an installation @ ${erlang.home}</echo>
+					</else>
+				</if>
+			</then>
+			<else>
+				<echo>This platform does not need to undeploy (use 'ant clean' instead).</echo>
+			</else>
+		</if>
+	</target>
+	
+	<target name="deploy-rabbitmq" depends="init-props" unless="${is.rabbitmq.installed}">
+		<if> 
+			<equals arg1="${os-family}" arg2="windows" />
+			<then>
+				<!-- Find Rabbit tar.gz ... -->
+				<common:artifact-locator repo-path="${vfra.repo}" artifact-prefix="rabbitmq-server-windows-" suffix=".zip" file-location-property="rabbitmq.server.file" file-version-property="rabbitmq.version" />
+				<echo>rabbit file location: ${rabbitmq.server.file}</echo>
+				<echo>rabbit file version: ${rabbitmq.version}</echo>
+		
+				<!-- Unzip, configure, make, make install -->
+				<property name="rabbitmq.server.install.dir" value="${temp.dir}/rabbitmq_server-${rabbitmq.version}" />
+				<unzip src="${rabbitmq.server.file}" dest="${temp.dir}" />
+				<move todir="${install.dir}" >
+					<fileset dir="${rabbitmq.server.install.dir}" >
+						<include name="**/*" />
+					</fileset>
+				</move>
+			</then>
+			<elseif>
+				<equals arg1="${os-family}" arg2="unix" />
+				<then>
+					<!-- Find Rabbit tar.gz ... -->
+					<common:artifact-locator repo-path="${vfra.repo}" artifact-prefix="rabbitmq-server-generic-unix-" suffix=".tar.gz" file-location-property="rabbitmq.server.file" file-version-property="rabbitmq.version" />
+					<echo>rabbit file location: ${rabbitmq.server.file}</echo>
+					<echo>rabbit file version: ${rabbitmq.version}</echo>
+			
+					<!-- Unzip, configure, make, make install -->
+					<property name="rabbitmq.server.install.dir" value="${temp.dir}/rabbitmq_server-${rabbitmq.version}" />
+					<exec dir="${temp.dir}" executable="tar" logerror="rabbitmq.untar.error">
+						<arg value="-zxvf" />
+						<arg value="${rabbitmq.server.file}" />
+					</exec>
+					<move todir="${install.dir}" >
+						<fileset dir="${rabbitmq.server.install.dir}" >
+							<include name="**/*" />
+						</fileset>
+					</move>
+				</then>
+			</elseif>
+			<else>
+				<fail>The installation does not support ${os-family}.</fail>				
+			</else>			
+		</if>
+		<common:set-installed component-name="${component}" component-version="${rabbitmq.version}" install-path="${install.dir}" />
+	</target>
+
+	<!-- Primary lifecycle below -->
+	<target name="deploy" depends="common-deploy.deploy,deploy-erlang,deploy-rabbitmq,init-props" description="This will install a local, self contained version of rabbitmq within linux.">
+	</target>
+
+	<target name="configure" depends="common-deploy.configure" description="">
+		<!-- enable the rabbitmq management plugin 'rabbitmq-plugins enable rabbitmq_management' -->
+		<if>
+			<and>
+				<isset property="is.rabbitmq.installed" />
+				<isset property="is.erlang.installed" />
+			</and>
+			<then>
+				<if> 
+					<equals arg1="${os-family}" arg2="windows" />
+					<then>
+						<cmd-exec dir="${installed.rabbitmq.path}" executable="${installed.rabbitmq.path}/sbin/rabbitmq-plugins.bat" failonerror="true">
+							<args>
+								<arg value="enable" />
+								<arg value="rabbitmq_management" />
+							</args>
+							<envs>
+								<env key="ERLANG_HOME" value="${erlang.home}"/>
+								<env key="RABBITMQ_ENABLED_PLUGINS_FILE" value="${install.dir}/enabled_plugins" />
+							</envs>
+						</cmd-exec>
+					</then>
+					<elseif>
+						<equals arg1="${os-family}" arg2="unix" />
+						<then>
+							<install-exec dir="${installed.rabbitmq.path}" executable="${installed.rabbitmq.path}/sbin/rabbitmq-plugins" logerror="rabbitmq_management.enable.error">
+								<arg value="enable" />
+								<arg value="rabbitmq_management" />
+							</install-exec>
+						</then>
+					</elseif>
+				</if>
+			</then>
+			<else>
+				<fail message="rabbitmq or erlang is not installed, run the deploy task first. " />
+			</else>
+		</if>
+	</target>
+
+	<target name="start" depends="common-deploy.start" description="">
+		<if>
+			<and>
+				<isset property="is.rabbitmq.installed" />
+				<isset property="is.erlang.installed" />
+			</and>
+			<then>
+				<if> 
+					<equals arg1="${os-family}" arg2="windows" />
+					<then>
+						<cmd-exec dir="${installed.rabbitmq.path}" executable="${installed.rabbitmq.path}/sbin/rabbitmq-server.bat" failonerror="false">
+							<args>
+								<arg value="-detached" />
+							</args>
+							<envs>
+								<env key="ERLANG_HOME" value="${erlang.home}"/>
+								<env key="RABBITMQ_ENABLED_PLUGINS_FILE" value="${install.dir}/enabled_plugins" />
+							</envs>
+						</cmd-exec>
+					</then>
+					<elseif>
+						<equals arg1="${os-family}" arg2="unix" />
+						<then>				
+							<install-exec failonerror="false" dir="${installed.rabbitmq.path}" executable="${installed.rabbitmq.path}/sbin/rabbitmq-server" logerror="rabbitmq_server.enable.error" >
+								<arg value="-detached" />
+							</install-exec>
+						</then>
+					</elseif>
+				</if>
+			</then>
+			<else>
+				<fail message="rabbitmq or erlang is not installed, run the deploy task first. " />
+			</else>
+		</if>
+	</target>
+
+	<target name="stop" depends="init,init-props,common-deploy.stop" description="">
+		<if>
+			<and>
+				<isset property="is.rabbitmq.installed" />
+				<isset property="is.erlang.installed" />
+			</and>
+			<then>
+				<if> 
+					<equals arg1="${os-family}" arg2="windows" />
+					<then>
+						<cmd-exec dir="${installed.rabbitmq.path}" executable="${installed.rabbitmq.path}/sbin/rabbitmqctl.bat" failonerror="true">
+							<args>
+								<arg value="stop" />
+							</args>
+							<envs>
+								<env key="ERLANG_HOME" value="${erlang.home}"/>
+								<env key="RABBITMQ_ENABLED_PLUGINS_FILE" value="${install.dir}/enabled_plugins" />
+							</envs>
+						</cmd-exec>
+					</then>
+					<elseif>
+						<equals arg1="${os-family}" arg2="unix" />
+						<then>				
+							<install-exec failonerror="false" dir="${installed.rabbitmq.path}" executable="${installed.rabbitmq.path}/sbin/rabbitmqctl" logerror="rabbitmq_server.enable.error" >
+								<arg value="stop" />
+							</install-exec>
+						</then>
+					</elseif>
+				</if>
+			</then>
+			<else>
+				<echo message="rabbitmq or erlang is not installed, run the deploy task first. " />
+			</else>
+		</if>
+	</target>
+	
+	<target name="clean-processes" depends="init-props">
+		<input
+		    message="It is not possible to verify the RabbitMQ process absolutely - about to 'taskkill' 
+			the first found erl.exe and epmd.exe processes. Continue (y/n)?"
+		    validargs="y,n"
+			addproperty="do.kill"
+			/>
+		<condition property="do.abort">
+			<equals arg1="n" arg2="${do.kill}"/>
+		</condition>
+		<fail if="do.abort">Aborted by user.</fail>
+		<if>
+			<equals arg1="${os-family}" arg2="windows" />
+			<then>
+				<exec executable="c:/Windows/System32/tasklist.exe" outputproperty="erl.output" failifexecutionfails="false">
+					<arg value="/FI" />
+					<arg value="&quot;IMAGENAME eq erl.exe&quot;" />
+				</exec>
+				<echo>tasklist output: ${erl.output}</echo>
+				<propertyregex property="erl-pid" input="${erl.output}"
+					regexp="erl.exe\s*(\d+)"
+					select="\1" />
+				<echo>erl.exe PID: ${erl-pid}</echo>
+				<common:processKill pid="${erl-pid}" />
+				<exec executable="c:/Windows/System32/tasklist.exe" outputproperty="epmd.output" failifexecutionfails="false">
+					<arg value="/FI" />
+					<arg value="&quot;IMAGENAME eq epmd.exe&quot;" />
+				</exec>
+				<echo>epmd tasklist output: ${epmd.output}</echo>
+				<propertyregex property="epmd-pid" input="${epmd.output}"
+					regexp="epmd.exe\s*(\d+) "
+					select="\1" />
+				<echo>epmd.exe PID: ${epmd-pid}</echo>
+				<common:processKill pid="${epmd-pid}" />
+			</then>
+			<else>
+				<echo>Not implemented for ${os-family}.</echo>
+			</else>
+		</if>	
+	</target>
+</project>

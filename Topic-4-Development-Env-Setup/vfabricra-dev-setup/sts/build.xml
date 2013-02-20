@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<project name="sts-deploy" default="all" basedir="." xmlns:common="uri://vmware.com/common_include/common-macros">
+	<import file="${basedir}/../common_include/common-deploy.xml" />
+	
+	<target name="deploy" depends="init,common-deploy.deploy" unless="is.sts.installed">
+		<!-- Mac differs from Unix in STS file naming, so we have to override the os-family to pick up the right settings here. -->
+		<if> 
+			<isset property="isOSX"/>
+			<then>
+				<var name="os-family" value="osx" />	
+			</then>
+		</if>
+		<propertycopy name="sts.prefix" from="sts.${os-family}.${arch}.prefix" />
+		<propertycopy name="sts.suffix" from="sts.${os-family}.${arch}.suffix" />
+		<if> 
+			<isset property="isOSX"/>
+			<then>
+				<!-- Get state back to Unix. -->
+				<var name="os-family" value="unix" />
+			</then>
+		</if>
+		<common:artifact-locator repo-path="${vfra.repo}" 
+			artifact-prefix="${sts.prefix}" 
+			suffix="${sts.suffix}" 
+			file-location-property="sts.file" 
+			file-version-property="sts.version" />
+		<property name="sts.unzip.dir" value="${install.dir}/springsource" />
+		<if>
+			<equals arg1="${os-family}" arg2="windows" />
+			<then>
+				<unzip src="${sts.file}" dest="${install.dir}" />
+			</then>
+			<elseif>
+				<equals arg1="${os-family}" arg2="unix" />
+				<then>
+					<exec dir="${install.dir}" executable="tar" logerror="sts.untar.error">
+						<arg value="-zxf" />
+						<arg value="${sts.file}" />
+					</exec>				
+				</then>
+			</elseif>
+			<else>
+				<fail>The installation does not support ${os-family}.</fail>
+			</else>
+		</if>		
+		<common:installation-locator 
+			install-root-path="${sts.unzip.dir}"
+			install-prefix="sts-"
+			install-location-property="locator.sts.installed.location" 
+			install-version-property="locator.sts.installed.version" />
+		<common:set-installed component-name="sts" component-version="${locator.sts.installed.version}" install-path="${locator.sts.installed.location}" />
+		<common:installation-locator 
+			install-root-path="${sts.unzip.dir}"
+			install-prefix="spring-roo-"
+			install-location-property="locator.roo.installed.location" 
+			install-version-property="locator.roo.installed.version" />
+		<common:set-installed component-name="roo" component-version="${locator.roo.installed.version}" install-path="${locator.roo.installed.location}" />
+		<common:installation-locator 
+			install-root-path="${sts.unzip.dir}"
+			install-prefix="vfabric-tc-server-developer-"
+			install-location-property="locator.tcserver.installed.location" 
+			install-version-property="locator.tcserver.installed.version" />
+		<common:set-installed component-name="tcserver" component-version="${locator.tcserver.installed.version}" install-path="${locator.tcserver.installed.location}" />
+	</target>
+	
+	<target name="configure" depends="common-deploy.configure" >
+		<if>
+			<isset property="http.proxyHost" />
+			<then>
+				<echo>Setting up Proxy support for Eclipse</echo>
+				<concat destfile="${installed.sts.path}/STS.ini" append="true">-Dhttp.proxyHost=${http.proxyHost}${line.separator}-Dhttp.proxyPort=${http.proxyPort}</concat>
+			</then>
+		</if>	
+	</target>
+</project>

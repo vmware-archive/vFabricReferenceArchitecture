@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# Source function library.
+CWD=`dirname $0`
+. "$CWD/common.env"
+
+N=sqlfx
+A=sqlfx
+
+case "$1" in
+start)
+
+  for n in $NODES
+  do
+    $CWD/$N start $n &
+  done
+  
+  ;;
+status)
+  for n in $NODES
+  do
+    $CWD/sqlfx status $n
+  done
+  
+  ;;
+stop)
+  for n in $NODES
+  do
+    $CWD/$N stop $n &
+  done
+  
+  ;;
+
+*)
+  echo "$0 start|stop|status"
+  exit 0
+esac

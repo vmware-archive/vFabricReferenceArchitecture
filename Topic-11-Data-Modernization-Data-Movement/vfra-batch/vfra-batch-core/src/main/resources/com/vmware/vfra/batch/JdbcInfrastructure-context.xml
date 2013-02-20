@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:batch="http://www.springframework.org/schema/batch"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+
+	<bean id="reportingTxManager" lazy-init="true"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="reportingDataSource" />
+	</bean>
+
+	<bean id="jobTxManager" lazy-init="true"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="jobDataSource" />
+	</bean>
+
+ 	<beans profile="property-datasource">
+		<bean id="jobDataSource" class="${batch.db.job.dataSourceClass}">
+			<property name="driverClassName" value="${batch.db.job.driverClassName}" />
+			<property name="url" value="${batch.db.job.url}" />
+			<property name="username" value="${batch.db.job.username}" />
+			<property name="password" value="${batch.db.job.password}" />
+			<!-- <property name="suppressClose" value="${batch.db.job.suppressClose}" 
+				/> -->
+		</bean>
+
+		<bean id="stagingDataSource" class="${batch.db.stg.dataSourceClass}">
+			<property name="driverClassName" value="${batch.db.stg.driverClassName}" />
+			<property name="url" value="${batch.db.stg.url}" />
+			<property name="username" value="${batch.db.stg.username}" />
+			<property name="password" value="${batch.db.stg.password}" />
+			<!-- <property name="suppressClose" value="${batch.db.stg.suppressClose}" 
+				/> -->
+		</bean>
+
+
+		<bean id="reportingDataSource" class="${batch.db.rpt.dataSourceClass}">
+			<property name="driverClassName" value="${batch.db.rpt.driverClassName}" />
+			<property name="url" value="${batch.db.rpt.url}" />
+			<property name="username" value="${batch.db.rpt.username}" />
+			<property name="password" value="${batch.db.rpt.password}" />
+			<!-- <property name="suppressClose" value="${batch.db.rpt.suppressClose}" 
+				/> -->
+		</bean>
+    </beans>
+
+	<beans profile="jndi-datasource">
+		<jee:jndi-lookup id="jobDataSource"  jndi-name="jdbc/batchdbjob" />
+		<jee:jndi-lookup id="stagingDataSource"  jndi-name="jdbc/batchdbstg" />
+		<jee:jndi-lookup id="reportingDataSource"  jndi-name="jdbc/batchdbrpt" />	
+    </beans>
+</beans>
+

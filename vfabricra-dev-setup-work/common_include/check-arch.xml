@@ -1,0 +1,54 @@
+<project name="check-arch" default="architecture-props" basedir=".">
+    <target name="architecture-props" depends="check-family,check-register" >
+<!--
+    	<echo>Arch: ${arch}</echo>
+        <echo>OS Family: ${os-family}</echo>
+        <echo>isOSX: ${isOSX}</echo>    	
+-->
+    </target>
+
+    <target name="check-family" >
+        <condition property="os-family" value="unix" else="windows">
+            <os family="unix" />
+        </condition>
+        <condition property="unix">
+            <os family="unix" />
+        </condition>
+    	<condition property="isOSX">
+    	  <and>
+    	    <os family="unix"/>
+    	    <os family="mac"/>
+    	  </and>
+    	</condition>
+    </target>
+
+    <target name="check-register" depends="reg-unix,reg-windows">
+    </target>
+
+    <target name="reg-unix" if="unix">
+        <exec dir="." executable="uname" outputproperty="result">
+            <arg line="-m"/>
+        </exec>
+        <condition property="x64">
+            <matches string="${result}" pattern="^.*64$"/>
+        </condition>
+
+        <condition property="arch" value="64" else="32">
+            <isset property="x64"/>
+        </condition>
+    </target>
+
+    <target name="reg-windows" unless="unix">
+        <exec dir="." executable="cmd" outputproperty="result">
+            <arg line="/c SET ProgramFiles(x86)"/>
+        </exec>
+
+        <condition property="x64">
+            <matches string="${result}" pattern="^.*=.*Program Files \(x86\)"/>
+        </condition>
+
+        <condition property="arch" value="64" else="32">
+            <isset property="x64"/>
+        </condition>
+    </target> 
+</project>

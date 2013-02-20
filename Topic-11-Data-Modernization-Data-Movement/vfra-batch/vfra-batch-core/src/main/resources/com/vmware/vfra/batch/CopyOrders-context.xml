@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:batch="http://www.springframework.org/schema/batch"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd
+		http://www.springframework.org/schema/task  http://www.springframework.org/schema/task/spring-task.xsd">
+
+	<import
+		resource="classpath:/com/vmware/vfra/batch/SpringBatchInfrastructure-context.xml" />
+
+	<!-- Job configuration -->
+
+	<bean name="jobDateIncrementer" class="com.vmware.vfra.batch.JobDateIncrementer" />
+
+	<bean id="validator"
+		class="org.springframework.batch.core.job.DefaultJobParametersValidator">
+		<property name="requiredKeys">
+			<set>
+				<value>jobTimeStamp</value>
+			</set>
+		</property>
+	</bean>
+
+	<batch:job id="copyOrdersJob" incrementer="jobDateIncrementer">
+		<batch:step id="partitionedStep">
+			<batch:partition partitioner="partitioner" handler="masterPartitionHandler" />
+		</batch:step>
+		<batch:validator ref="validator" />
+	</batch:job>
+
+	<batch:step id="partitionedReadWrite">
+		<batch:tasklet transaction-manager="reportingTxManager">
+			<batch:chunk reader="orderItemReader" writer="orderItemWriter"
+				commit-interval="10" />
+		</batch:tasklet>
+	</batch:step>
+
+	<!-- more thread safe option that JdbcCursorItemReader -->
+	<bean id="orderItemReader" scope="step"
+		class="org.springframework.batch.item.database.JdbcPagingItemReader">
+		<property name="dataSource" ref="stagingDataSource" />
+		<property name="rowMapper" ref="orderRowMapper" />
+                <!-- required for thread safety -->
+		<property name="saveState" value="false" />				
+		<property name="queryProvider">
+			<bean
+				class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
+				<property name="dataSource" ref="stagingDataSource" />
+				<property name="fromClause" value="app.orders" />
+				<property name="selectClause" value="account_accountid, completiondate, holding_holdingid, opendate, orderfee, orderid, orderstatus, ordertype, price, quantity, quote_symbol" />
+				<property name="sortKey" value="orderid" />
+				<property name="ascending" value="true" />
+				<property name="whereClause" value="orderid &gt;= :minId and orderid &lt;= :maxId" />
+			</bean>
+		</property>
+		<property name="parameterValues">
+			<map>
+				<entry key="minId" value="#{stepExecutionContext[minValue]}" />
+				<entry key="maxId" value="#{stepExecutionContext[maxValue]}" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="orderRowMapper" class="com.vmware.vfra.batch.OrderRowMapper"
+		scope="step">
+		<property name="jobTimeStamp" value="#{stepExecutionContext['jobTimeStamp']}" />
+	</bean>
+
+	<bean id="orderItemWriter" scope="step"
+		class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+		<property name="assertUpdates" value="true" />
+		<property name="itemSqlParameterSourceProvider">
+			<bean
+				class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+		</property>
+		<property name="sql"
+			value="insert into reporting.orders (order_fee, completion_date, order_type, order_status, price, quantity, open_date, order_id, account_id, quote_symbol, holding_id, job_time_stamp) values (:orderFee, :completionDate, :orderType, :orderStatus, :price, :quantity, :openDate, :orderId, :accountId, :quoteSymbol, :holdingId, :jobTimeStamp)" />
+		<property name="dataSource" ref="reportingDataSource" />
+	</bean>
+
+	<!-- Master configuration -->
+
+	<bean id="partitioner" class="com.vmware.vfra.batch.ColumnRangePartitioner">
+		<property name="dataSource" ref="stagingDataSource" />
+		<property name="table" value="app.orders" />
+		<property name="column" value="orderid" />
+	</bean>
+
+	<bean id="masterPartitionHandler" class="com.vmware.vfra.batch.master.MasterPollingPartitionHandler">
+		<property name="partitionSize" value="${batch.partitionSize}" />
+		<property name="stepName" value="partitionedReadWrite" />
+	</bean>
+
+	<bean id="remoteStepExecutionService" class="com.vmware.vfra.batch.master.RestStepExecutionService">
+		<property name="restTemplate" ref="restTemplate" />
+		<property name="restUrl" value="${batch.workerUrl}" />
+	</bean>
+
+	<bean id="poller" class="com.vmware.vfra.batch.master.MasterPoller">
+		<property name="maxPollTimeInSeconds" value="${batch.maxPollTimeInSeconds}" />
+		<property name="pollingIntervalInSeconds" value="${batch.pollingIntervalInSeconds}" />
+	</bean>
+
+	<!-- Worker configuration -->
+
+	<task:annotation-driven executor="workerTaskExecutor" />
+
+	<bean id="stepExecutionRequestHandler" class="com.vmware.vfra.batch.worker.WorkerRequestHandler" />
+
+	<bean id="workerTaskExecutor"
+		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="2" />
+		<property name="maxPoolSize" value="8" />
+		<property name="queueCapacity" value="25" />
+	</bean>
+
+</beans>

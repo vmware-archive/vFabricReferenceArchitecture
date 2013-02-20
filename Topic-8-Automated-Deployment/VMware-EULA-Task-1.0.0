@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns26:export-package
+    xmlns:ns9="http://www.vmware.com/darwin/schema/beans/cloud/provider"
+    xmlns:ns7="http://www.vmware.com/darwin/schema/beans/catalog/component"
+    xmlns:ns17="http://www.vmware.com/darwin/schema/beans/update/profile"
+    xmlns:ns15="http://www.vmware.com/darwin/schema/beans/flow"
+    xmlns:ns25="http://www.vmware.com/darwin/schema/beans/notification"
+    xmlns:ns6="http://www.vmware.com/darwin/schema/beans/entity"
+    xmlns:ns12="http://www.vmware.com/darwin/schema/beans/cloud/tunnel"
+    xmlns:ns20="http://www.vmware.com/darwin/schema/beans/security/user"
+    xmlns:ns22="http://www.vmware.com/darwin/schema/beans/ssl"
+    xmlns:ns19="http://www.vmware.com/darwin/schema/beans/security/ldap"
+    xmlns:ns13="http://www.vmware.com/darwin/schema/beans/deployment/environment"
+    xmlns:ns23="http://www.vmware.com/darwin/schema/beans/response"
+    xmlns:ns21="http://www.vmware.com/darwin/schema/beans/networking"
+    xmlns:ns24="http://www.vmware.com/darwin/schema/beans/api"
+    xmlns:ns18="http://www.vmware.com/darwin/schema/beans/deployment"
+    xmlns:ns5="http://www.vmware.com/darwin/schema/beans/metatag"
+    xmlns:ns4="http://www.vmware.com/darwin/schema/beans/props"
+    xmlns:ns10="http://www.vmware.com/darwin/schema/beans/physical/template"
+    xmlns:ns27="http://www.vmware.com/darwin/schema/beans/license"
+    xmlns:ns26="http://www.vmware.com/darwin/schema/beans/exim"
+    xmlns:ns16="http://www.vmware.com/darwin/schema/beans/deployment/profile"
+    xmlns:ns14="http://www.vmware.com/darwin/schema/beans/driver/location"
+    xmlns:ns8="http://www.vmware.com/darwin/schema/beans/scripts"
+    xmlns:ns11="http://www.vmware.com/darwin/schema/beans/blueprint"
+    xmlns:ns3="http://www.vmware.com/darwin/schema/beans/application" xmlns:ns2="http://www.vmware.com/darwin/schema/beans/security">
+    <errors>false</errors>
+    <application-director-version>vFabric Application Director CLI BUILD [5.0.0-879382]</application-director-version>
+    <script-task-version>
+        <id>0</id>
+        <inactive>false</inactive>
+        <lock-version>0</lock-version>
+        <last-updated>2013-02-06T20:56:04+00:00</last-updated>
+        <last-update-user>admin</last-update-user>
+        <created>2013-02-06T20:56:04+00:00</created>
+        <create-user>admin</create-user>
+        <name>VMwareEULA</name>
+        <description></description>
+        <revision>0</revision>
+        <major>1</major>
+        <minor>0</minor>
+        <micro>0</micro>
+        <qualifier></qualifier>
+        <dynamically-installable>false</dynamically-installable>
+        <auto-bind-properties>false</auto-bind-properties>
+        <icon-name></icon-name>
+        <props>
+            <id>0</id>
+            <inactive>false</inactive>
+            <lock-version>0</lock-version>
+            <last-updated>2013-02-06T20:56:04+00:00</last-updated>
+            <last-update-user>admin</last-update-user>
+            <created>2013-02-06T20:56:04+00:00</created>
+            <create-user>admin</create-user>
+            <name></name>
+            <description>vFabric Repository RPM</description>
+            <key>vfabric_repo</key>
+            <prop-type>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>0</lock-version>
+                <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                <last-update-user>SYSTEM</last-update-user>
+                <created>2012-10-19T05:45:07+00:00</created>
+                <create-user>SYSTEM</create-user>
+                <name>String</name>
+                <description>String (java.lang.String).</description>
+            </prop-type>
+            <required>true</required>
+            <secured>false</secured>
+            <prop-auto-bind-type>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>1</lock-version>
+                <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                <last-update-user>SYSTEM</last-update-user>
+                <created>2012-10-19T05:45:07+00:00</created>
+                <create-user>SYSTEM</create-user>
+                <name>None</name>
+                <description>Property will not participate in auto-binding.</description>
+                <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
+            </prop-auto-bind-type>
+            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+            <readonly>false</readonly>
+            <overridable>true</overridable>
+            <expression>false</expression>
+            <ns4:bound-prop>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>0</lock-version>
+                <last-updated>2013-02-06T20:56:04+00:00</last-updated>
+                <last-update-user>admin</last-update-user>
+                <created>2013-02-06T20:56:04+00:00</created>
+                <create-user>admin</create-user>
+                <bind-lifecycle-type>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                    <last-update-user>SYSTEM</last-update-user>
+                    <created>2012-10-19T05:45:07+00:00</created>
+                    <create-user>SYSTEM</create-user>
+                    <name>Catalog</name>
+                    <description>Bindable at service/catalog level.</description>
+                    <lifecycle-order>1</lifecycle-order>
+                </bind-lifecycle-type>
+                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                <overridable>true</overridable>
+                <expression>false</expression>
+            </ns4:bound-prop>
+        </props>
+        <props>
+            <id>0</id>
+            <inactive>false</inactive>
+            <lock-version>0</lock-version>
+            <last-updated>2013-02-06T20:56:04+00:00</last-updated>
+            <last-update-user>admin</last-update-user>
+            <created>2013-02-06T20:56:04+00:00</created>
+            <create-user>admin</create-user>
+            <name></name>
+            <description>Proxy Port if behind Firewall</description>
+            <key>httpport</key>
+            <prop-type>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>0</lock-version>
+                <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                <last-update-user>SYSTEM</last-update-user>
+                <created>2012-10-19T05:45:07+00:00</created>
+                <create-user>SYSTEM</create-user>
+                <name>String</name>
+                <description>String (java.lang.String).</description>
+            </prop-type>
+            <required>true</required>
+            <secured>false</secured>
+            <prop-auto-bind-type>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>1</lock-version>
+                <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                <last-update-user>SYSTEM</last-update-user>
+                <created>2012-10-19T05:45:07+00:00</created>
+                <create-user>SYSTEM</create-user>
+                <name>None</name>
+                <description>Property will not participate in auto-binding.</description>
+                <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
+            </prop-auto-bind-type>
+            <value><![CDATA[3128]]></value>
+            <readonly>false</readonly>
+            <overridable>true</overridable>
+            <expression>false</expression>
+            <ns4:bound-prop>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>0</lock-version>
+                <last-updated>2013-02-06T20:56:04+00:00</last-updated>
+                <last-update-user>admin</last-update-user>
+                <created>2013-02-06T20:56:04+00:00</created>
+                <create-user>admin</create-user>
+                <bind-lifecycle-type>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                    <last-update-user>SYSTEM</last-update-user>
+                    <created>2012-10-19T05:45:07+00:00</created>
+                    <create-user>SYSTEM</create-user>
+                    <name>Catalog</name>
+                    <description>Bindable at service/catalog level.</description>
+                    <lifecycle-order>1</lifecycle-order>
+                </bind-lifecycle-type>
+                <value><![CDATA[3128]]></value>
+                <overridable>true</overridable>
+                <expression>false</expression>
+            </ns4:bound-prop>
+        </props>
+        <props>
+            <id>0</id>
+            <inactive>false</inactive>
+            <lock-version>0</lock-version>
+            <last-updated>2013-02-06T20:56:04+00:00</last-updated>
+            <last-update-user>admin</last-update-user>
+            <created>2013-02-06T20:56:04+00:00</created>
+            <create-user>admin</create-user>
+            <name></name>
+            <description>Proxy Server if behind Firewall</description>
+            <key>httpproxy</key>
+            <prop-type>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>0</lock-version>
+                <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                <last-update-user>SYSTEM</last-update-user>
+                <created>2012-10-19T05:45:07+00:00</created>
+                <create-user>SYSTEM</create-user>
+                <name>String</name>
+                <description>String (java.lang.String).</description>
+            </prop-type>
+            <required>true</required>
+            <secured>false</secured>
+            <prop-auto-bind-type>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>1</lock-version>
+                <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                <last-update-user>SYSTEM</last-update-user>
+                <created>2012-10-19T05:45:07+00:00</created>
+                <create-user>SYSTEM</create-user>
+                <name>None</name>
+                <description>Property will not participate in auto-binding.</description>
+                <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
+            </prop-auto-bind-type>
+            <value><![CDATA[192.168.1.1]]></value>
+            <readonly>false</readonly>
+            <overridable>true</overridable>
+            <expression>false</expression>
+            <ns4:bound-prop>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>0</lock-version>
+                <last-updated>2013-02-06T20:56:04+00:00</last-updated>
+                <last-update-user>admin</last-update-user>
+                <created>2013-02-06T20:56:04+00:00</created>
+                <create-user>admin</create-user>
+                <bind-lifecycle-type>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                    <last-update-user>SYSTEM</last-update-user>
+                    <created>2012-10-19T05:45:07+00:00</created>
+                    <create-user>SYSTEM</create-user>
+                    <name>Catalog</name>
+                    <description>Bindable at service/catalog level.</description>
+                    <lifecycle-order>1</lifecycle-order>
+                </bind-lifecycle-type>
+                <value><![CDATA[192.168.1.1]]></value>
+                <overridable>true</overridable>
+                <expression>false</expression>
+            </ns4:bound-prop>
+        </props>
+        <props>
+            <id>0</id>
+            <inactive>false</inactive>
+            <lock-version>0</lock-version>
+            <last-updated>2013-02-06T20:56:04+00:00</last-updated>
+            <last-update-user>admin</last-update-user>
+            <created>2013-02-06T20:56:04+00:00</created>
+            <create-user>admin</create-user>
+            <name></name>
+            <description>VMware EULA Location for Automated Install</description>
+            <key>eula_location</key>
+            <prop-type>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>0</lock-version>
+                <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                <last-update-user>SYSTEM</last-update-user>
+                <created>2012-10-19T05:45:07+00:00</created>
+                <create-user>SYSTEM</create-user>
+                <name>String</name>
+                <description>String (java.lang.String).</description>
+            </prop-type>
+            <required>true</required>
+            <secured>false</secured>
+            <prop-auto-bind-type>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>1</lock-version>
+                <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                <last-update-user>SYSTEM</last-update-user>
+                <created>2012-10-19T05:45:07+00:00</created>
+                <create-user>SYSTEM</create-user>
+                <name>None</name>
+                <description>Property will not participate in auto-binding.</description>
+                <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
+            </prop-auto-bind-type>
+            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+            <readonly>false</readonly>
+            <overridable>true</overridable>
+            <expression>false</expression>
+            <ns4:bound-prop>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>0</lock-version>
+                <last-updated>2013-02-06T20:56:04+00:00</last-updated>
+                <last-update-user>admin</last-update-user>
+                <created>2013-02-06T20:56:04+00:00</created>
+                <create-user>admin</create-user>
+                <bind-lifecycle-type>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                    <last-update-user>SYSTEM</last-update-user>
+                    <created>2012-10-19T05:45:07+00:00</created>
+                    <create-user>SYSTEM</create-user>
+                    <name>Catalog</name>
+                    <description>Bindable at service/catalog level.</description>
+                    <lifecycle-order>1</lifecycle-order>
+                </bind-lifecycle-type>
+                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                <overridable>true</overridable>
+                <expression>false</expression>
+            </ns4:bound-prop>
+        </props>
+        <script-task>
+            <id>0</id>
+            <inactive>false</inactive>
+            <lock-version>0</lock-version>
+            <last-updated>2013-02-06T20:53:30+00:00</last-updated>
+            <last-update-user>admin</last-update-user>
+            <created>2013-02-06T20:53:30+00:00</created>
+            <create-user>admin</create-user>
+            <name>VMwareEULA</name>
+            <description>VMware EULA</description>
+            <revision>0</revision>
+        </script-task>
+        <os-versions>
+            <id>0</id>
+            <inactive>false</inactive>
+            <lock-version>0</lock-version>
+            <last-updated>2012-11-06T18:49:25+00:00</last-updated>
+            <last-update-user>admin</last-update-user>
+            <created>2012-11-06T18:49:25+00:00</created>
+            <create-user>admin</create-user>
+            <name>CentOS64</name>
+            <description>v6.3</description>
+            <revision>0</revision>
+            <major>6</major>
+            <minor>3</minor>
+            <micro>0</micro>
+            <qualifier></qualifier>
+            <dynamically-installable>false</dynamically-installable>
+            <auto-bind-properties>false</auto-bind-properties>
+            <icon-name></icon-name>
+            <operating-system>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>0</lock-version>
+                <last-updated>2012-10-19T05:45:08+00:00</last-updated>
+                <last-update-user>SYSTEM</last-update-user>
+                <created>2012-10-19T05:45:08+00:00</created>
+                <create-user>SYSTEM</create-user>
+                <name>CentOS64</name>
+                <description>CentOS 64bit</description>
+                <revision>0</revision>
+                <icon-name>centos</icon-name>
+                <os-family-meta-tag>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                    <last-update-user>SYSTEM</last-update-user>
+                    <created>2012-10-19T05:45:07+00:00</created>
+                    <create-user>SYSTEM</create-user>
+                    <name>Linux</name>
+                    <description>Linux based operating systems.</description>
+                    <meta-tag-type>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                        <last-update-user>SYSTEM</last-update-user>
+                        <created>2012-10-19T05:45:07+00:00</created>
+                        <create-user>SYSTEM</create-user>
+                        <name>OS Family</name>
+                        <description>Operating System (OS) Family.</description>
+                        <meta-tag-enum>OS_FAMILY</meta-tag-enum>
+                        <user-managed-type>false</user-managed-type>
+                    </meta-tag-type>
+                    <os-family>LINUX</os-family>
+                </os-family-meta-tag>
+                <hardware-architecture-meta-tag>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                    <last-update-user>SYSTEM</last-update-user>
+                    <created>2012-10-19T05:45:07+00:00</created>
+                    <create-user>SYSTEM</create-user>
+                    <name>x86_64</name>
+                    <description>x86_64</description>
+                    <meta-tag-type>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                        <last-update-user>SYSTEM</last-update-user>
+                        <created>2012-10-19T05:45:07+00:00</created>
+                        <create-user>SYSTEM</create-user>
+                        <name>Hardware Architecture</name>
+                        <description>Hardware Architecture, used to describe whether something is or supports 32 bit, 64 bit, etc.</description>
+                        <meta-tag-enum>HARDWARE_ARCHITECTURE</meta-tag-enum>
+                        <user-managed-type>false</user-managed-type>
+                    </meta-tag-type>
+                    <hardware-architecture>X86_64</hardware-architecture>
+                </hardware-architecture-meta-tag>
+            </operating-system>
+        </os-versions>
+        <os-versions>
+            <id>0</id>
+            <inactive>false</inactive>
+            <lock-version>0</lock-version>
+            <last-updated>2011-11-22T19:59:18+00:00</last-updated>
+            <last-update-user>SYSTEM</last-update-user>
+            <created>2011-11-22T19:59:18+00:00</created>
+            <create-user>SYSTEM</create-user>
+            <name>RHEL64</name>
+            <description>RHEL 6.1 64bit</description>
+            <revision>0</revision>
+            <major>6</major>
+            <minor>1</minor>
+            <micro>0</micro>
+            <qualifier></qualifier>
+            <dynamically-installable>false</dynamically-installable>
+            <auto-bind-properties>false</auto-bind-properties>
+            <operating-system>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>0</lock-version>
+                <last-updated>2012-10-19T05:45:08+00:00</last-updated>
+                <last-update-user>SYSTEM</last-update-user>
+                <created>2012-10-19T05:45:08+00:00</created>
+                <create-user>SYSTEM</create-user>
+                <name>RHEL64</name>
+                <description>Red Hat Enterprise Linux 64bit</description>
+                <revision>0</revision>
+                <icon-name>redhat</icon-name>
+                <os-family-meta-tag>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                    <last-update-user>SYSTEM</last-update-user>
+                    <created>2012-10-19T05:45:07+00:00</created>
+                    <create-user>SYSTEM</create-user>
+                    <name>Linux</name>
+                    <description>Linux based operating systems.</description>
+                    <meta-tag-type>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                        <last-update-user>SYSTEM</last-update-user>
+                        <created>2012-10-19T05:45:07+00:00</created>
+                        <create-user>SYSTEM</create-user>
+                        <name>OS Family</name>
+                        <description>Operating System (OS) Family.</description>
+                        <meta-tag-enum>OS_FAMILY</meta-tag-enum>
+                        <user-managed-type>false</user-managed-type>
+                    </meta-tag-type>
+                    <os-family>LINUX</os-family>
+                </os-family-meta-tag>
+                <hardware-architecture-meta-tag>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                    <last-update-user>SYSTEM</last-update-user>
+                    <created>2012-10-19T05:45:07+00:00</created>
+                    <create-user>SYSTEM</create-user>
+                    <name>x86_64</name>
+                    <description>x86_64</description>
+                    <meta-tag-type>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                        <last-update-user>SYSTEM</last-update-user>
+                        <created>2012-10-19T05:45:07+00:00</created>
+                        <create-user>SYSTEM</create-user>
+                        <name>Hardware Architecture</name>
+                        <description>Hardware Architecture, used to describe whether something is or supports 32 bit, 64 bit, etc.</description>
+                        <meta-tag-enum>HARDWARE_ARCHITECTURE</meta-tag-enum>
+                        <user-managed-type>false</user-managed-type>
+                    </meta-tag-type>
+                    <hardware-architecture>X86_64</hardware-architecture>
+                </hardware-architecture-meta-tag>
+            </operating-system>
+        </os-versions>
+        <ns8:component-version-script>
+            <id>0</id>
+            <inactive>false</inactive>
+            <lock-version>0</lock-version>
+            <last-updated>2013-02-06T20:56:04+00:00</last-updated>
+            <last-update-user>admin</last-update-user>
+            <created>2013-02-06T20:56:04+00:00</created>
+            <create-user>admin</create-user>
+            <description></description>
+            <script>#!/bin/bash
+env &gt; /tmp/env.sh
+set -e
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/groovy-1.8.6/bin
+export JAVA_HOME=/usr/java/default
+
+#
+# Setup EULA Acceptance, Not this is good for vfabric5.1 only
+# Generic accept-vfabric-eula.txt does not work
+#
+mkdir -p /etc/vmware/vfabric
+echo "I_ACCEPT_EULA_LOCATED_AT=$eula_location" &gt;&gt; /etc/vmware/vfabric/accept-vfabric5.1-eula.txt
+#
+# Download vFabric Repo 
+#
+if [[ -n ${httpproxy} &amp;&amp; -n ${httpport} ]]; 
+then
+    rpm -U --httpproxy $httpproxy --httpport $httpport $vfabric_repo
+    http_proxy="http://${httpproxy}:${httpport}"
+    https_proxy="http://${httpproxy}:${httpport}"
+    export http_proxy https_proxy
+else
+    rpm -U $vfabric_repo
+fi
+</script>
+            <embedded>true</embedded>
+            <script-type>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>0</lock-version>
+                <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                <last-update-user>SYSTEM</last-update-user>
+                <created>2012-10-19T05:45:07+00:00</created>
+                <create-user>SYSTEM</create-user>
+                <name>Bash Script</name>
+                <description>Bash shell script.</description>
+                <name-message-key>type.script.bash.name</name-message-key>
+                <description-message-key>type.script.bash.description</description-message-key>
+                <supported-os-details>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-10-19T05:45:08+00:00</last-updated>
+                    <last-update-user>SYSTEM</last-update-user>
+                    <created>2012-10-19T05:45:08+00:00</created>
+                    <create-user>SYSTEM</create-user>
+                    <os-family>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                        <last-update-user>SYSTEM</last-update-user>
+                        <created>2012-10-19T05:45:07+00:00</created>
+                        <create-user>SYSTEM</create-user>
+                        <name>Linux</name>
+                        <description>Linux based operating systems.</description>
+                        <meta-tag-type>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-10-19T05:45:07+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>OS Family</name>
+                            <description>Operating System (OS) Family.</description>
+                            <meta-tag-enum>OS_FAMILY</meta-tag-enum>
+                            <user-managed-type>false</user-managed-type>
+                        </meta-tag-type>
+                        <os-family>LINUX</os-family>
+                    </os-family>
+                    <supports-array-props>true</supports-array-props>
+                    <supports-output-props>true</supports-output-props>
+                    <exec-command>source &lt;exec-script&gt; &lt;script-file&gt; &lt;output-properties-file&gt;</exec-command>
+                    <exec-script>trap "APPDEXITSTATUS=\$?;printenv &gt; $2;exit $APPDEXITSTATUS" EXIT
+# Execute action script
+source $1
+APPDRETURNSTATUS=$?
+# Unset trap
+trap - EXIT
+# Save env variables in output properties file
+printenv &gt; $2
+exit $APPDRETURNSTATUS
+</exec-script>
+                    <exec-script-extension>sh</exec-script-extension>
+                    <file-extension>sh</file-extension>
+                </supported-os-details>
+                <script-type-expression>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                    <last-update-user>SYSTEM</last-update-user>
+                    <created>2012-10-19T05:45:07+00:00</created>
+                    <create-user>SYSTEM</create-user>
+                    <prop-type>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                        <last-update-user>SYSTEM</last-update-user>
+                        <created>2012-10-19T05:45:07+00:00</created>
+                        <create-user>SYSTEM</create-user>
+                        <name>String</name>
+                        <description>String (java.lang.String).</description>
+                    </prop-type>
+                    <expression>$&lt;property-name&gt;</expression>
+                </script-type-expression>
+                <script-type-expression>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                    <last-update-user>SYSTEM</last-update-user>
+                    <created>2012-10-19T05:45:07+00:00</created>
+                    <create-user>SYSTEM</create-user>
+                    <prop-type>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                        <last-update-user>SYSTEM</last-update-user>
+                        <created>2012-10-19T05:45:07+00:00</created>
+                        <create-user>SYSTEM</create-user>
+                        <name>Content</name>
+                        <description>Content (java.lang.String).</description>
+                    </prop-type>
+                    <expression>$&lt;property-name&gt;</expression>
+                </script-type-expression>
+                <script-type-expression>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                    <last-update-user>SYSTEM</last-update-user>
+                    <created>2012-10-19T05:45:07+00:00</created>
+                    <create-user>SYSTEM</create-user>
+                    <prop-type>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-10-19T05:45:07+00:00</last-updated>
+                        <last-update-user>SYSTEM</last-update-user>
+                        <created>2012-10-19T05:45:07+00:00</created>
+                        <create-user>SYSTEM</create-user>
+                        <name>Array</name>
+                        <description>Array</description>
+                    </prop-type>
+                    <expression>${&lt;property-name&gt;[@]}</expression>
+                </script-type-expression>
+            </script-type>
+            <component-lifecycle-type>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>0</lock-version>
+                <last-updated>2012-10-19T05:45:08+00:00</last-updated>
+                <last-update-user>SYSTEM</last-update-user>
+                <created>2012-10-19T05:45:08+00:00</created>
+                <create-user>SYSTEM</create-user>
+                <name>INSTALL</name>
+                <description>Install lifecycle on a component.</description>
+                <name-message-key>type.lifecycle.install.name</name-message-key>
+                <description-message-key>type.lifecycle.install.description</description-message-key>
+            </component-lifecycle-type>
+            <reboot-after>false</reboot-after>
+        </ns8:component-version-script>
+    </script-task-version>
+</ns26:export-package>

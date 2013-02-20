@@ -1,0 +1,605 @@
+<?xml version="1.0" ?>
+<project name="springtrader-deploy" default="deploy" basedir="." xmlns:common="uri://vmware.com/common_include/common-macros">
+	<import file="${basedir}/../common_include/common-deploy.xml" />
+	<target name="init-props" depends="common-deploy.init-props">
+		<propertycopy name="instance.root.dir" from="${springtrader.instance.root.dir}" />
+		<pathconvert targetos="windows" property="temp-dir.windows_dir" >
+			<path location="${temp.dir}" />
+		</pathconvert>
+		<property name="datagen.dir" value="${temp.dir}/datagen" />
+		<mkdir dir="${datagen.dir}" />
+	</target>
+		
+	<target name="git-clone" depends="init-props" unless="is.git-clone.installed">
+		<common:user-log URL="https://github.com/vFabric/springtrader/wiki/Getting-Started-Guide#wiki-lin-clone" />
+		<if>
+			<equals arg1="${use.git}"  arg2="true" />
+			<then>
+				<property name="springtrader.constructed.url" value="${springtrader.git.url}" />
+				<echo>springtrader.constructed.url -- ${springtrader.constructed.url} </echo>
+				<git-clone uri="${springtrader.constructed.url}" dest="${install.dir}/springtrader" />
+			</then>
+			<else>
+				<propertyregex property="file.name" 
+				               input="${springtrader.git.archive.url}"
+				               regexp="(.*)\/(.*)$" 
+				               select="\2" />
+				<property name="springtrader.file" value="${temp.dir}/${file.name}" /> <!-- The destination file name. -->
+				<echo>Checking ${springtrader.file} location... </echo>
+				<if>
+					<not>
+						<available file="${springtrader.file}" />
+					</not>
+					<then>
+						<get src="${springtrader.git.archive.url}" dest="${temp.dir}"/>
+					</then>
+				</if>
+				<if>
+					<not>
+						<available file="${install.dir}/springtrader-${springtrader.branch}" type="dir" />
+					</not>
+					<then>
+						<unzip src="${springtrader.file}" dest="${temp.dir}" />	
+						<move todir="${install.dir}/springtrader" >
+							<fileset dir="${temp.dir}/springtrader-${springtrader.branch}" >
+								<include name="**/*" />
+							</fileset>
+						</move>
+					</then>
+				</if>
+			</else>
+		</if>
+		<common:set-installed component-name="git-clone" component-version="LATEST" install-path="${install.dir}/springtrader" />
+	</target>
+	
+	<target name="config-services" depends="init-props" unless="is.config-services.installed">
+		<property file="${base.deploy.root}/sqlfire/build.properties" />
+		<common:user-log URL="https://github.com/vFabric/springtrader/wiki/Getting-Started-Guide#wiki-lin-sys-conf" />
+		<!-- original: jdbc\:sqlfire\://nanodbserver\:1527/ -->
+		<common:update-prop-file 
+			property-file="${installed.git-clone.path}/${springtrader.props.database.file}"
+			property-key="sqlfire.database.url"
+			property-value="jdbc:sqlfire://${sqlfire.locator.bind.address}:${sqlfire.locator.client.port}/"
+		/>
+		<!-- original: jdbc\:postgresql\://nanodbserver\:5432 -->
+		<common:update-prop-file 
+			property-file="${installed.git-clone.path}/${springtrader.props.database.file}"
+			property-key="database.url"
+			property-value="jdbc:postgresql://localhost:5432"
+		/>
+		<!-- original: jdbc:sqlfire://nanodbserver:1527/ -->
+		<common:update-prop-file 
+			property-file="${installed.git-clone.path}/${springtrader.props.template.sqlfire.file}"
+			property-key="springtrader.springtrader.url"
+			property-value="jdbc:sqlfire://${sqlfire.locator.bind.address}:${sqlfire.locator.client.port}/"
+		/>
+		<!-- original: jdbc\:sqlfire\://nanodbserver\:1527/ -->
+		<common:update-prop-file 
+			property-file="${installed.git-clone.path}/${springtrader.props.template.postgres.file}"
+			property-key="springtrader.springtrader.url"
+			property-value="jdbc:sqlfire://${sqlfire.locator.bind.address}:${sqlfire.locator.client.port}/"
+		/>
+		<common:update-prop-file 
+			property-file="${installed.git-clone.path}/${springtrader.props.tools.sqlf.file}"
+			property-key="dbHost"
+			property-value="${sqlfire.locator.bind.address}"
+		/>		
+		<common:update-prop-file 
+			property-file="${installed.git-clone.path}/${springtrader.props.tools.props.file}"
+			property-key="dbHost"
+			property-value="${sqlfire.locator.bind.address}"
+		/>
+		<common:set-installed component-name="config-services" component-version="LATEST" install-path="${install.dir}/springtrader" />
+	</target>
+	
+	<target name="config-reset" depends="init-props" >
+		<common:reset-prop-file file="${installed.git-clone.path}/${springtrader.props.database.file}" /> 
+		<common:reset-prop-file file="${installed.git-clone.path}/${springtrader.props.template.sqlfire.file}" /> 
+		<common:reset-prop-file file="${installed.git-clone.path}/${springtrader.props.template.postgres.file}" />
+		<common:reset-prop-file file="${installed.git-clone.path}/${springtrader.props.tools.sqlf.file}" /> 
+		<common:reset-prop-file file="${installed.git-clone.path}/${springtrader.props.tools.props.file}" />		
+		<delete file="${install.dir}/config-services.installed" />
+	</target>
+	
+	<target name="setupSqlfireClient" depends="init-props">
+		<common:user-log URL="https://github.com/vFabric/springtrader/wiki/Getting-Started-Guide#wiki-lin-sqlfc" />
+		<copy file="${installed.sqlfire.path}/lib/sqlfireclient.jar" tofile="${install.dir}/springtrader/lib/sqlfireclient-1.0.3.jar" />
+		<copy file="${installed.sqlfire.path}/lib/sqlfireclient.jar" tofile="${install.dir}/springtrader/templates/springtrader/lib/sqlfireclient-1.0.3.jar" />
+	</target>
+
+	<target name="setupGemfire" depends="init-props">
+		<common:user-log URL="https://github.com/vFabric/springtrader/wiki/Getting-Started-Guide#wiki-lin-gemf" />
+		<copy file="${installed.gemfire.path}/lib/gemfire.jar" todir="${install.dir}/springtrader/lib" />
+	</target>
+
+	<target name="springtrader-build" depends="init-props, git-clone, setupGemfire, setupSqlfireClient, config-services" unless="is.springtrader-build.installed" >
+		<common:user-log URL="https://github.com/vFabric/springtrader/wiki/Getting-Started-Guide#wiki-lin-build" />
+		<if>
+			<isset property="http.proxyHost" />
+			<then>
+				<propertyfile file="${install.dir}/springtrader/gradle.properties">
+					<entry key="systemProp.http.proxyHost" value="${http.proxyHost}" />
+					<entry key="systemProp.http.proxyPort" value="${http.proxyPort}" />
+					<entry key="systemProp.https.proxyHost" value="${https.proxyHost}" />
+					<entry key="systemProp.https.proxyPort" value="${https.proxyPort}" />
+				</propertyfile>
+			</then>
+		</if>
+		<chmod perm="ugo+rx" >
+			<fileset dir="${installed.git-clone.path}">
+				<include name="gradlew"/>
+			</fileset>
+		</chmod>
+		<gradle-exec failonerror="true" dir="${installed.git-clone.path}" >
+			<args>
+				<arg value="clean" />
+			</args>
+		</gradle-exec>
+		<gradle-exec failonerror="true" dir="${installed.git-clone.path}" >
+			<args>
+				<arg value="build" />
+			</args>
+		</gradle-exec>
+		<gradle-exec failonerror="true" dir="${installed.git-clone.path}" >
+			<args>
+				<arg value="eclipse" />
+			</args>
+		</gradle-exec>
+		<gradle-exec failonerror="true" dir="${installed.git-clone.path}" >
+			<args>
+				<arg value="release" />				
+			</args>
+		</gradle-exec>
+		<echo>Building Selenium Tests...</echo>
+		<if>
+			<equals arg1="${os-family}" arg2="windows" />
+			<then>
+				<copy failonerror="false" file="${installed.git-clone.path}/gradlew.bat" todir="${installed.git-clone.path}/tools/selenium" />
+			</then>
+			<else>
+				<chmod perm="ugo+rx" >
+					<fileset dir="${installed.git-clone.path}/tools/selenium">
+						<include name="gradlew"/>
+					</fileset>
+				</chmod>				
+			</else>
+		</if>
+		<gradle-exec failonerror="true" dir="${installed.git-clone.path}/tools/selenium" >
+			<args>
+				<arg value="clean" />
+			</args>
+		</gradle-exec>
+		<gradle-exec failonerror="true" dir="${installed.git-clone.path}/tools/selenium" >
+			<args>
+				<arg value="build" />
+			</args>
+		</gradle-exec>
+		<gradle-exec failonerror="true" dir="${installed.git-clone.path}/tools/selenium" >
+			<args>
+				<arg value="eclipse" />
+			</args>
+		</gradle-exec>
+		<common:set-installed component-name="springtrader-build" component-version="LATEST" install-path="${install.dir}/springtrader" />
+	</target>
+	
+	<target name="springtrader-build-clean" depends="init-props" >
+		<echo>Cleaning springtrader with gradle</echo>
+		<gradle-exec failonerror="true" >
+			<args>
+				<arg value="clean" />
+			</args>
+		</gradle-exec>
+		<delete file="${install.dir}/springtrader-build.installed" />
+	</target>	
+	
+	<target name="install-template" depends="init-props" unless="is.springtrader-template.installed">
+		<check-tcserver prop="is.tcserver.installed" />
+		<common:user-log URL="https://github.com/vFabric/springtrader/wiki/Getting-Started-Guide#wiki-lin-deploy" />
+		<echo> Checking ${installed.tcserver.path}/templates/${springtrader.tcserver.template}</echo>
+		<if>
+			<not>
+				<available file="${installed.tcserver.path}/templates/${springtrader.tcserver.template}" type="dir" />
+			</not>
+			<then>
+				<common:install-tcserver-template 
+					tcserver-root="${installed.tcserver.path}"
+					template-dir="${install.dir}/springtrader/templates/${springtrader.tcserver.template}"
+					template-name="${springtrader.tcserver.template}"
+				/>
+			</then>
+		</if>
+		<common:set-installed component-name="springtrader-template" component-version="LATEST" install-path="${installed.tcserver.path}/templates/${springtrader.tcserver.template}" />
+	</target>
+	
+	<macrodef name="check-tcserver">
+		<attribute name="prop" />
+		<sequential>
+			<if> 
+				<not>
+					<isset property="@{prop}" />
+				</not>
+				<then>
+					<fail>tc server must be installed first (run 'sts' submodule 'deploy' task via cd ../sts; ant all</fail>
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+	
+	<target name="clean-template" depends="init-props" >
+		<if>
+			<available file="${installed.tcserver.path}/templates/${springtrader.tcserver.template}" type="dir" />
+			<then>
+				<echo>Deleting '${installed.tcserver.path}/templates/${springtrader.tcserver.template}'</echo>
+				<delete dir="${installed.tcserver.path}/templates/${springtrader.tcserver.template}"/>
+			</then>
+			<else>
+				<echo>Did not find '${installed.tcserver.path}/templates/${springtrader.tcserver.template}' for removal.</echo>
+			</else>
+		</if>
+	</target>
+
+	<target name="springtrader-tcserver-web" depends="init-props" unless="is.springtrader-tcserver-web.installed">
+		<check-tcserver prop="is.tcserver.installed" />
+		<common:user-log URL="https://github.com/vFabric/springtrader/wiki/Getting-Started-Guide#wiki-lin-deploy" />
+		<common:create-tcserver-instance 
+			tcserver-root="${installed.tcserver.path}" 
+			instance-name="${springtrader.tcserver.web.instance}"
+			root-install-path="${instance.root.dir}"
+			base-template="insight"
+			template="${springtrader.tcserver.template}"
+			base-jmx-port="${springtrader.tcserver.web.base.jmx.port}"
+			bio-http-port="${springtrader.tcserver.web.bio.http.port}" 
+			bio-https-port="${springtrader.tcserver.web.bio.https.port}" 
+			template-properties-file="${installed.springtrader-template.path}/sqlfire.properties"
+		/>
+		<common:set-installed component-name="springtrader-tcserver-web" component-version="LATEST" install-path="${install.dir}/${springtrader.tcserver.web.instance}" />	
+		<pathconvert targetos="windows" property="installed.springtrader-tcserver-web.path-windows.path" >
+			<path location="${installed.springtrader-tcserver-web.path}" />
+		</pathconvert>
+		<concat destfile="${installed.springtrader-tcserver-web.path}/conf/wrapper.conf" append="true">
+			wrapper.pidfile=${installed.springtrader-tcserver-web.path-windows.path}${dir.separator}wrapper.pid${line.separator}
+			wrapper.java.pidfile=${installed.springtrader-tcserver-web.path}${dir.separator}wrapper.java.pid
+		</concat>
+	</target>
+	
+	<target name="springtrader-tcserver-async" depends="init-props" unless="is.springtrader-tcserver-async.installed">
+		<check-tcserver prop="is.tcserver.installed" />
+		<common:user-log URL="https://github.com/vFabric/springtrader/wiki/Getting-Started-Guide#wiki-lin-deploy" />
+		<common:create-tcserver-instance 
+			tcserver-root="${installed.tcserver.path}" 
+			instance-name="${springtrader.tcserver.async.instance}"
+			root-install-path="${instance.root.dir}"
+			base-template="insight"
+			template="${springtrader.tcserver.template}"
+			base-jmx-port="${springtrader.tcserver.async.base.jmx.port}"
+			bio-http-port="${springtrader.tcserver.async.bio.http.port}" 
+			bio-https-port="${springtrader.tcserver.async.bio.https.port}" 
+			template-properties-file="${installed.springtrader-template.path}/sqlfire.properties"
+		/>		
+		<common:set-installed component-name="springtrader-tcserver-async" component-version="LATEST" install-path="${install.dir}/${springtrader.tcserver.async.instance}" />
+		<pathconvert targetos="windows" property="installed.springtrader-tcserver-async.path-windows.path" >
+			<path location="${installed.springtrader-tcserver-async.path}" />
+		</pathconvert>
+		<concat destfile="${installed.springtrader-tcserver-async.path}/conf/wrapper.conf" append="true">
+			wrapper.pidfile=${installed.springtrader-tcserver-async.path-windows.path}${dir.separator}wrapper.pid${line.separator}
+			wrapper.java.pidfile=${installed.springtrader-tcserver-async.path-windows.path}${dir.separator}wrapper.java.pid
+		</concat>
+	</target>
+		
+	<target name="springtrader-tcserver" depends="init-props, install-template, springtrader-tcserver-async, springtrader-tcserver-web" >
+	</target>
+
+	<target name="deploy-war" depends="init-props, springtrader-tcserver" >
+		<common:user-log URL="https://github.com/vFabric/springtrader/wiki/Getting-Started-Guide#wiki-lin-deploy" />
+		<check-tcserver prop="is.tcserver.installed" />
+		<common:user-log URL="https://github.com/vFabric/springtrader/wiki/Getting-Started-Guide#wiki-lin-deploy" />
+		<copy file="${install.dir}/springtrader/${springtrader.async.war}" 
+			tofile="${installed.springtrader-tcserver-async.path}/webapps/${springtrader.async.final.war}" />
+		<copy file="${install.dir}/springtrader/${springtrader.web.war}" 
+			tofile="${installed.springtrader-tcserver-web.path}/webapps/${springtrader.web.final.war}" />
+		<copy file="${install.dir}/springtrader/${springtrader.services.war}" 
+			tofile="${installed.springtrader-tcserver-web.path}/webapps/${springtrader.services.final.war}" />		
+	</target>
+	
+	<target name="deploy-groovy" depends="init-props" unless="is.groovy.installed" >
+		<common:artifact-locator repo-path="${vfra.repo}" 
+			artifact-prefix="${groovy.prefix}" 
+			suffix="${groovy.suffix}" 
+			file-location-property="groovy.file"
+			file-version-property="groovy.version" />
+		<if>
+			<not><available file="${install.dir}/groovy-${groovy.version}" type="dir" /></not>
+			<then>
+				<unzip src="${groovy.file}" dest="${install.dir}" />						
+				<chmod perm="ugo+rx" >
+					<fileset dir="${install.dir}/groovy-${groovy.version}/bin">
+						<include name="groovy*"/>
+					</fileset>
+				</chmod>
+			</then>
+		</if>
+		<common:set-installed component-name="groovy" component-version="LATEST" install-path="${install.dir}/groovy-${groovy.version}" />		
+	</target>
+	
+	<target name="deploy" depends="common-deploy.deploy, git-clone, config-services, setupSqlfireClient, setupGemfire, springtrader-build, springtrader-tcserver, deploy-war, deploy-groovy" description="git clones and builds springtrader. Target chain is git-clone -> springtrader-build -> deploy. ">
+		<common:set-installed component-name="${component}" component-version="LATEST" install-path="${install.dir}" />
+	</target>
+	
+	<target name="init-data-props" depends="init-props, deploy-datagen" >
+		<path id="datagen.classpath">
+			<fileset dir="${datagen.dir}/libs" >
+				<include name="*.jar"/>
+				<exclude name="groovy*" />
+			</fileset>
+			<pathelement location="${datagen.dir}"/>
+			<pathelement location="${datagen.dir}/org/nanotrader"/>
+		</path>
+
+		<pathconvert targetos="windows" property="installed.groovy.path.windows_dir" >
+			<path location="${installed.groovy.path}" />
+		</pathconvert>
+		<macrodef name="windows-groovy-exec">
+			<attribute name="script" />
+			<attribute name="classpath-ref" />
+			<attribute name="dir" />
+			<sequential>
+				<echo>Executing Groovy ( ${installed.groovy.path.windows_dir} )</echo>
+				<property name="g-cp" value="${toString:@{classpath-ref}}" />
+				<install-exec executable="cmd" dir="${datagen.dir}" >
+					<arg value="/c" />
+					<arg value="${installed.groovy.path.windows_dir}\bin\groovy.bat" />
+					<arg value="-cp" />
+					<arg value="&quot;${g-cp}&quot;" />
+					<arg value="@{script}" />
+					<env key="GROOVY_HOME" value="${installed.groovy.path.windows_dir}" />
+				</install-exec>
+				<var name="g-cp" unset="true"/>
+			</sequential>
+		</macrodef>
+	</target>
+	
+	<target name="deploy-datagen" depends="init-props" unless="is.datagen.installed" >
+		<common:user-log URL="https://github.com/vFabric/springtrader/wiki/Getting-Started-Guide#wiki-lin-deploy" />
+		<property name="tools.lib" value="${install.dir}/springtrader/tools/build/libs" />
+		<unzip dest="${datagen.dir}" src="${tools.lib}/DataGenerator.zip" />	
+		<common:set-installed component-name="datagen" component-version="LATEST" install-path="${temp.dir}/datagen" />
+	</target>
+		
+	<target name="load-schema" depends="init-props, init-data-props, common-deploy.configure" unless="is.load-schema.installed" >
+		<common:user-log URL="https://github.com/vFabric/springtrader/wiki/Getting-Started-Guide#wiki-lin-deploy" />
+		<if>
+			<equals arg1="${os-family}" arg2="windows" />
+			<then>
+				<echo>Installing Springtrader Schema...</echo>
+				<if>
+					<not>
+						<isset property="use.sqlexec" />
+					</not>
+					<then>
+						<windows-groovy-exec classpath-ref="datagen.classpath" dir="${datagen.dir}" script="NanotraderCreateSqlfSchema.groovy" />
+					</then>
+					<else>
+						<property name="sqlf.props.file" value="${basedir}/src/scripts/nanotrader.sqlf.properties" />
+						<property file="${sqlf.props.file}" prefix="sqlf."  />
+						<echo>PRINTING PROPERTIES</echo>
+						<propertyselector property="propertyList"
+							delimiter=","
+							match="sqlf\.(.*)"
+							select="\1"
+							casesensitive="false"/>
+							<for list="${propertyList}" param="sequence">
+								<sequential>
+									<echo>@{sequence}</echo>
+								</sequential>
+							</for>
+						<sql
+						    driver="${sqlf.dbDriver}"
+						    url="${sqlf.dbURLPrefix}${sqlf.dbHost}:${sqlf.dbPort}"
+						    userid="${sqlf.dbUser}"
+						    password="${sqlf.dbPasswd}"
+							src="${datagen.dir}/nanotrader-sqlf-tables.ddl"
+							classpathref="datagen.classpath"
+							onerror="continue"
+						 />
+						<sql
+						    driver="${sqlf.dbDriver}"
+						    url="${sqlf.dbURLPrefix}${sqlf.dbHost}:${sqlf.dbPort}"
+						    userid="${sqlf.dbUser}"
+						    password="${sqlf.dbPasswd}"
+							src="${datagen.dir}/initdb-sqlf.sql"
+							classpathref="datagen.classpath"
+							onerror="continue"
+						 />
+					</else>
+				</if>
+			</then>
+			<elseif>
+				<equals arg1="${os-family}" arg2="unix" />
+				<then>
+					<chmod perm="ugo+rx" >
+						<fileset dir="${temp.dir}/datagen">
+							<include name="createSchema*"/>
+							<include name="createSqlfSchema*"/>
+							<include name="generateData*"/>
+							<include name="loadOrders*"/>
+						</fileset>
+					</chmod>
+					<echo>Installing SpringTrader Schema...</echo>
+					<install-exec executable="${datagen.dir}/createSqlfSchema" dir="${datagen.dir}" >
+						<env key="GROOVY_HOME" value="${installed.groovy.path}" />
+						<env key="PATH" value="${installed.groovy.path}/bin:${env.PATH}" />
+					</install-exec>
+				</then>						
+			</elseif>
+		</if>
+		<common:set-installed component-name="load-schema" component-version="LATEST" install-path="${install.dir}" />	
+	</target>
+
+	<target name="reload-data" depends="init-props, init-data-props" >
+		<delete file="${install.dir}/load-schema.installed" />
+		<var name="is.load-schema.installed" unset="true" />
+		<antcall target="load-schema" />
+		<delete file="${install.dir}/load-data.installed" />
+		<var name="is.load-data.installed" unset="true" />
+		<antcall target="load-data" />
+	</target>
+	
+	<target name="configure" depends="init-props, init-data-props, load-schema, common-deploy.configure" description="" unless="is.springtrader-configure.installed">
+		<common:set-installed component-name="springtrader-configure" component-version="LATEST" install-path="${install.dir}" />	
+	</target>
+
+	<target name="start-tcserver-instances" depends="init-props" >
+		<common:user-log URL="https://github.com/vFabric/springtrader/wiki/Getting-Started-Guide#wiki-lin-deploy" />
+		<if>
+			<equals arg1="${os-family}" arg2="windows" />
+			<then>
+				<common:tcserver-ctl-command 
+					tcserver-root="${installed.tcserver.path}" 
+					instance-base-path="${instance.root.dir}"
+					instance-name="${springtrader.tcserver.web.instance}"
+					command="run"
+				/>	
+				<common:tcserver-ctl-command 
+					tcserver-root="${installed.tcserver.path}" 
+					instance-base-path="${instance.root.dir}"
+					instance-name="${springtrader.tcserver.async.instance}"
+					command="run"
+				/>
+			</then>
+			<else>
+				<common:tcserver-ctl-command 
+					tcserver-root="${installed.tcserver.path}" 
+					instance-base-path="${instance.root.dir}"
+					instance-name="${springtrader.tcserver.web.instance}"
+					command="start"
+				/>
+				<common:tcserver-ctl-command 
+					tcserver-root="${installed.tcserver.path}" 
+					instance-base-path="${instance.root.dir}"
+					instance-name="${springtrader.tcserver.async.instance}"
+					command="start"
+				/>
+			</else>
+		</if>
+	</target>
+
+	<target name="load-data" depends="init-props, init-data-props" unless="is.load-data.installed" >
+		<common:user-log URL="https://github.com/vFabric/springtrader/wiki/Getting-Started-Guide#wiki-lin-deploy" />
+		<echo>Generating and populating sample data...</echo>
+		<if>
+			<equals arg1="${os-family}" arg2="windows" />
+			<then>
+				<windows-groovy-exec classpath-ref="datagen.classpath" dir="${datagen.dir}" script="NanotraderGenerateData.groovy" />
+			</then>
+			<elseif>
+				<equals arg1="${os-family}" arg2="unix" />
+				<then>
+					<install-exec executable="${temp.dir}/datagen/generateData" dir="${temp.dir}/datagen" >
+						<env key="GROOVY_HOME" value="${installed.groovy.path}" />
+						<env key="PATH" value="${installed.groovy.path}/bin:${env.PATH}" />
+					</install-exec>
+				</then>
+			</elseif>
+		</if>
+		<common:set-installed component-name="load-data" component-version="LATEST" install-path="${temp.dir}" />
+	</target>
+	
+	<target name="start" depends="init, init-props, start-tcserver-instances, load-data, common-deploy.start" description="Starts tc server containers." />
+	
+	<macrodef name="trim">
+		<attribute name="property" />
+		<attribute name="input" />
+		<sequential>
+		    <propertyregex
+		      property="@{property}"
+		      input="@{input}"
+		      regexp="[\s]*(.+)[\n]*"
+		      replace="\1"
+		      override="true"
+		    />
+	  </sequential>
+	</macrodef>
+
+	<target name="stop-web" depends="init-props">
+		<if>
+			<equals arg1="${os-family}" arg2="windows" />
+			<then>
+				<if>
+					<available file="${installed.springtrader-tcserver-web.path}/wrapper.pid" />
+					<then>
+						<replaceregexp 
+						        file="${installed.springtrader-tcserver-web.path}/wrapper.pid" 
+						        match="\s+" 
+						        replace="" 
+						/>
+						<loadfile property="web.wrapper.pid"
+						      srcFile="${installed.springtrader-tcserver-web.path}/wrapper.pid"/>
+						<trim input="${web.wrapper.pid}" property="trim.web.wrapper.pid" />
+						<common:processKill pid="${trim.web.wrapper.pid}" />
+					</then>
+				</if>
+			</then>
+			<else>
+				<common:tcserver-ctl-command 
+					tcserver-root="${installed.tcserver.path}" 
+					instance-base-path="${instance.root.dir}"
+					instance-name="${springtrader.tcserver.web.instance}"
+					command="stop"
+				/>
+			</else>
+		</if>
+	</target>
+
+	<target name="stop-async" depends="init-props">
+		<if>
+			<equals arg1="${os-family}" arg2="windows" />
+			<then>
+				<if>
+					<available file="${installed.springtrader-tcserver-async.path}/wrapper.pid" />
+					<then>
+						<replaceregexp 
+				        file="${installed.springtrader-tcserver-async.path}/wrapper.pid" 
+				        match="\s+" 
+				        replace="" 
+						/> 
+						<loadfile property="async.wrapper.pid"
+						      srcFile="${installed.springtrader-tcserver-async.path}/wrapper.pid"/>
+						<common:processKill pid="${async.wrapper.pid}" />
+					</then>
+				</if>
+			</then>
+			<else>
+				<common:tcserver-ctl-command 
+					tcserver-root="${installed.tcserver.path}" 
+					instance-base-path="${instance.root.dir}"
+					instance-name="${springtrader.tcserver.async.instance}"
+					command="stop"
+				/>
+			</else>
+		</if>
+	</target>
+	
+	<target name="stop" depends="init, init-props, stop-async, stop-web, common-deploy.stop" description="Stops tc server containers." > 
+	</target>
+	
+	<target name="clean-tcserver" depends="init-props, stop, clean-processes"> 
+		<delete dir="${instance.root.dir}/${springtrader.tcserver.web.instance}" />
+		<delete file="${install.dir}/springtrader-tcserver-web.installed" />
+		<var name="is.springtrader-tcserver-web.installed" unset="true" />
+		<delete dir="${instance.root.dir}/${springtrader.tcserver.async.instance}" />
+		<delete file="${install.dir}/springtrader-tcserver-async.installed" />
+		<var name="is.springtrader-tcserver-async.installed" unset="true" />
+		<delete file="${install.dir}/springtrader.installed" />
+		<delete file="${install.dir}/springtrader-template.installed" />
+		<delete dir="${installed.tcserver.path}/templates/${springtrader.tcserver.template}" />
+		<var name="is.springtrader-template.installed" unset="true" />
+	</target>
+
+	<target name="clean-build" depends="stop, clean-tcserver, clean-template" >
+		<delete file="${install.dir}/nano-configure.installed" />
+		<delete file="${install.dir}/load-data.installed" />		
+	</target>
+	
+	<target name="clean-processes" depends="init-props, stop" description="Forcibly clean up running processes so that clean target works regardless of state. " />
+
+</project>

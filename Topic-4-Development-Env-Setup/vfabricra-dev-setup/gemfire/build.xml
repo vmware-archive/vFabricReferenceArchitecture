@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<project name="gemfire-deploy" default="deploy" basedir="." xmlns:common="uri://vmware.com/common_include/common-macros">
+	<import file="${basedir}/../common_include/common-deploy.xml" />
+	<target name="deploy" depends="common-deploy.deploy" unless="is.gemfire.installed">
+		<common:artifact-locator repo-path="${vfra.repo}" 
+			artifact-prefix="vFabric_GemFire_" 
+			suffix=".zip" 
+			file-location-property="gemfire.file" 
+			file-version-property="gemfire.version" />
+		<unzip src="${gemfire.file}" dest="${temp.dir}" />
+		<move todir="${install.dir}" >
+			<fileset dir="${temp.dir}/vFabric_GemFire_${gemfire.version}" >
+				<include name="**/*" />
+			</fileset>
+		</move>
+		<common:set-installed component-name="gemfire" component-version="${gemfire.version}" install-path="${install.dir}" />
+	</target>
+
+	<target name="fetch-deps">
+		<echo>**** Please download vFabric Gemfire from https://my.vmware.com/group/vmware/evalcenter?p=vfabric-gemfire and place it in your repository (Currently set to ${vfra.repo})</echo>
+	</target>
+</project>

@@ -1,0 +1,211 @@
+<?xml version="1.0" ?>
+<project name="sqlfire-deploy" default="deploy" basedir="." xmlns:common="uri://vmware.com/common_include/common-macros">
+	<import file="${basedir}/../common_include/common-deploy.xml" />
+	<target name="init" depends="common-deploy.init" >
+		<mkdir dir="${sqlfire.locator.dir}"/>
+		<mkdir dir="${sqlfire.server.dir}"/>
+	</target>
+	
+	<target name="init-commands" depends="init-props" >
+		<if>
+			<equals arg1="${os-family}" arg2="windows" />
+			<then>
+				<macrodef name="sqlf-exec">
+					<attribute name="failonerror" />
+					<element name="args"/>
+					<sequential>
+						<echo>Executing - ${installed.sqlfire.path}/bin/sqlf.bat </echo>
+						<exec failonerror="@{failonerror}" dir="${installed.sqlfire.path}" executable="cmd">
+							<arg value="/c" />
+							<arg value="${installed.sqlfire.path}/bin/sqlf.bat"/>
+							<args />
+						</exec>
+					</sequential>
+				</macrodef>
+			</then>
+			<elseif>
+				<equals arg1="${os-family}" arg2="unix" />
+				<then>
+					<macrodef name="sqlf-exec">
+						<attribute name="failonerror" />
+						<element name="args" />
+						<sequential>
+							<install-exec failonerror="@{failonerror}" executable="${installed.sqlfire.path}/bin/sqlf" dir="${installed.sqlfire.path}" >
+								<args />
+							</install-exec>
+						</sequential>
+					</macrodef>
+				</then>
+			</elseif>
+			<else>
+				<fail>The installation does not support ${os-family}.</fail>
+			</else>
+		</if>
+	</target>
+
+	<target name="deploy" depends="common-deploy.deploy" unless="is.sqlfire.installed">
+		<common:artifact-locator repo-path="${vfra.repo}" 
+			artifact-prefix="vFabric_SQLFire_" 
+			suffix="_Installer.jar" 
+			file-location-property="sqlfire.file" 
+			file-version-property="sqlfire.version" />
+
+		<interact executable="java -jar ${sqlfire.file}" timeout="100" testload="false">
+			<expect value="continue>" />
+			<send value="&#10;&#13;" />
+			<expect value="continue>" />
+			<send value="&#10;&#13;" />
+			<expect value="continue>" />
+			<send value="&#10;&#13;" />
+			<expect value="continue>" />
+			<send value="&#10;&#13;" />
+			<expect value="continue>" />
+			<send value="&#10;&#13;" />
+			<expect value="continue>" />
+			<send value="&#10;&#13;" />
+			<expect value="continue>" />
+			<send value="&#10;&#13;" />
+			<expect value="continue>" />
+			<send value="&#10;&#13;" />
+			<expect value="continue>" />
+			<send value="&#10;&#13;" />
+			<expect value="continue>" />
+			<send value="&#10;&#13;" />
+			<expect value="installation." />
+			<send value="agree&#10;&#13;" />
+			<expect value="directory." />
+			<send value="${temp.dir}&#10;&#13;" />
+			<expect value="[yes]" />
+			<send value="&#10;&#13;" />
+		</interact>
+
+		<move todir="${install.dir}" >
+			<fileset dir="${temp.dir}/vFabric_SQLFire_${sqlfire.version}" >
+				<include name="**/*" />
+			</fileset>
+		</move>
+		<common:set-installed component-name="${component}" component-version="${sqlfire.version}" install-path="${install.dir}" />
+	</target>
+
+	<target name="configure" depends="init,init-props,common-deploy.configure" description="Handles pre-reqs for 1 locator and 1 SQLFire instance.">
+		<mkdir dir="${sqlfire.server.dir}" />
+		<mkdir dir="${sqlfire.server.dir}" />
+	</target>
+
+	<target name="start-locator" depends="init-props" description="Starts 1 locator and 1 SQLFire instance.">
+		<!-- 
+		sqlf locator start -peer-discovery-address=127.0.0.1 -peer-discovery-port=3241 -dir=locator1
+		-client-port=1527 -client-bind-address=127.0.0.1
+		sqlf server start -dir=server1 -client-bind-address=127.0.0.1 -client-port=1528
+		-locators=127.0.0.1[3241]
+		-->
+		<sqlf-exec failonerror="true">
+			<args>
+				<arg value="locator" />
+				<arg value="start" />
+				<arg value="-peer-discovery-address=${sqlfire.peer.discovery.address}" />
+				<arg value="-peer-discovery-port=${sqlfire.peer.discovery.port}" />
+				<arg value="-dir=${sqlfire.locator.dir}" />
+				<arg value="-client-port=${sqlfire.locator.client.port}" />
+				<arg value="-client-bind-address=${sqlfire.locator.client.bind.address}" />
+				<arg value="-bind-address=${sqlfire.locator.bind.address}" />				
+				<arg value="-locators=${sqlfire.locators}" />
+			</args>
+		</sqlf-exec>
+	</target>
+
+	<target name="start-server" depends="init-commands, init-props" description="Starts 1 locator and 1 SQLFire instance.">
+		<!--
+		sqlf server start -dir=server1 -client-bind-address=127.0.0.1 -client-port=1528
+		-locators=127.0.0.1[3241]
+		-->
+		<sqlf-exec failonerror="true">
+			<args>
+				<arg value="server" />
+				<arg value="start" />
+				<arg value="-dir=${sqlfire.server.dir}" />
+				<arg value="-client-bind-address=${sqlfire.server.client.bind.address}" />
+				<arg value="-bind-address=${sqlfire.server.bind.address}" />	
+				<arg value="-client-port=${sqlfire.server.client.port}" />
+				<arg value="-locators=${sqlfire.locators}" />
+			</args>
+		</sqlf-exec>
+	</target>
+
+	<target name="start" depends="init-commands, start-locator, start-server, common-deploy.start" description="Starts 1 locator and 1 SQLFire instance.">
+	</target>
+
+	<target name="stop-server" depends="init-props">
+		<sqlf-exec failonerror="false">
+			<args>
+				<arg value="server" />
+				<arg value="stop" />
+				<arg value="-dir=${sqlfire.server.dir}" />
+			</args>
+		</sqlf-exec>
+	</target>
+
+	<target name="stop-locator" depends="init-props">
+		<sqlf-exec failonerror="false">
+			<args>
+				<arg value="locator" />
+				<arg value="stop" />
+				<arg value="-dir=${sqlfire.locator.dir}" />
+			</args>
+		</sqlf-exec>
+	</target>
+
+	<target name="restart-clean" depends="init-props" description="Cleanup all the data directories to avoid the long reload of SQLFire. This will require nanotrader re-running configure.">
+		<delete dir="${sqlfire.server.dir}" />
+		<delete dir="${sqlfire.server.dir}" />
+	</target>
+
+	<target name="restart" depends="stop, restart-clean, common-deploy.restart" description="">
+
+	</target>
+
+	<target name="stop" depends="init-commands, stop-server, stop-locator, common-deploy.stop" >
+	</target>
+
+	<target name="fetch-deps">
+		<echo>**** Please download vFabric SQLFire from http://www.vmware.com/products/application-platform/vfabric-sqlfire/overview.html and place it in your repository (Currently set to ${vfra.repo})</echo>
+	</target>
+	
+	<target name="clean-processes" depends="init-props" description="Forcibly clean up running processes so that clean target works regardless of state. " >
+		<if>
+			<available file="${sqlfire.server.dir}/sqlfserver.log" />
+			<then>
+				<loadfile
+					property="sqlf.server.log"
+					srcFile="${sqlfire.server.dir}/sqlfserver.log"
+					failonerror="false"
+					/>
+				<propertyregex property="server-pid" input="${sqlf.server.log}" 
+					regexp="(.*)Process ID: (.*)\b" 
+					select="\2" />
+				<echo>server-pid: ${server-pid}</echo>
+				<common:processKill pid="${server-pid}" />
+			</then>
+			<else>
+				<echo>Did not find ${sqlfire.server.dir}/sqlfserver.log - skipping process removal for SQLF Server</echo>
+			</else>
+		</if>
+		<if>
+			<available file="${sqlfire.locator.dir}/sqlflocator.log" />
+			<then>				
+				<loadfile
+					property="sqlf.locator.log"
+					srcFile="${sqlfire.locator.dir}/sqlflocator.log"
+					/>
+				<propertyregex property="locator-pid" input="${sqlf.locator.log}" 
+					regexp="(.*)Process ID: (.*)\b" 
+					select="\2" />
+				<echo>locator-pid: ${locator-pid}</echo>
+				<common:processKill pid="${locator-pid}" />
+			</then>
+			<else>
+				<echo>Did not find ${sqlfire.locator.dir}/sqlflocator.log - skipping process removal for SQLF locator</echo>
+			</else>
+		</if>
+	</target>
+</project>

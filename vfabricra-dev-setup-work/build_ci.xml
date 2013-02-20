@@ -1,0 +1,68 @@
+<project name="build-ci" default="ci_windows" basedir=".">
+	<import file="build.xml" />
+	<presetdef name="ci_ant">
+		<ant antfile="build.xml" inheritall="false">
+		</ant>
+	</presetdef>
+	
+	<target name="ci_linux" description="Build environment linux target.">
+		<property environment="env"/>
+		<property name="repo.dir" value="${basedir}/repo" />
+		<!-- update then load build.properties file -->
+		<mkdir dir="${repo.dir}"/>
+		<propertyfile file="${basedir}/build.properties">
+			<entry  key="vfra.repo" value="${repo.dir}"/>	
+		</propertyfile>
+		<!-- this contains most notably an unchanged 'remote.repo' -->
+		<property file="${basedir}/build.properties" />
+		<ant antfile="${basedir}/common_include/common-deploy.xml" target="fetch-deps" inheritall="true">
+			<property file="${basedir}/fetch.properties" />
+		</ant>
+		<ci_ant target="all"/>
+		<ci_ant target="stop"/>
+		<ci_ant target="publish"/>
+		<ci_ant target="ci"/>
+	</target>	
+	
+	<target name="autobuild_linux" description="Build environment linux target for automated install.">
+		<property environment="env"/>
+		<property name="repo.dir" value="${basedir}/repo" />
+		<!-- update then load build.properties file -->
+		<mkdir dir="${repo.dir}"/>
+		<propertyfile file="${basedir}/build.properties">
+			<entry  key="vfra.repo" value="${repo.dir}"/>	
+		</propertyfile>
+		<!-- this contains most notably an unchanged 'remote.repo' -->
+		<property file="${basedir}/build.properties" />
+
+		<ant antfile="${basedir}/common_include/common-deploy.xml" target="fetch-deps" inheritall="true">
+			<property file="${basedir}/fetch.properties" />
+		</ant>
+		<ci_ant target="all"/>
+		<ci_ant target="stop"/>		
+	</target>
+	
+	<target name="ci_fetch" unless="skip.fetch">
+		<echo>skip.fetch == ${skip.fetch}</echo>
+		<ant antfile="${basedir}/common_include/common-deploy.xml" target="fetch-deps" inheritall="true">
+			<property file="${basedir}/fetch.properties" />
+		</ant>		
+	</target>
+	
+	<target name="ci_windows" description="Build environment Windows target.">
+		<property environment="env"/>
+		<property name="repo.dir" value="${basedir}/repo" />
+		<!-- update then load build.properties file -->
+		<mkdir dir="${repo.dir}"/>
+		<propertyfile file="${basedir}/build.properties">
+			<entry  key="vfra.repo" value="${repo.dir}"/>	
+		</propertyfile>
+		<ci_ant target="clean-repo" />
+		<antcall target="ci_fetch"  />
+		<ci_ant target="clean-processes"/>
+		<ci_ant target="clean"/> 
+		<ci_ant target="all"/>
+		<ci_ant target="stop"/>
+		<ci_ant target="publish"/>
+	</target>
+</project>

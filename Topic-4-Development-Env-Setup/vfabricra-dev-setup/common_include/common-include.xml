@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<project name="common-include" basedir="."
+	xmlns:artifact="antlib:org.apache.maven.artifact.ant" 
+	xmlns:common="uri://vmware.com/common_include/common-macros"
+	>
+	
+	<echo>******************************************************************</echo>
+	<echo>*           VMWare vFabric Reference Architecture                *</echo>
+	<echo>*              Developer Environment Automation                  *</echo>
+	<echo>******************************************************************</echo>
+	<property name="base.deploy.root-location" location="${ant.file.common-include}/../../" />
+	<pathconvert targetos="unix" property="base.deploy.root" >
+		<path location="${base.deploy.root-location}" />
+	</pathconvert>
+	<typedef file="${base.deploy.root}/common_include/common-macros.xml" uri="uri://vmware.com/common_include/common-macros"/>
+	<property file="${base.deploy.root}/build.properties" />
+ 	<property name="vfra.repo" value="${base.deploy.root}/repo" />	
+	<mkdir dir="${vfra.repo}" />
+
+	<property name="temp.dir-location" location="${basedir}/temp" />
+	<pathconvert targetos="unix" property="temp.dir" >
+		<path location="${temp.dir-location}" />
+	</pathconvert>
+
+	<property name="install.dir-location" location="${basedir}/install" />
+	<pathconvert targetos="unix" property="install.dir" >
+		<path location="${install.dir-location}" />
+	</pathconvert>
+
+	<property name="publish.dir-location" location="${base.deploy.root}/ci/temp" />
+	<pathconvert targetos="unix" property="publish.dir" >
+		<path location="${publish.dir-location}" />
+	</pathconvert>
+
+	<mkdir dir="${publish.dir}" />
+	<basename property="component" file="${basedir}"/>
+
+	<path id="antlib.ant-contrib.classpath">
+		<pathelement location="${base.deploy.root}/antlibs/ant-contrib-1.0b3.jar" />
+	</path>
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath refid="antlib.ant-contrib.classpath" />
+	</taskdef>
+	
+	<if>
+		<isset property="http.proxyHost" />
+		<then>
+			<setproxy proxyhost="${http.proxyHost}" proxyport="${http.proxyPort}"
+			    nonproxyhosts="127.0.0.1" />				
+		</then>
+		<else>
+		</else>
+	</if>
+	<if>
+		<and>
+			<isset property="http.proxyHost" />
+			<isset property="http.proxyPort" />
+		</and>
+		<then>
+			<property name="gradle.proxy.settings" value=" -Dhttp.proxyHost=${http.proxyHost} -Dhttp.proxyPort=${http.proxyPort}" />
+		</then>
+		<else>
+			<property name="gradle.proxy.settings" value="" />
+		</else>
+	</if>
+	
+	<path id="antlib.maven-ant-tasks.classpath">
+		<pathelement location="${base.deploy.root}/antlibs/maven-ant-tasks-2.1.3.jar" />
+	</path>
+	<typedef resource="org/apache/maven/artifact/ant/antlib.xml"
+	           uri="antlib:org.apache.maven.artifact.ant"
+	           classpathref="antlib.maven-ant-tasks.classpath" />
+	<if>
+		<isset property="m2.settingsFile" />
+		<then>	
+			<artifact:dependencies pathId="maven.dependency.classpath" useScope="runtime" settingsFile="${m2.settingsFile}" >
+				<pom file="${base.deploy.root}/pom.xml"/>
+			</artifact:dependencies>
+		</then>
+		<else>
+			<artifact:dependencies pathId="maven.dependency.classpath" useScope="runtime">
+				<pom file="${base.deploy.root}/pom.xml"/>
+			</artifact:dependencies>		
+		</else>
+	</if>
+	<path id="antlib.expect-tasks.classpath">
+		<pathelement location="${base.deploy.root}/antlibs/ant-expect-0.0.1-SNAPSHOT.jar" />
+	</path>	
+	<taskdef resource="expect-task.properties" loaderref="expect">
+		<classpath refid="maven.dependency.classpath" />
+		<classpath refid="antlib.expect-tasks.classpath" />
+	</taskdef>
+</project>

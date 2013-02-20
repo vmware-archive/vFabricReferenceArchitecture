@@ -1,0 +1,79 @@
+#!/bin/sh
+#
+# ---------------------------------------------------------------------------
+# chkconfig:
+# description: 	Start up the SQLFire JMX agent
+
+# Source function library.
+ENV=`dirname $0`
+. "$ENV/common.env"
+
+#The name of the instance we want to stop/start
+INSTANCE_NAME=jmx
+mkdir -p $GF_SERVER_HOME/servers/$INSTANCE_NAME
+
+# see also agent.properties in instance folder
+
+INSTANCE_OPTS="-bind-address=$BIND_IP -log-file=$GF_SERVER_HOME/servers/$INSTANCE_NAME/agent.log -locators=$LOCATORS"
+JAVA_OPTS="-J-Xmx$JMXAGENT_HEAPSIZE -J-Xms$JMXAGENT_HEAPSIZE"
+
+stop() {
+    if [ -x "$GF_BIN" ];
+    then
+        echo "Stopping SQLFire JMX"
+        $GF_BIN agent stop -dir=$GF_SERVER_HOME/servers/$INSTANCE_NAME
+        RETVAL=$?
+    else
+        echo "Startup script $GF_BIN doesn't exist or is not executable."
+        RETVAL=255
+    fi
+}
+
+status() {
+    if [ -x "$GF_BIN" ];
+    then
+        echo "Status-ing SQLFire JMX"
+        $GF_BIN agent status -dir=$GF_SERVER_HOME/servers/$INSTANCE_NAME
+        RETVAL=$?
+    else
+        echo "Startup script $GF_BIN doesn't exist or is not executable."
+        RETVAL=255
+    fi
+}
+
+
+start() {
+    if [ -x "$GF_BIN" ];
+    then
+        echo "Starting SQLFire JMX"
+        $GF_BIN agent start $JAVA_OPTS -dir=$GF_SERVER_HOME/servers/$INSTANCE_NAME $INSTANCE_OPTS
+        RETVAL=$?
+    else
+        echo "Startup script $GF_BIN doesn't exist or is not executable."
+        RETVAL=255
+    fi
+}
+
+
+case "$1" in
+ start)
+        start
+	;;
+ stop)
+        stop
+ 	;;
+ restart)
+        stop
+	sleep 3
+        start
+        ;;
+ status)
+        status
+        ;;
+ *)
+ 	echo $"Usage: $0 {start|stop|restart|status}"
+	exit 1
+	;;
+esac
+
+exit $RETVAL
