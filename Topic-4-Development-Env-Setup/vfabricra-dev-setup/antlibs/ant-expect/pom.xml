@@ -1,0 +1,42 @@
+<!-- Portions Copyright (c) 2013 VMware, Inc. All rights reserved. -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.vmware.vfabric.dev</groupId>
+	<artifactId>ant-expect</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Ant Expect Task</name>
+	<description>An Ant task implementation to provide interactions with processes coded directly within a build.xml </description>
+	<dependencies>
+		<dependency>
+			<groupId>net.sourceforge.expectj</groupId>
+			<artifactId>expectj</artifactId>
+			<version>2.0.7</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-ant-tasks</artifactId>
+			<version>2.1.3</version>
+		</dependency>
+	</dependencies>
+	<profiles>
+		<profile>
+			<id>ci</id>
+			<activation>
+				<property>
+					<name>env</name>
+					<value>ci</value>
+				</property>
+			</activation>
+			<properties>
+				<appserver.home>/path/to/dev/appserver</appserver.home>
+			</properties>
+		</profile>
+	</profiles>
+</project>
