@@ -14,7 +14,7 @@
 		<property name="erlang.home" location="${erlang.home.prop}" />
 	</target>
 	
-	<target name="deploy-erlang" depends="init-props" unless="${is.erlang.installed}">
+	<target name="deploy-erlang" depends="init-props" unless="is.erlang.installed">
 		<if> 
 			<equals arg1="${os-family}" arg2="windows" />
 			<then>
@@ -110,7 +110,7 @@
 		</if>
 	</target>
 	
-	<target name="deploy-rabbitmq" depends="init-props" unless="${is.rabbitmq.installed}">
+	<target name="deploy-rabbitmq" depends="init-props" unless="is.rabbitmq.installed">
 		<if> 
 			<equals arg1="${os-family}" arg2="windows" />
 			<then>

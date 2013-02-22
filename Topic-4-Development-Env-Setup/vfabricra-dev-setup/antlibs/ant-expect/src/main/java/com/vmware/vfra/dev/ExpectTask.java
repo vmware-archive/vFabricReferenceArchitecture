@@ -18,7 +18,7 @@
  *
  */
 
-package com.vnware.vfra.dev;
+package com.vmware.vfra.dev;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -33,9 +33,9 @@ import org.apache.tools.ant.Task;
 import org.apache.tools.ant.types.Commandline;
 import org.apache.tools.ant.types.RedirectorElement;
 
-import com.vnware.vfra.dev.command.Expect;
-import com.vnware.vfra.dev.command.ExpectCommand;
-import com.vnware.vfra.dev.command.Send;
+import com.vmware.vfra.dev.command.Expect;
+import com.vmware.vfra.dev.command.ExpectCommand;
+import com.vmware.vfra.dev.command.Send;
 
 import expectj.ExpectJ;
 import expectj.ExpectJException;
@@ -93,6 +93,28 @@ public class ExpectTask extends Task {
         cmdl.setExecutable(value);
     }
 	
+
+    /**
+     * Set the timeout in milliseconds after which the process will be killed.
+     *
+     * @param value timeout in milliseconds.
+     *
+     * @since Ant 1.5
+     */
+    public void setTimeout(Long value) {
+        timeout = value;
+    }
+
+    /**
+     * Set the timeout in milliseconds after which the process will be killed.
+     *
+     * @param value timeout in milliseconds.
+     */
+    public void setTimeout(Integer value) {
+        setTimeout(
+            (Long) ((value == null) ? null : new Long(value.intValue())));
+    }
+    
 	/**
      * Interact with a process via ExpectJ.
      *

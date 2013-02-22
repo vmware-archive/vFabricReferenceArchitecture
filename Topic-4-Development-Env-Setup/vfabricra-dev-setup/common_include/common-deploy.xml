@@ -7,6 +7,7 @@
 	<import file="${ant.file.common-deploy}/../common-include.xml" />
 	<import file="${ant.file.common-deploy}/../check-arch.xml" />
 	<property file="${basedir}/build.properties" />
+	
 	<target name="init" depends="architecture-props">
 		<echo>*** --> Managing component '${component}' </echo>
 		<mkdir dir="${install.dir}" />
@@ -117,7 +118,54 @@
 			</else>
 		</if>
 	</target>
-		
+
+	<macrodef name="display-eula">
+		<attribute name="eula-file" />
+		<attribute name="component-name" />
+		<attribute name="prompt-name" />
+		<sequential>
+			<loadfile srcfile="@{eula-file}" property="@{eula-file}.contents" />
+			<echo>${@{eula-file}.contents}</echo>
+			<input
+				message="Enter 'agree' to accept the terms of the @{prompt-name} license (at @{eula-file}) or 'disagree' to abort the installation."
+				validargs="agree,disagree"
+				addproperty="do.kill"
+				/>
+			<condition property="do.abort">
+				<equals arg1="disagree" arg2="${do.kill}"/>
+			</condition>
+			<fail if="do.abort">EULA not agreed to by user.</fail>
+			<set-installed component-name="@{component-name}" component-version="LATEST" install-path="${base.deploy.root}" />
+		</sequential>
+	</macrodef>
+	
+	<target name="display_tcserver_eula" unless="is.tcserver_eula.installed"  >
+		<display-eula eula-file="${base.deploy.root}/vfabric_tcserver_EULA.txt" component-name="tcserver_eula" prompt-name="vFabric tc Server" />
+	</target>
+
+	<target name="display_sqlfire_eula" unless="is.sqlfire_eula.installed"  >
+		<display-eula eula-file="${base.deploy.root}/vfabric_sqlfire_EULA.txt" component-name="sqlfire_eula" prompt-name="vFabric SQLFire" />
+	</target>
+
+	<target name="display_vfra_eula" unless="is.vfra_eula.installed"  >
+		<display-eula eula-file="${base.deploy.root}/vfabric_reference_architecture_EULA.txt" component-name="vfra_eula" prompt-name="vFabric Reference Architecture" />
+	</target>
+
+
+	<macrodef name="set-installed" description="Drops a file that marks this component as installed and contains the metadata / properties for the component installation.">
+		<attribute name="component-name" description="Name of the component to set as installed, works with 'check-installed' macrodef." />
+		<attribute name="component-version" description="Name of the component version to set as installed, works with 'check-installed' macrodef." />
+		<attribute name="install-path" description="The path to the component binary installation." />
+		<sequential>
+			<pathconvert targetos="unix" property="install-path" >
+				<path location="@{install-path}" />
+			</pathconvert>
+			<echo file="${install-path}/@{component-name}.installed">installed.@{component-name}.version=@{component-version}${line.separator}is.@{component-name}.installed=true</echo>
+			<property file="${install-path}/@{component-name}.installed" />
+			<var name="install-path" unset="true" />
+	 	</sequential>
+	</macrodef>
+	
 	<target name="init-props" depends="init">
 		<common:load-installed component-name="${component}" installed-property="is.${component}.installed" />
 		<!-- Loads all existing *.installed properties files in all component/install/ directories-->
@@ -131,6 +179,19 @@
 				<property file="@{file}" />
 			</sequential>
 		</for>
+		<for param="file">
+			<path>
+				<fileset dir="${base.deploy.root}" includes="*.installed">
+					<depth max="1" />
+				</fileset>
+			</path>
+			<sequential>
+				<property file="@{file}" />
+			</sequential>
+		</for>
+		<antcall target="display_tcserver_eula" />
+		<antcall target="display_sqlfire_eula" />
+		<antcall target="display_vfra_eula" />
 	</target>
 	
 	<target name="deploy" depends="init-props" unless="is.${component}.installed">

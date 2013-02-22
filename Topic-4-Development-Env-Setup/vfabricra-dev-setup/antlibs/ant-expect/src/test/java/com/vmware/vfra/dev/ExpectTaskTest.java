@@ -10,9 +10,9 @@ import org.apache.tools.ant.taskdefs.Delete;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.vnware.vfra.dev.ExpectTask;
-import com.vnware.vfra.dev.command.Expect;
-import com.vnware.vfra.dev.command.Send;
+import com.vmware.vfra.dev.ExpectTask;
+import com.vmware.vfra.dev.command.Expect;
+import com.vmware.vfra.dev.command.Send;
 
 public class ExpectTaskTest {
 

@@ -449,5 +449,3 @@ capability of the Software and enable the Wide Area Network (WAN) communicationf
 
 Apr18-2012
 
-
-Enter "agree" to accept the terms of the license or "disagree" to abort the installation.

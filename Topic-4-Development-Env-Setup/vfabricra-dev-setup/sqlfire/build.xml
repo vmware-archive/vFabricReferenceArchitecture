@@ -100,7 +100,7 @@
 		sqlf server start -dir=server1 -client-bind-address=127.0.0.1 -client-port=1528
 		-locators=127.0.0.1[3241]
 		-->
-		<sqlf-exec failonerror="true">
+		<sqlf-exec failonerror="false">
 			<args>
 				<arg value="locator" />
 				<arg value="start" />
@@ -120,7 +120,7 @@
 		sqlf server start -dir=server1 -client-bind-address=127.0.0.1 -client-port=1528
 		-locators=127.0.0.1[3241]
 		-->
-		<sqlf-exec failonerror="true">
+		<sqlf-exec failonerror="false">
 			<args>
 				<arg value="server" />
 				<arg value="start" />
