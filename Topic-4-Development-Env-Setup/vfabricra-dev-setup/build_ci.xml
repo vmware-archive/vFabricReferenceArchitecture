@@ -1,4 +1,5 @@
 <project name="build-ci" default="ci_windows" basedir=".">
+	<!-- Copyright (c) 2013 VMware, Inc. All rights reserved. -->
 	<import file="build.xml" />
 	<presetdef name="ci_ant">
 		<ant antfile="build.xml" inheritall="false">

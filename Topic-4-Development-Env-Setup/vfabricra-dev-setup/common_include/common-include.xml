@@ -3,7 +3,7 @@
 	xmlns:artifact="antlib:org.apache.maven.artifact.ant" 
 	xmlns:common="uri://vmware.com/common_include/common-macros"
 	>
-	
+	<!-- Copyright (c) 2013 VMware, Inc. All rights reserved. -->	
 	<echo>******************************************************************</echo>
 	<echo>*           VMWare vFabric Reference Architecture                *</echo>
 	<echo>*              Developer Environment Automation                  *</echo>

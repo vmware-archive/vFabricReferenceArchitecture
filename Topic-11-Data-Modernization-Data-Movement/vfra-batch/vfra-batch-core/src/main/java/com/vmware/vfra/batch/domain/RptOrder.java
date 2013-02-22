@@ -1,3 +1,5 @@
+// Copyright (c) 2013 VMware, Inc. All rights reserved.
+
 package com.vmware.vfra.batch.domain;
 
 import java.io.Serializable;

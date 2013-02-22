@@ -1,3 +1,5 @@
+-- Copyright (c) 2013 VMware, Inc. All rights reserved. 
+
 INSERT INTO QUOTE VALUES (1, 107.32, 116.32, 0, 113.32, 118.32, 'Activision Blizzard, Inc', 'ATVI', 14, 1);
 INSERT INTO QUOTE VALUES (2, 119.22, 130.22, 0, 126.22, 134.22, 'Adobe Systems Incorporated', 'ADBE', 7, 1);
 INSERT INTO QUOTE VALUES (3, 109.49, 116.49, 0, 125.49, 110.49, 'Akamai Technologies, Inc.', 'AKAM', 16, 1);

@@ -1,4 +1,5 @@
 <?xml version="1.0" ?>
+<!-- Copyright (c) 2013 VMware, Inc. All rights reserved. -->
 <project name="build" default="all" basedir=".">	
 	<presetdef name="common.dev">
 		<subant antfile="build.xml" inheritall="false">			

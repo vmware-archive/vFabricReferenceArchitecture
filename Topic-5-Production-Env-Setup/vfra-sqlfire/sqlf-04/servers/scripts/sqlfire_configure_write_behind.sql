@@ -1,3 +1,5 @@
+-- Copyright (c) 2013 VMware, Inc. All rights reserved. 
+
 -- Step 1: create asyncheventlistener
 -- Prerequisites:
 -- 1. Ensure 'server groups' ('dbsync' used below) matches -server-groups used by servers (not necessary for locator)

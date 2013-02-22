@@ -1,5 +1,5 @@
 <antlib xmlns:current="ant:current">
-	
+<!-- Copyright (c) 2013 VMware, Inc. All rights reserved. -->	
 	<!-- This method allows the use of centralized printing / formatting for User-oriented information TBD. -->
 	<macrodef name="user-log">
 		<attribute name="URL" />

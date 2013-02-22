@@ -1,4 +1,5 @@
 #!/bin/sh
+# Copyright (c) 2013 VMware, Inc. All rights reserved. 
 
 for f in `find .. -name sqlf*.log` 
 do

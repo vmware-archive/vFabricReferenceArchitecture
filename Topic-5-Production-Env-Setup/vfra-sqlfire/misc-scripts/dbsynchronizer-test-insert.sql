@@ -1,3 +1,5 @@
+-- Copyright (c) 2013 VMware, Inc. All rights reserved. 
+
 insert into APP.ORDERS 
 (ORDERID, COMPLETIONDATE, OPENDATE, ORDERFEE, ORDERSTATUS, ORDERTYPE, PRICE, QUANTITY, ACCOUNT_ACCOUNTID, HOLDING_HOLDINGID, QUOTE_SYMBOL) 
 values (1, '2012-08-28', '2012-08-28', 10.50, 'closed', 'buy', 154.18, 109.00, null, null, 'VMW')

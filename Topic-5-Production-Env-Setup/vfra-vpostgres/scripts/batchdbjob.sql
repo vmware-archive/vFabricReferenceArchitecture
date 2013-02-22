@@ -1,3 +1,4 @@
+-- Copyright (c) 2013 VMware, Inc. All rights reserved. 
 --while connected to database batchdbjob
 
 CREATE TABLE BATCH_JOB_INSTANCE  (
