@@ -1,4 +1,5 @@
 #!/bin/sh
+# Copyright (c) 2013 VMware, Inc. All rights reserved. 
 # This script attempts to save time by retrieving and configuring local tools for the 
 # vFabric-RA project development setup. 
 #

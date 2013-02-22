@@ -1,3 +1,4 @@
+-- Copyright (c) 2013 VMware, Inc. All rights reserved. 
 --while connected to database batchdbrpt
 
 create schema reporting;

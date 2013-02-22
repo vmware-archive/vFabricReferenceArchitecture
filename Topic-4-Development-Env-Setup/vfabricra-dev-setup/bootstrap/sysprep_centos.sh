@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright (c) 2013 VMware, Inc. All rights reserved. 
 
 # The packages listed for installation here should be available in standard Redhat / CentOS RPM mirrors, or, on the standard installation media. In particular, no other repositories will be required. 
 

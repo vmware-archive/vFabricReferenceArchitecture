@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright (c) 2013 VMware, Inc. All rights reserved. 
 #set -x
 
 TARGET_DIR=/home/vfabric/vfra

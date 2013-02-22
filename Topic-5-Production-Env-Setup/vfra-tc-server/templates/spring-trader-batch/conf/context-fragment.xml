@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!-- Portions Copyright (c) 2013 VMware, Inc. All rights reserved. -->
 <Context>
 	<add:ResourceLink type="javax.sql.DataSource"
                   name="jdbc/batchdbstg"

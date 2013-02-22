@@ -1,4 +1,5 @@
 <?xml version="1.0" ?>
+<!-- Copyright (c) 2013 VMware, Inc. All rights reserved. -->
 <project name="gemfire-deploy" default="deploy" basedir="." xmlns:common="uri://vmware.com/common_include/common-macros">
 	<import file="${basedir}/../common_include/common-deploy.xml" />
 	<target name="deploy" depends="common-deploy.deploy" unless="is.gemfire.installed">

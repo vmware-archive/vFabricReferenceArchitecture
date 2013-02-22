@@ -1,4 +1,5 @@
 <?xml version="1.0" ?>
+<!-- Copyright (c) 2013 VMware, Inc. All rights reserved. -->
 <project name="devenv-deploy" default="all" basedir="." xmlns:common="uri://vmware.com/common_include/common-macros">
 	<echo>loading props from ${basedir}/../springtrader/build.properties</echo> 
 	<property file="${basedir}/../springtrader/build.properties" />

@@ -1,3 +1,4 @@
+// Copyright (c) 2013 VMware, Inc. All rights reserved.
 package com.vmware.vfra.batch.inttest;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;

@@ -1,5 +1,6 @@
 <project name="check-arch" default="architecture-props" basedir=".">
     <target name="architecture-props" depends="check-family,check-register" >
+    	<!-- Portions Copyright (c) 2013 VMware, Inc. All rights reserved. -->
 <!--
     	<echo>Arch: ${arch}</echo>
         <echo>OS Family: ${os-family}</echo>
