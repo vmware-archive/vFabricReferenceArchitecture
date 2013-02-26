@@ -14,6 +14,6 @@ Automated Development Installation of vFabric and SpringTrader
 * Download or clone this Github repository
 * Download VMware SQLFire and Gemfire, put them in the Topic-4/vfabricra-dev-setup/repo directory. 
 * Run 'ant fetch-deps all' from within Topic-4/vfabricra-dev-setup 
-* Browse to [SpringTrader Running on the local system](localhost:8080/spring-nanotrader-web)
+* Browse to [SpringTrader Running on the local system](http://localhost:8080/spring-nanotrader-web)
 
 ![Developer Installation Overview](http://blogs.vmware.com/vfabric/files/2013/02/Davelopment_Environment_Setup.png)
