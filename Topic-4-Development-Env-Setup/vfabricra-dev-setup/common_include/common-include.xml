@@ -4,10 +4,6 @@
 	xmlns:common="uri://vmware.com/common_include/common-macros"
 	>
 	<!-- Copyright (c) 2013 VMware, Inc. All rights reserved. -->	
-	<echo>******************************************************************</echo>
-	<echo>*           VMWare vFabric Reference Architecture                *</echo>
-	<echo>*              Developer Environment Automation                  *</echo>
-	<echo>******************************************************************</echo>
 	<property name="base.deploy.root-location" location="${ant.file.common-include}/../../" />
 	<pathconvert targetos="unix" property="base.deploy.root" >
 		<path location="${base.deploy.root-location}" />

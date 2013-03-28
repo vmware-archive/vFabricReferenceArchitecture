@@ -6,9 +6,12 @@
 	<!-- Copyright (c) 2013 VMware, Inc. All rights reserved. -->
 	<import file="${ant.file.common-deploy}/../common-include.xml" />
 	<import file="${ant.file.common-deploy}/../check-arch.xml" />
-	<property file="${basedir}/build.properties" />
-	
+	<property file="${basedir}/build.properties" />	
 	<target name="init" depends="architecture-props">
+		<echo>******************************************************************</echo>
+		<echo>*           VMWare vFabric Reference Architecture                *</echo>
+		<echo>*              Developer Environment Automation                  *</echo>
+		<echo>******************************************************************</echo>		
 		<echo>*** --> Managing component '${component}' </echo>
 		<mkdir dir="${install.dir}" />
 		<mkdir dir="${temp.dir}" />

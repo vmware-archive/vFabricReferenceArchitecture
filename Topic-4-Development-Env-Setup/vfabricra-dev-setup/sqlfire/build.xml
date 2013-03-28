@@ -45,41 +45,54 @@
 	</target>
 
 	<target name="deploy" depends="common-deploy.deploy" unless="is.sqlfire.installed">
-		<common:artifact-locator repo-path="${vfra.repo}" 
-			artifact-prefix="vFabric_SQLFire_" 
-			suffix="_Installer.jar" 
-			file-location-property="sqlfire.file" 
-			file-version-property="sqlfire.version" />
-
-		<interact executable="java -jar ${sqlfire.file}" timeout="100" testload="false">
-			<expect value="continue>" />
-			<send value="&#10;&#13;" />
-			<expect value="continue>" />
-			<send value="&#10;&#13;" />
-			<expect value="continue>" />
-			<send value="&#10;&#13;" />
-			<expect value="continue>" />
-			<send value="&#10;&#13;" />
-			<expect value="continue>" />
-			<send value="&#10;&#13;" />
-			<expect value="continue>" />
-			<send value="&#10;&#13;" />
-			<expect value="continue>" />
-			<send value="&#10;&#13;" />
-			<expect value="continue>" />
-			<send value="&#10;&#13;" />
-			<expect value="continue>" />
-			<send value="&#10;&#13;" />
-			<expect value="continue>" />
-			<send value="&#10;&#13;" />
-			<expect value="installation." />
-			<send value="agree&#10;&#13;" />
-			<expect value="directory." />
-			<send value="${temp.dir}&#10;&#13;" />
-			<expect value="[yes]" />
-			<send value="&#10;&#13;" />
-		</interact>
-
+		<!-- Maintain backwards compatibility with version 1.0.3 of SQLFire by passing in -sqlfireJar=true -->
+		<if> 
+			<isset property="sqlfireJar"/>
+			<then>
+				<common:artifact-locator repo-path="${vfra.repo}" 
+					artifact-prefix="vFabric_SQLFire_" 
+					suffix="_Installer.jar" 
+					file-location-property="sqlfire.file" 
+					file-version-property="sqlfire.version" />		
+				<interact executable="java -jar ${sqlfire.file}" timeout="100" testload="false">
+					<expect value="continue>" />
+					<send value="&#10;&#13;" />
+					<expect value="continue>" />
+					<send value="&#10;&#13;" />
+					<expect value="continue>" />
+					<send value="&#10;&#13;" />
+					<expect value="continue>" />
+					<send value="&#10;&#13;" />
+					<expect value="continue>" />
+					<send value="&#10;&#13;" />
+					<expect value="continue>" />
+					<send value="&#10;&#13;" />
+					<expect value="continue>" />
+					<send value="&#10;&#13;" />
+					<expect value="continue>" />
+					<send value="&#10;&#13;" />
+					<expect value="continue>" />
+					<send value="&#10;&#13;" />
+					<expect value="continue>" />
+					<send value="&#10;&#13;" />
+					<expect value="installation." />
+					<send value="agree&#10;&#13;" />
+					<expect value="directory." />
+					<send value="${temp.dir}&#10;&#13;" />
+					<expect value="[yes]" />
+					<send value="&#10;&#13;" />
+				</interact>
+			</then>
+			<else>
+			<!-- Default to SQLFire 1.1.x ZIP file -->
+				<common:artifact-locator repo-path="${vfra.repo}" 
+					artifact-prefix="vFabric_SQLFire_" 
+					suffix=".zip" 
+					file-location-property="sqlfire.file" 
+					file-version-property="sqlfire.version" />		
+				<unzip src="${sqlfire.file}" dest="${temp.dir}" />				
+			</else>
+		</if>
 		<move todir="${install.dir}" >
 			<fileset dir="${temp.dir}/vFabric_SQLFire_${sqlfire.version}" >
 				<include name="**/*" />
