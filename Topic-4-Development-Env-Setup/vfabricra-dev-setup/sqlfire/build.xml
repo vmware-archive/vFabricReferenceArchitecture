@@ -98,6 +98,11 @@
 				<include name="**/*" />
 			</fileset>
 		</move>
+		<chmod perm="ugo+rx" >
+			<fileset dir="${install.dir}/bin/">
+				<include name="*"/>
+			</fileset>
+		</chmod>		
 		<common:set-installed component-name="${component}" component-version="${sqlfire.version}" install-path="${install.dir}" />
 	</target>
 
