@@ -4,9 +4,9 @@
 
 TARGET_DIR=/home/vfabric/vfra
 
-export http_proxy=http://proxy:3128
-export https_proxy=http://proxy:3128
-export REMOTE_REPO=http://repo_server/repo
+export http_proxy=https://proxy:3128
+export https_proxy=https://proxy:3128
+export REMOTE_REPO=https://repo_server/repo
 export USER_PASS=username:password
 
 mkdir -p $TARGET_DIR

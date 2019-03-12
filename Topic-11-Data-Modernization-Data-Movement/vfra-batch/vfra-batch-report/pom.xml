@@ -274,7 +274,7 @@
 		<repository>
 			<id>org.springframework.maven.milestone</id>
 			<name>Spring Maven Milestone Repository</name>
-			<url>http://maven.springframework.org/milestone</url>
+			<url>https://maven.springframework.org/milestone</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
@@ -282,15 +282,15 @@
 		<repository>
 			<id>repository.springframework.maven.release</id>
 			<name>Spring Framework Maven Release Repository</name>
-			<url>http://repo.springsource.org/libs-release</url>
+			<url>https://repo.springsource.org/libs-release</url>
 		</repository>
 		<repository>
 			<id>repository.springframework.maven.snapshot</id>
 			<name>Spring Framework Maven Snapshot Repository</name>
-			<url>http://repo.springsource.org/snapshot</url>
+			<url>https://repo.springsource.org/snapshot</url>
 		</repository>
 
-		<!-- <repository> <id>QUERYDSL</id> <url>http://source.mysema.com/maven2/releases</url> 
+		<!-- <repository> <id>QUERYDSL</id> <url>https://source.mysema.com/maven2/releases</url> 
 			<layout>default</layout> </repository> -->
 	</repositories>
 

@@ -6,8 +6,8 @@
 # fetchtools.sh 
 
 # uncomment if within a VMware lab environment.
-#export http_proxy=http://proxy:3128
-#export https_proxy=http://proxy:3128
+#export http_proxy=https://proxy:3128
+#export https_proxy=https://proxy:3128
 #export ANT_OPTS="-Dhttp.proxyHost=proxy -Dhttp.proxyPort=3128"
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -32,7 +32,7 @@ if [ -d "${SUN_JDK}" ]; then
 fi
 
 # ANT 
-ANT_REMOTE=http://apache.mirrors.tds.net/ant/binaries
+ANT_REMOTE=http://apache.mirrors.tds.net/ant/binaries/
 ANT_PKG=apache-ant-1.8.4
 ANT_ARCHIVE=$ANT_PKG-bin.tar.gz
 ANT_INSTALL_DIR=$TOOLS/$ANT_PKG
@@ -59,9 +59,9 @@ export PATH=${ANT_HOME}/bin:${PATH}
 #export M2_HOME=${TOOLS}/$M2_PKG
 #export PATH=${M2_HOME}/bin:${PATH}
 
-# http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.4.zip 
+# https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.4.zip 
 # Groovy 
-#GROOVY_REMOTE=http://dist.groovy.codehaus.org/distributions
+#GROOVY_REMOTE=https://dist.groovy.codehaus.org/distributions
 #GROOVY_PKG=groovy-binary-2.0.4
 #GROOVY_ARCHIVE=$GROOVY_PKG.zip
 #GROOVY_INSTALL_DIR=$TOOLS/${GROOVY_PKG/binary-/}

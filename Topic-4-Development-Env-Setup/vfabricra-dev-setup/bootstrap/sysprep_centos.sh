@@ -3,8 +3,8 @@
 
 # The packages listed for installation here should be available in standard Redhat / CentOS RPM mirrors, or, on the standard installation media. In particular, no other repositories will be required. 
 
-#export http_proxy=http://proxy:3128
-#export https_proxy=http://proxy:3128
+#export http_proxy=https://proxy:3128
+#export https_proxy=https://proxy:3128
 
 yum -y install perl
 yum -y install unzip
