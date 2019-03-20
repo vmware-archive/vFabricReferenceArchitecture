@@ -44,7 +44,7 @@ its own applicable license terms and conditions, which can be found in the
 <Press enter to continue>
 open_source_licenses.txt file, the Documentation or as applicable, the 
 corresponding source files for the Software available at 
-http://www.vmware.com/download/open_source.html.
+https://www.vmware.com/download/open_source.html.
 
 1.6	"Virtual Machine" means a software container that can run its own 
 operating system and execute applications like a physical machine.   
@@ -131,7 +131,7 @@ provisioning of updates, support, invoicing or online services to You.
 
 <Press enter to continue>
 Collected Data is subject to VMware's Privacy Policy at 
-http://www.vmware.com/help/privacy.html . 
+https://www.vmware.com/help/privacy.html . 
 
 2.7	Audit Rights. During the term of this EULA and for two (2) years after 
 termination or expiration of the EULA or support and subscription services for 

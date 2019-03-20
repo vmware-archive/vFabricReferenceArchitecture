@@ -7,8 +7,8 @@
  *
  * Copyright (c) 2009-2012 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
- * under both the MIT (http://www.opensource.org/licenses/mit-license.php) and GPL 
- * version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html) licenses. This means that you can 
+ * under both the MIT (https://www.opensource.org/licenses/mit-license.php) and GPL 
+ * version 2.0 (https://www.gnu.org/licenses/gpl-2.0.html) licenses. This means that you can 
  * choose the license that best suits your project and use it accordingly. 
  *
  * Although not required, the author would appreciate an email letting him 
@@ -22,8 +22,8 @@
  *
  *     version 2007.04.27
  *     author Ash Searle
- *     http://hexmen.com/blog/2007/03/printf-sprintf/
- *     http://hexmen.com/js/sprintf.js
+ *     https://hexmen.com/blog/2007/03/printf-sprintf/
+ *     https://hexmen.com/js/sprintf.js
  *     The author (Ash Searle) has placed this code in the public domain:
  *     "This code is unrestricted: you are free to use it however you like."
  *
@@ -42,8 +42,8 @@
  * 
  * Ken Snyder (ken d snyder at gmail dot com)
  * 2008-09-10
- * version 2.0.2 (http://kendsnyder.com/sandbox/date/)     
- * Creative Commons Attribution License 3.0 (http://creativecommons.org/licenses/by/3.0/)
+ * version 2.0.2 (https://kendsnyder.com/sandbox/date/)     
+ * Creative Commons Attribution License 3.0 (https://creativecommons.org/licenses/by/3.0/)
  *
  * jqplotToImage function based on Larry Siden's export-jqplot-to-png.js.
  * Larry has generously given permission to adapt his code for inclusion
@@ -60,7 +60,7 @@
     // This code is a modified version of the canvastext.js code, copyright below:
     //
     // This code is released to the public domain by Jim Studt, 2007.
-    // He may keep some sort of up to date copy at http://www.federated.com/~jim/canvastext/
+    // He may keep some sort of up to date copy at https://www.federated.com/~jim/canvastext/
     //
     $.jqplot.CanvasTextRenderer = function(options){
         this.fontStyle = 'normal';  // normal, italic, oblique [not implemented]

@@ -93,7 +93,7 @@ BSD-STYLE, MIT-STYLE, OR SIMILAR STYLE LICENSES are applicable to the following 
 
 >>> erlang-r15b02
 
-"Following text from the COPYRIGHT file in the R15B02 manual pages download from http://www.erlang.org/download_release/15.
+"Following text from the COPYRIGHT file in the R15B02 manual pages download from https://www.erlang.org/download_release/15.
 
 This software is subject to the following Copyrights and Licenses:
 
@@ -108,7 +108,7 @@ The contents of this file are subject to the Erlang Public License,
 Version 1.1, (the "License"); you may not use this file except in
 compliance with the License. You should have received a copy of the
 Erlang Public License along with this software. If not, it can be
-retrieved online at http://www.erlang.org/.
+retrieved online at https://www.erlang.org/.
 
 Software distributed under the License is distributed on an "AS IS"
 basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
@@ -281,7 +281,7 @@ terms specified in this license.
 
 
   The data format used by the zlib library is described by RFCs (Request for
-  Comments) 1950 to 1952 in the files http://www.ietf.org/rfc/rfc1950.txt
+  Comments) 1950 to 1952 in the files https://www.ietf.org/rfc/rfc1950.txt
   (zlib format), rfc1951.txt (deflate format) and rfc1952.txt (gzip format).
 /
 
@@ -308,7 +308,7 @@ terms specified in this license.
 
  @copyright 2001-2003 Richard Carlsson
  @author Richard Carlsson <richardc@csd.uu.se>
-   [http://www.csd.uu.se/~richardc/]
+   [https://www.csd.uu.se/~richardc/]
  @version {@vsn}
  @end
  =====================================================================
@@ -617,7 +617,7 @@ ant.jar
  */
 
 W3C SOFTWARE NOTICE AND LICENSE
-http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
+https://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
 
 This work (and included software, documentation such as READMEs, or other
 related items) is being provided by the copyright holders under the following
@@ -670,9 +670,9 @@ this notice can be directed to site-policy@w3.org.
  
 Joseph Reagle <site-policy@w3.org> 
 
-This license came from: http://www.megginson.com/SAX/copying.html
+This license came from: http://www.megginson.com/downloads/SAX/
   However please note future versions of SAX may be covered 
-  under http://saxproject.org/?selected=pd
+  under https://saxproject.org/?selected=pd
 
 SAX2 is Free!
 
@@ -757,7 +757,7 @@ permission of The Codehaus. "classworlds" is a registered
 trademark of The Codehaus.
 
 5. Due credit should be given to The Codehaus.
-(http://classworlds.codehaus.org/).
+(https://classworlds.codehaus.org/).
 
 THIS SOFTWARE IS PROVIDED BY THE CODEHAUS AND CONTRIBUTORS
 ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT
@@ -887,28 +887,28 @@ The files amqp-rabbitmq-0.8.json and amqp-rabbitmq-0.9.1.json are
 license.
 
 jQuery is "Copyright (c) 2010 John Resig" and is covered by the MIT
-license.  It was downloaded from http://jquery.com/
+license.  It was downloaded from https://jquery.com/
 
 EJS is "Copyright (c) 2007 Edward Benson" and is covered by the MIT
-license.  It was downloaded from http://embeddedjs.com/
+license.  It was downloaded from https://embeddedjs.com/
 
 Sammy is "Copyright (c) 2008 Aaron Quint, Quirkey NYC, LLC" and is
 covered by the MIT license.  It was downloaded from
-http://code.quirkey.com/sammy/
+https://code.quirkey.com/sammy/
 
 Webmachine is Copyright (c) Basho Technologies and is covered by the
-Apache License 2.0.  It was downloaded from http://webmachine.basho.com/
+Apache License 2.0.  It was downloaded from https://webmachine.basho.com/
 
 Eldap is "Copyright (c) 2010, Torbjorn Tornkvist" and is covered by
 the MIT license.  It was downloaded from https://github.com/etnt/eldap
 
 Mochiweb is "Copyright (c) 2007 Mochi Media, Inc." and is covered by
 the MIT license.  It was downloaded from
-http://github.com/mochi/mochiweb/
+https://github.com/mochi/mochiweb/
 
 glMatrix is "Copyright (c) 2011, Brandon Jones" and is covered by the
 BSD 2-Clause license.  It was downloaded from
-http://code.google.com/p/glmatrix/
+https://code.google.com/p/glmatrix/
 
 
 The MIT license is as follows:
@@ -1410,7 +1410,7 @@ EXHIBIT A -Mozilla Public License.
      ``The contents of this file are subject to the Mozilla Public License
      Version 1.1 (the "License"); you may not use this file except in
      compliance with the License. You may obtain a copy of the License at
-     http://www.mozilla.org/MPL/
+     https://www.mozilla.org/MPL/
 
      Software distributed under the License is distributed on an "AS IS"
      basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
@@ -1471,7 +1471,7 @@ The HTML, CSS, font and image files are licensed as follows:
                                  (Copyright 2009 Matt McInerney)
 
     images/ : Creative Commons Attribution-ShareAlike
-                                 http://creativecommons.org/licenses/by-sa/3.0/
+                                 https://creativecommons.org/licenses/by-sa/3.0/
 
 Some portions of noVNC are copyright to their individual authors.
 Please refer to the individual source files and/or to the noVNC commit
@@ -1488,7 +1488,7 @@ licenses (all MPL 2.0 compatible):
     include/jsunzip.js : zlib/libpng license
 
     include/web-socket-js/ : New BSD license (3-clause). Source code at
-                                 http://github.com/gimite/web-socket-js
+                                 https://github.com/gimite/web-socket-js
 
     include/chrome-app/tcp-stream.js
                                : Apache 2.0 license
@@ -1509,12 +1509,12 @@ The following license texts are included:
 
 Or alternatively the license texts may be found here:
 
-    http://www.mozilla.org/MPL/2.0/
-    http://www.gnu.org/licenses/lgpl.html and
-    http://www.gnu.org/licenses/gpl.html
-    http://scripts.sil.org/OFL
-    http://en.wikipedia.org/wiki/BSD_licenses
-    http://www.gzip.org/zlib/zlib_license.html
+    https://www.mozilla.org/MPL/2.0/
+    https://www.gnu.org/licenses/lgpl.html and
+    https://www.gnu.org/licenses/gpl.html
+    https://scripts.sil.org/OFL
+    https://en.wikipedia.org/wiki/BSD_licenses
+    https://www.gzip.org/zlib/zlib_license.html
     http://www.apache.org/licenses/LICENSE-2.0.html
 
 
@@ -1874,7 +1874,7 @@ If You choose to distribute Source Code Form that is Incompatible With Secondary
 
 Exhibit A - Source Code Form License Notice
 
-This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 If it is not possible or desirable to put the notice in a particular file, then You may include the notice in a location (such as a LICENSE file in a relevant directory) where a recipient would be likely to look for such a notice.
 
@@ -2350,7 +2350,7 @@ EXHIBIT A -Mozilla Public License.
    Version 1.1 (the "License"); you may not use this file except in
    compliance with the License. You may obtain a copy of the License at
 
-   http://www.mozilla.org/MPL/
+   https://www.mozilla.org/MPL/
 
    Software distributed under the License is distributed on an "AS IS"
    basis, WITHOUT WARRANTY OF
@@ -3429,7 +3429,7 @@ CONDITIONS.
    an Adaptation (as defined below) for the purposes of this License.
 
    c. "Creative Commons Compatible License" means a license that is
-   listed at http://creativecommons.org/compatiblelicenses that has
+   listed at https://creativecommons.org/compatiblelicenses that has
    been approved by Creative Commons as being essentially equivalent
    to this License, including, at a minimum, because that license: (i)
    contains terms that have the same purpose, meaning and effect as the
@@ -3745,7 +3745,7 @@ THE POSSIBILITY OF SUCH DAMAGES.
 		   GNU LESSER GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
- Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
@@ -4187,7 +4187,7 @@ EXHIBIT A.
 Version 1.1, (the "License"); you may not use this file except in
 compliance with the License. You should have received a copy of the
 Erlang Public License along with this software. If not, it can be
-retrieved via the world wide web at http://www.erlang.org/.
+retrieved via the world wide web at https://www.erlang.org/.
 
 Software distributed under the License is distributed on an "AS IS"
 basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
@@ -4207,7 +4207,7 @@ available (as would be noted above), you may obtain a copy of
 the source code corresponding to the binaries for such open
 source components and modifications thereto, if any, (the
 "Source Files"), by downloading the Source Files from VMware's website at
-http://www.vmware.com/download/open_source.html, or by sending a request, with
+https://www.vmware.com/download/open_source.html, or by sending a request, with
 your name and address to: VMware, Inc., 3401 Hillview Avenue,
 Palo Alto, CA 94304,United States of America. All such
 requests should clearly specify: OPEN SOURCE FILES REQUEST,

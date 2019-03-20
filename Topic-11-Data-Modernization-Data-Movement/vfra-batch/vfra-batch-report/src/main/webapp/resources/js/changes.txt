@@ -392,4 +392,4 @@ Title: Change Log
 * Re-factored axis tick renderer instantiation into the axes renderers themselves.
 
 
-For changes prior to 0.6.0 release, please see change log at http://bitbucket.org/cleonello/jqplot/changesets/
+For changes prior to 0.6.0 release, please see change log at https://bitbucket.org/cleonello/jqplot/changesets/

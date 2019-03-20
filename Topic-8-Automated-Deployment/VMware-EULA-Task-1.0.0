@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ns26:export-package
-    xmlns:ns9="http://www.vmware.com/darwin/schema/beans/cloud/provider"
-    xmlns:ns7="http://www.vmware.com/darwin/schema/beans/catalog/component"
-    xmlns:ns17="http://www.vmware.com/darwin/schema/beans/update/profile"
-    xmlns:ns15="http://www.vmware.com/darwin/schema/beans/flow"
-    xmlns:ns25="http://www.vmware.com/darwin/schema/beans/notification"
-    xmlns:ns6="http://www.vmware.com/darwin/schema/beans/entity"
-    xmlns:ns12="http://www.vmware.com/darwin/schema/beans/cloud/tunnel"
-    xmlns:ns20="http://www.vmware.com/darwin/schema/beans/security/user"
-    xmlns:ns22="http://www.vmware.com/darwin/schema/beans/ssl"
-    xmlns:ns19="http://www.vmware.com/darwin/schema/beans/security/ldap"
-    xmlns:ns13="http://www.vmware.com/darwin/schema/beans/deployment/environment"
-    xmlns:ns23="http://www.vmware.com/darwin/schema/beans/response"
-    xmlns:ns21="http://www.vmware.com/darwin/schema/beans/networking"
-    xmlns:ns24="http://www.vmware.com/darwin/schema/beans/api"
-    xmlns:ns18="http://www.vmware.com/darwin/schema/beans/deployment"
-    xmlns:ns5="http://www.vmware.com/darwin/schema/beans/metatag"
-    xmlns:ns4="http://www.vmware.com/darwin/schema/beans/props"
-    xmlns:ns10="http://www.vmware.com/darwin/schema/beans/physical/template"
-    xmlns:ns27="http://www.vmware.com/darwin/schema/beans/license"
-    xmlns:ns26="http://www.vmware.com/darwin/schema/beans/exim"
-    xmlns:ns16="http://www.vmware.com/darwin/schema/beans/deployment/profile"
-    xmlns:ns14="http://www.vmware.com/darwin/schema/beans/driver/location"
-    xmlns:ns8="http://www.vmware.com/darwin/schema/beans/scripts"
-    xmlns:ns11="http://www.vmware.com/darwin/schema/beans/blueprint"
-    xmlns:ns3="http://www.vmware.com/darwin/schema/beans/application" xmlns:ns2="http://www.vmware.com/darwin/schema/beans/security">
+    xmlns:ns9="https://www.vmware.com/darwin/schema/beans/cloud/provider"
+    xmlns:ns7="https://www.vmware.com/darwin/schema/beans/catalog/component"
+    xmlns:ns17="https://www.vmware.com/darwin/schema/beans/update/profile"
+    xmlns:ns15="https://www.vmware.com/darwin/schema/beans/flow"
+    xmlns:ns25="https://www.vmware.com/darwin/schema/beans/notification"
+    xmlns:ns6="https://www.vmware.com/darwin/schema/beans/entity"
+    xmlns:ns12="https://www.vmware.com/darwin/schema/beans/cloud/tunnel"
+    xmlns:ns20="https://www.vmware.com/darwin/schema/beans/security/user"
+    xmlns:ns22="https://www.vmware.com/darwin/schema/beans/ssl"
+    xmlns:ns19="https://www.vmware.com/darwin/schema/beans/security/ldap"
+    xmlns:ns13="https://www.vmware.com/darwin/schema/beans/deployment/environment"
+    xmlns:ns23="https://www.vmware.com/darwin/schema/beans/response"
+    xmlns:ns21="https://www.vmware.com/darwin/schema/beans/networking"
+    xmlns:ns24="https://www.vmware.com/darwin/schema/beans/api"
+    xmlns:ns18="https://www.vmware.com/darwin/schema/beans/deployment"
+    xmlns:ns5="https://www.vmware.com/darwin/schema/beans/metatag"
+    xmlns:ns4="https://www.vmware.com/darwin/schema/beans/props"
+    xmlns:ns10="https://www.vmware.com/darwin/schema/beans/physical/template"
+    xmlns:ns27="https://www.vmware.com/darwin/schema/beans/license"
+    xmlns:ns26="https://www.vmware.com/darwin/schema/beans/exim"
+    xmlns:ns16="https://www.vmware.com/darwin/schema/beans/deployment/profile"
+    xmlns:ns14="https://www.vmware.com/darwin/schema/beans/driver/location"
+    xmlns:ns8="https://www.vmware.com/darwin/schema/beans/scripts"
+    xmlns:ns11="https://www.vmware.com/darwin/schema/beans/blueprint"
+    xmlns:ns3="https://www.vmware.com/darwin/schema/beans/application" xmlns:ns2="https://www.vmware.com/darwin/schema/beans/security">
     <errors>false</errors>
     <application-director-version>vFabric Application Director CLI BUILD [5.0.0-879382]</application-director-version>
     <script-task-version>
@@ -81,7 +81,7 @@
                 <description>Property will not participate in auto-binding.</description>
                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
             </prop-auto-bind-type>
-            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+            <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
             <readonly>false</readonly>
             <overridable>true</overridable>
             <expression>false</expression>
@@ -105,7 +105,7 @@
                     <description>Bindable at service/catalog level.</description>
                     <lifecycle-order>1</lifecycle-order>
                 </bind-lifecycle-type>
-                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                 <overridable>true</overridable>
                 <expression>false</expression>
             </ns4:bound-prop>
@@ -276,7 +276,7 @@
                 <description>Property will not participate in auto-binding.</description>
                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
             </prop-auto-bind-type>
-            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+            <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
             <readonly>false</readonly>
             <overridable>true</overridable>
             <expression>false</expression>
@@ -300,7 +300,7 @@
                     <description>Bindable at service/catalog level.</description>
                     <lifecycle-order>1</lifecycle-order>
                 </bind-lifecycle-type>
-                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                 <overridable>true</overridable>
                 <expression>false</expression>
             </ns4:bound-prop>
