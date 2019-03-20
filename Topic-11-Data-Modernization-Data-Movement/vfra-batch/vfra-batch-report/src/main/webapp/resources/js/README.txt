@@ -7,17 +7,17 @@ usage.txt and jqPlotOptions.txt files included with the distribution.
 
 The jqPlot home page is at <http://www.jqplot.com/>.
 
-Downloads can be found at <http://bitbucket.org/cleonello/jqplot/downloads/>.
+Downloads can be found at <https://bitbucket.org/cleonello/jqplot/downloads/>.
 
-The mailing list is at <http://groups.google.com/group/jqplot-users>.
+The mailing list is at <https://groups.google.com/group/jqplot-users>.
 
-Examples and unit tests are at <http://www.jqplot.com/tests/>.
+Examples and unit tests are at <http://www.jqplot.com/examples/>.
 
 Documentation is at <http://www.jqplot.com/docs/>.
 
-The project page and source code are at <http://www.bitbucket.org/cleonello/jqplot/>.
+The project page and source code are at <https://www.bitbucket.org/cleonello/jqplot/>.
 
-Bugs, issues, feature requests: <http://www.bitbucket.org/cleonello/jqplot/issues/>.
+Bugs, issues, feature requests: <https://www.bitbucket.org/cleonello/jqplot/issues/>.
 
 Basic Usage Instructions:
 
@@ -36,7 +36,7 @@ For usage instructions, see <jqPlot Usage> in usage.txt.  For available options,
 Building from source:
 
 If you've cloned the repository, you can build a distribution from source.
-You need to have ant <http://ant.apache.org> installed.  You can simply 
+You need to have ant <https://ant.apache.org> installed.  You can simply 
 type "ant" from the jqplot directory to build the default "all" target.  
 There are 6 pertinent targets: clean, dist, min, docs, compress and all.  Use:
 
@@ -64,14 +64,14 @@ Date instance methods:
 
     author Ken Snyder (ken d snyder at gmail dot com)
     date 2008-09-10
-    version 2.0.2 (http://kendsnyder.com/sandbox/date/)     
-    license Creative Commons Attribution License 3.0 (http://creativecommons.org/licenses/by/3.0/)
+    version 2.0.2 (https://kendsnyder.com/sandbox/date/)     
+    license Creative Commons Attribution License 3.0 (https://creativecommons.org/licenses/by/3.0/)
 
 JavaScript printf/sprintf functions.
 
     version 2007.04.27
     author Ash Searle
-    http://hexmen.com/blog/2007/03/printf-sprintf/
-    http://hexmen.com/js/sprintf.js
+    https://hexmen.com/blog/2007/03/printf-sprintf/
+    https://hexmen.com/js/sprintf.js
     The author (Ash Searle) has placed this code in the public domain:
     "This code is unrestricted: you are free to use it however you like."

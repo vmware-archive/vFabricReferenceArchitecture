@@ -7,7 +7,7 @@
 // 	Ben Nadel / Kinky Solutions
 	
 // 	Link:
-// 	http://www.bennadel.com/index.cfm?event=blog.view&id=1591
+// 	https://www.bennadel.com/index.cfm?event=blog.view&id=1591
 	
 // 	Date Posted:
 // 	May 21, 2009 at 9:10 PM
@@ -72,7 +72,7 @@ jQuery.fn.print = function(){
 	// Write the HTML for the document. In this, we will
 	// write out the HTML of the current element.
 	objDoc.open();
-	objDoc.write( "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">" );
+	objDoc.write( "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">" );
 	objDoc.write( "<html>" );
 	objDoc.write( "<body>" );
 	objDoc.write( "<head>" );

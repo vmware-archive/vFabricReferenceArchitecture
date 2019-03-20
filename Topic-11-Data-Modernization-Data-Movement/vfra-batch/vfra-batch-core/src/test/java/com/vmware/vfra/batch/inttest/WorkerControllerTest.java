@@ -50,7 +50,7 @@ public class WorkerControllerTest {
 
 	/**
 	 * Example of using fluent API to test REST controller. See:
-	 * http://blog.springsource.org/2012/11/12/spring-framework-3-2-rc1-spring-mvc-test-framework/
+	 * https://blog.springsource.org/2012/11/12/spring-framework-3-2-rc1-spring-mvc-test-framework/
 	 */
 	@Test
 	public void testController() throws Exception {

@@ -1,11 +1,11 @@
 /*!
  * jQuery UI 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI
+ * https://docs.jquery.com/UI
  */
 (function( $, undefined ) {
 
@@ -236,7 +236,7 @@ $(function() {
 	$.support.selectstart = "onselectstart" in div;
 
 	// set display to none to avoid a layout bug in IE
-	// http://dev.jquery.com/ticket/4014
+	// https://dev.jquery.com/ticket/4014
 	body.removeChild( div ).style.display = "none";
 });
 
@@ -315,11 +315,11 @@ $.extend( $.ui, {
 /*!
  * jQuery UI Widget 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Widget
+ * https://docs.jquery.com/UI/Widget
  */
 (function( $, undefined ) {
 
@@ -330,7 +330,7 @@ if ( $.cleanData ) {
 		for ( var i = 0, elem; (elem = elems[i]) != null; i++ ) {
 			try {
 				$( elem ).triggerHandler( "remove" );
-			// http://bugs.jquery.com/ticket/8235
+			// https://bugs.jquery.com/ticket/8235
 			} catch( e ) {}
 		}
 		_cleanData( elems );
@@ -344,7 +344,7 @@ if ( $.cleanData ) {
 					$( "*", this ).add( [ this ] ).each(function() {
 						try {
 							$( this ).triggerHandler( "remove" );
-						// http://bugs.jquery.com/ticket/8235
+						// https://bugs.jquery.com/ticket/8235
 						} catch( e ) {}
 					});
 				}
@@ -583,11 +583,11 @@ $.Widget.prototype = {
 /*!
  * jQuery UI Mouse 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Mouse
+ * https://docs.jquery.com/UI/Mouse
  *
  * Depends:
  *	jquery.ui.widget.js
@@ -745,11 +745,11 @@ $.widget("ui.mouse", {
 /*
  * jQuery UI Draggable 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Draggables
+ * https://docs.jquery.com/UI/Draggables
  *
  * Depends:
  *	jquery.ui.core.js
@@ -1570,11 +1570,11 @@ $.ui.plugin.add("draggable", "zIndex", {
 /*
  * jQuery UI Droppable 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Droppables
+ * https://docs.jquery.com/UI/Droppables
  *
  * Depends:
  *	jquery.ui.core.js
@@ -1866,11 +1866,11 @@ $.ui.ddmanager = {
 /*
  * jQuery UI Resizable 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Resizables
+ * https://docs.jquery.com/UI/Resizables
  *
  * Depends:
  *	jquery.ui.core.js
@@ -2107,7 +2107,7 @@ $.widget("ui.resizable", $.ui.mouse, {
 		this.resizing = true;
 		this.documentScroll = { top: $(document).scrollTop(), left: $(document).scrollLeft() };
 
-		// bugfix for http://dev.jquery.com/ticket/1749
+		// bugfix for https://dev.jquery.com/ticket/1749
 		if (el.is('.ui-draggable') || (/absolute/).test(el.css('position'))) {
 			el.css({ position: 'absolute', top: iniPos.top, left: iniPos.left });
 		}
@@ -2708,11 +2708,11 @@ var isNumber = function(value) {
 /*
  * jQuery UI Selectable 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Selectables
+ * https://docs.jquery.com/UI/Selectables
  *
  * Depends:
  *	jquery.ui.core.js
@@ -2974,11 +2974,11 @@ $.extend($.ui.selectable, {
 /*
  * jQuery UI Sortable 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Sortables
+ * https://docs.jquery.com/UI/Sortables
  *
  * Depends:
  *	jquery.ui.core.js
@@ -4051,11 +4051,11 @@ $.extend($.ui.sortable, {
 /*
  * jQuery UI Effects 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Effects/
+ * https://docs.jquery.com/UI/Effects/
  */
 ;jQuery.effects || (function($, undefined) {
 
@@ -4263,7 +4263,7 @@ function filterStyles(styles) {
 }
 
 function styleDifference(oldStyle, newStyle) {
-	var diff = { _: 0 }, // http://dev.jquery.com/ticket/5459
+	var diff = { _: 0 }, // https://dev.jquery.com/ticket/5459
 		name;
 
 	for (name in newStyle) {
@@ -4605,7 +4605,7 @@ $.fn.extend({
 /******************************************************************************/
 
 /*
- * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
+ * jQuery Easing v1.3 - https://gsgd.co.uk/sandbox/jquery/easing/
  *
  * Uses the built in easing capabilities added In jQuery 1.1
  * to offer multiple easing options
@@ -4814,11 +4814,11 @@ $.extend($.easing,
 /*
  * jQuery UI Effects Blind 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Effects/Blind
+ * https://docs.jquery.com/UI/Effects/Blind
  *
  * Depends:
  *	jquery.effects.core.js
@@ -4863,11 +4863,11 @@ $.effects.blind = function(o) {
 /*
  * jQuery UI Effects Bounce 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Effects/Bounce
+ * https://docs.jquery.com/UI/Effects/Bounce
  *
  * Depends:
  *	jquery.effects.core.js
@@ -4941,11 +4941,11 @@ $.effects.bounce = function(o) {
 /*
  * jQuery UI Effects Clip 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Effects/Clip
+ * https://docs.jquery.com/UI/Effects/Clip
  *
  * Depends:
  *	jquery.effects.core.js
@@ -4995,11 +4995,11 @@ $.effects.clip = function(o) {
 /*
  * jQuery UI Effects Drop 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Effects/Drop
+ * https://docs.jquery.com/UI/Effects/Drop
  *
  * Depends:
  *	jquery.effects.core.js
@@ -5045,11 +5045,11 @@ $.effects.drop = function(o) {
 /*
  * jQuery UI Effects Explode 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Effects/Explode
+ * https://docs.jquery.com/UI/Effects/Explode
  *
  * Depends:
  *	jquery.effects.core.js
@@ -5124,11 +5124,11 @@ $.effects.explode = function(o) {
 /*
  * jQuery UI Effects Fade 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Effects/Fade
+ * https://docs.jquery.com/UI/Effects/Fade
  *
  * Depends:
  *	jquery.effects.core.js
@@ -5156,11 +5156,11 @@ $.effects.fade = function(o) {
 /*
  * jQuery UI Effects Fold 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Effects/Fold
+ * https://docs.jquery.com/UI/Effects/Fold
  *
  * Depends:
  *	jquery.effects.core.js
@@ -5212,11 +5212,11 @@ $.effects.fold = function(o) {
 /*
  * jQuery UI Effects Highlight 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Effects/Highlight
+ * https://docs.jquery.com/UI/Effects/Highlight
  *
  * Depends:
  *	jquery.effects.core.js
@@ -5262,11 +5262,11 @@ $.effects.highlight = function(o) {
 /*
  * jQuery UI Effects Pulsate 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Effects/Pulsate
+ * https://docs.jquery.com/UI/Effects/Pulsate
  *
  * Depends:
  *	jquery.effects.core.js
@@ -5313,11 +5313,11 @@ $.effects.pulsate = function(o) {
 /*
  * jQuery UI Effects Scale 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Effects/Scale
+ * https://docs.jquery.com/UI/Effects/Scale
  *
  * Depends:
  *	jquery.effects.core.js
@@ -5491,11 +5491,11 @@ $.effects.size = function(o) {
 /*
  * jQuery UI Effects Shake 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Effects/Shake
+ * https://docs.jquery.com/UI/Effects/Shake
  *
  * Depends:
  *	jquery.effects.core.js
@@ -5548,11 +5548,11 @@ $.effects.shake = function(o) {
 /*
  * jQuery UI Effects Slide 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Effects/Slide
+ * https://docs.jquery.com/UI/Effects/Slide
  *
  * Depends:
  *	jquery.effects.core.js
@@ -5598,11 +5598,11 @@ $.effects.slide = function(o) {
 /*
  * jQuery UI Effects Transfer 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Effects/Transfer
+ * https://docs.jquery.com/UI/Effects/Transfer
  *
  * Depends:
  *	jquery.effects.core.js
@@ -5643,11 +5643,11 @@ $.effects.transfer = function(o) {
 /*
  * jQuery UI Accordion 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Accordion
+ * https://docs.jquery.com/UI/Accordion
  *
  * Depends:
  *	jquery.ui.core.js
@@ -6254,11 +6254,11 @@ $.extend( $.ui.accordion, {
 /*
  * jQuery UI Autocomplete 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Autocomplete
+ * https://docs.jquery.com/UI/Autocomplete
  *
  * Depends:
  *	jquery.ui.core.js
@@ -6461,7 +6461,7 @@ $.widget( "ui.autocomplete", {
 				}
 			})
 			.zIndex( this.element.zIndex() + 1 )
-			// workaround for jQuery bug #5781 http://dev.jquery.com/ticket/5781
+			// workaround for jQuery bug #5781 https://dev.jquery.com/ticket/5781
 			.css({ top: 0, left: 0 })
 			.hide()
 			.data( "menu" );
@@ -6687,11 +6687,11 @@ $.extend( $.ui.autocomplete, {
  * it for the next release. You're welcome to give it a try anyway and give us feedback,
  * as long as you're okay with migrating your code later on. We can help with that, too.
  *
- * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2010, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Menu
+ * https://docs.jquery.com/UI/Menu
  *
  * Depends:
  *	jquery.ui.core.js
@@ -6866,11 +6866,11 @@ $.widget("ui.menu", {
 /*
  * jQuery UI Button 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Button
+ * https://docs.jquery.com/UI/Button
  *
  * Depends:
  *	jquery.ui.core.js
@@ -7282,11 +7282,11 @@ $.widget( "ui.buttonset", {
 /*
  * jQuery UI Datepicker 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Datepicker
+ * https://docs.jquery.com/UI/Datepicker
  *
  * Depends:
  *	jquery.ui.core.js
@@ -7567,7 +7567,7 @@ $.extend(Datepicker.prototype, {
 			this._disableDatepicker( target );
 		}
 		// Set display:block in place of inst.dpDiv.show() which won't work on disconnected elements
-		// http://bugs.jqueryui.com/ticket/7552 - A Datepicker created on a detached div has zero height
+		// https://bugs.jqueryui.com/ticket/7552 - A Datepicker created on a detached div has zero height
 		inst.dpDiv.css( "display", "block" );
 	},
 
@@ -9105,11 +9105,11 @@ window['DP_jQuery_' + dpuuid] = $;
 /*
  * jQuery UI Dialog 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Dialog
+ * https://docs.jquery.com/UI/Dialog
  *
  * Depends:
  *	jquery.ui.core.js
@@ -9287,7 +9287,7 @@ $.widget("ui.dialog", {
 				.prependTo(uiDialogTitlebar);
 
 		//handling of deprecated beforeclose (vs beforeClose) option
-		//Ticket #4669 http://dev.jqueryui.com/ticket/4669
+		//Ticket #4669 https://dev.jqueryui.com/ticket/4669
 		//TODO: remove in 1.9pre
 		if ($.isFunction(options.beforeclose) && !$.isFunction(options.beforeClose)) {
 			options.beforeClose = options.beforeclose;
@@ -9409,7 +9409,7 @@ $.widget("ui.dialog", {
 		}
 
 		//Save and then restore scroll since Opera 9.5+ resets when parent z-Index is changed.
-		//  http://ui.jquery.com/bugs/ticket/3193
+		//  https://ui.jquery.com/bugs/ticket/3193
 		saveScroll = { scrollTop: self.element.scrollTop(), scrollLeft: self.element.scrollLeft() };
 		$.ui.dialog.maxZ += 1;
 		self.uiDialog.css('z-index', $.ui.dialog.maxZ);
@@ -9650,7 +9650,7 @@ $.widget("ui.dialog", {
 			this.uiDialog.show();
 		}
 		this.uiDialog
-			// workaround for jQuery bug #5781 http://dev.jquery.com/ticket/5781
+			// workaround for jQuery bug #5781 https://dev.jquery.com/ticket/5781
 			.css({ top: 0, left: 0 })
 			.position($.extend({ of: window }, position));
 		if (!isVisible) {
@@ -9688,7 +9688,7 @@ $.widget("ui.dialog", {
 
 		switch (key) {
 			//handling of deprecated beforeclose (vs beforeClose) option
-			//Ticket #4669 http://dev.jqueryui.com/ticket/4669
+			//Ticket #4669 https://dev.jqueryui.com/ticket/4669
 			//TODO: remove in 1.9pre
 			case "beforeclose":
 				key = "beforeClose";
@@ -9983,11 +9983,11 @@ $.extend($.ui.dialog.overlay.prototype, {
 /*
  * jQuery UI Position 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Position
+ * https://docs.jquery.com/UI/Position
  */
 (function( $, undefined ) {
 
@@ -10235,11 +10235,11 @@ if ( !$.offset.setOffset ) {
 /*
  * jQuery UI Progressbar 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Progressbar
+ * https://docs.jquery.com/UI/Progressbar
  *
  * Depends:
  *   jquery.ui.core.js
@@ -10344,11 +10344,11 @@ $.extend( $.ui.progressbar, {
 /*
  * jQuery UI Slider 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Slider
+ * https://docs.jquery.com/UI/Slider
  *
  * Depends:
  *	jquery.ui.core.js
@@ -11010,11 +11010,11 @@ $.extend( $.ui.slider, {
 /*
  * jQuery UI Tabs 1.8.16
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Tabs
+ * https://docs.jquery.com/UI/Tabs
  *
  * Depends:
  *	jquery.ui.core.js
@@ -11389,7 +11389,7 @@ $.widget( "ui.tabs", {
 						showTab( el, $show );
 					});
 
-					// TODO make passing in node possible, see also http://dev.jqueryui.com/ticket/3171
+					// TODO make passing in node possible, see also https://dev.jqueryui.com/ticket/3171
 					self.load( self.anchors.index( this ) );
 
 					this.blur();

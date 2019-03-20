@@ -1,11 +1,11 @@
 /*
  * jQuery UI Effects 1.9pre
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Effects/
+ * https://docs.jquery.com/UI/Effects/
  */
 ;jQuery.effects || (function($, undefined) {
 
@@ -663,7 +663,7 @@ $.fn.extend({
 /******************************************************************************/
 
 /*
- * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
+ * jQuery Easing v1.3 - https://gsgd.co.uk/sandbox/jquery/easing/
  *
  * Uses the built in easing capabilities added In jQuery 1.1
  * to offer multiple easing options

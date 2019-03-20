@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ns26:export-package
-    xmlns:ns9="http://www.vmware.com/darwin/schema/beans/cloud/provider"
-    xmlns:ns7="http://www.vmware.com/darwin/schema/beans/catalog/component"
-    xmlns:ns17="http://www.vmware.com/darwin/schema/beans/update/profile"
-    xmlns:ns15="http://www.vmware.com/darwin/schema/beans/flow"
-    xmlns:ns25="http://www.vmware.com/darwin/schema/beans/notification"
-    xmlns:ns6="http://www.vmware.com/darwin/schema/beans/entity"
-    xmlns:ns12="http://www.vmware.com/darwin/schema/beans/cloud/tunnel"
-    xmlns:ns20="http://www.vmware.com/darwin/schema/beans/security/user"
-    xmlns:ns22="http://www.vmware.com/darwin/schema/beans/ssl"
-    xmlns:ns19="http://www.vmware.com/darwin/schema/beans/security/ldap"
-    xmlns:ns13="http://www.vmware.com/darwin/schema/beans/deployment/environment"
-    xmlns:ns23="http://www.vmware.com/darwin/schema/beans/response"
-    xmlns:ns21="http://www.vmware.com/darwin/schema/beans/networking"
-    xmlns:ns24="http://www.vmware.com/darwin/schema/beans/api"
-    xmlns:ns18="http://www.vmware.com/darwin/schema/beans/deployment"
-    xmlns:ns5="http://www.vmware.com/darwin/schema/beans/metatag"
-    xmlns:ns4="http://www.vmware.com/darwin/schema/beans/props"
-    xmlns:ns10="http://www.vmware.com/darwin/schema/beans/physical/template"
-    xmlns:ns27="http://www.vmware.com/darwin/schema/beans/license"
-    xmlns:ns26="http://www.vmware.com/darwin/schema/beans/exim"
-    xmlns:ns16="http://www.vmware.com/darwin/schema/beans/deployment/profile"
-    xmlns:ns14="http://www.vmware.com/darwin/schema/beans/driver/location"
-    xmlns:ns8="http://www.vmware.com/darwin/schema/beans/scripts"
-    xmlns:ns11="http://www.vmware.com/darwin/schema/beans/blueprint"
-    xmlns:ns3="http://www.vmware.com/darwin/schema/beans/application" xmlns:ns2="http://www.vmware.com/darwin/schema/beans/security">
+    xmlns:ns9="https://www.vmware.com/darwin/schema/beans/cloud/provider"
+    xmlns:ns7="https://www.vmware.com/darwin/schema/beans/catalog/component"
+    xmlns:ns17="https://www.vmware.com/darwin/schema/beans/update/profile"
+    xmlns:ns15="https://www.vmware.com/darwin/schema/beans/flow"
+    xmlns:ns25="https://www.vmware.com/darwin/schema/beans/notification"
+    xmlns:ns6="https://www.vmware.com/darwin/schema/beans/entity"
+    xmlns:ns12="https://www.vmware.com/darwin/schema/beans/cloud/tunnel"
+    xmlns:ns20="https://www.vmware.com/darwin/schema/beans/security/user"
+    xmlns:ns22="https://www.vmware.com/darwin/schema/beans/ssl"
+    xmlns:ns19="https://www.vmware.com/darwin/schema/beans/security/ldap"
+    xmlns:ns13="https://www.vmware.com/darwin/schema/beans/deployment/environment"
+    xmlns:ns23="https://www.vmware.com/darwin/schema/beans/response"
+    xmlns:ns21="https://www.vmware.com/darwin/schema/beans/networking"
+    xmlns:ns24="https://www.vmware.com/darwin/schema/beans/api"
+    xmlns:ns18="https://www.vmware.com/darwin/schema/beans/deployment"
+    xmlns:ns5="https://www.vmware.com/darwin/schema/beans/metatag"
+    xmlns:ns4="https://www.vmware.com/darwin/schema/beans/props"
+    xmlns:ns10="https://www.vmware.com/darwin/schema/beans/physical/template"
+    xmlns:ns27="https://www.vmware.com/darwin/schema/beans/license"
+    xmlns:ns26="https://www.vmware.com/darwin/schema/beans/exim"
+    xmlns:ns16="https://www.vmware.com/darwin/schema/beans/deployment/profile"
+    xmlns:ns14="https://www.vmware.com/darwin/schema/beans/driver/location"
+    xmlns:ns8="https://www.vmware.com/darwin/schema/beans/scripts"
+    xmlns:ns11="https://www.vmware.com/darwin/schema/beans/blueprint"
+    xmlns:ns3="https://www.vmware.com/darwin/schema/beans/application" xmlns:ns2="https://www.vmware.com/darwin/schema/beans/security">
     <errors>false</errors>
     <application-director-version>vFabric Application Director CLI BUILD [5.0.0-879382]</application-director-version>
     <application-versions>
@@ -494,7 +494,7 @@
                             <description>Property will not participate in auto-binding.</description>
                             <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                         </prop-auto-bind-type>
-                        <value><![CDATA[http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
+                        <value><![CDATA[https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
                         <readonly>false</readonly>
                         <overridable>true</overridable>
                         <expression>false</expression>
@@ -518,7 +518,7 @@
                                 <description>Bindable at service/catalog level.</description>
                                 <lifecycle-order>1</lifecycle-order>
                             </bind-lifecycle-type>
-                            <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
+                            <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
                             <overridable>true</overridable>
                             <expression>false</expression>
                         </ns4:bound-prop>
@@ -542,7 +542,7 @@
                                 <description>Bindable at blueprint level.</description>
                                 <lifecycle-order>2</lifecycle-order>
                             </bind-lifecycle-type>
-                            <value><![CDATA[http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
+                            <value><![CDATA[https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
                             <overridable>true</overridable>
                             <expression>false</expression>
                         </ns4:bound-prop>
@@ -761,7 +761,7 @@
                             <description>Property will not participate in auto-binding.</description>
                             <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                         </prop-auto-bind-type>
-                        <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                         <readonly>false</readonly>
                         <overridable>true</overridable>
                         <expression>false</expression>
@@ -785,7 +785,7 @@
                                 <description>Bindable at service/catalog level.</description>
                                 <lifecycle-order>1</lifecycle-order>
                             </bind-lifecycle-type>
-                            <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                             <overridable>true</overridable>
                             <expression>false</expression>
                         </ns4:bound-prop>
@@ -845,7 +845,7 @@
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
+                            <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -869,7 +869,7 @@
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
+                                <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -1040,7 +1040,7 @@
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -1064,7 +1064,7 @@
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -4614,7 +4614,7 @@ exit $APPDRETURNSTATUS
                             <description>Property will not participate in auto-binding.</description>
                             <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                         </prop-auto-bind-type>
-                        <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                        <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                         <readonly>true</readonly>
                         <overridable>false</overridable>
                         <expression>false</expression>
@@ -4638,7 +4638,7 @@ exit $APPDRETURNSTATUS
                                 <description>Bindable at service/catalog level.</description>
                                 <lifecycle-order>1</lifecycle-order>
                             </bind-lifecycle-type>
-                            <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                            <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                             <overridable>false</overridable>
                             <expression>false</expression>
                         </ns4:bound-prop>
@@ -5398,7 +5398,7 @@ exit $APPDRETURNSTATUS
                             <description>Property will not participate in auto-binding.</description>
                             <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                         </prop-auto-bind-type>
-                        <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                        <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                         <readonly>false</readonly>
                         <overridable>true</overridable>
                         <expression>false</expression>
@@ -5446,7 +5446,7 @@ exit $APPDRETURNSTATUS
                                 <description>Bindable at blueprint level.</description>
                                 <lifecycle-order>2</lifecycle-order>
                             </bind-lifecycle-type>
-                            <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                            <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                             <overridable>true</overridable>
                             <expression>false</expression>
                         </ns4:bound-prop>
@@ -5505,7 +5505,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                            <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                             <readonly>false</readonly>
                             <overridable>false</overridable>
                             <expression>false</expression>
@@ -5529,7 +5529,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                                <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                                 <overridable>false</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -7496,7 +7496,7 @@ exit $APPDRETURNSTATUS
                             <description>Property will not participate in auto-binding.</description>
                             <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                         </prop-auto-bind-type>
-                        <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
+                        <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
                         <readonly>false</readonly>
                         <overridable>true</overridable>
                         <expression>false</expression>
@@ -7544,7 +7544,7 @@ exit $APPDRETURNSTATUS
                                 <description>Bindable at blueprint level.</description>
                                 <lifecycle-order>2</lifecycle-order>
                             </bind-lifecycle-type>
-                            <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
+                            <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
                             <overridable>true</overridable>
                             <expression>false</expression>
                         </ns4:bound-prop>
@@ -8030,7 +8030,7 @@ exit $APPDRETURNSTATUS
                             <description>Property will not participate in auto-binding.</description>
                             <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                         </prop-auto-bind-type>
-                        <value><![CDATA[http://10.32.12.133/nanotrader/appfiles]]></value>
+                        <value><![CDATA[https://10.32.12.133/nanotrader/appfiles]]></value>
                         <readonly>false</readonly>
                         <overridable>true</overridable>
                         <expression>false</expression>
@@ -8078,7 +8078,7 @@ exit $APPDRETURNSTATUS
                                 <description>Bindable at blueprint level.</description>
                                 <lifecycle-order>2</lifecycle-order>
                             </bind-lifecycle-type>
-                            <value><![CDATA[http://10.32.12.133/nanotrader/appfiles]]></value>
+                            <value><![CDATA[https://10.32.12.133/nanotrader/appfiles]]></value>
                             <overridable>true</overridable>
                             <expression>false</expression>
                         </ns4:bound-prop>
@@ -8369,7 +8369,7 @@ exit $APPDRETURNSTATUS
                             <description>Property will not participate in auto-binding.</description>
                             <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                         </prop-auto-bind-type>
-                        <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                         <readonly>false</readonly>
                         <overridable>true</overridable>
                         <expression>false</expression>
@@ -8393,7 +8393,7 @@ exit $APPDRETURNSTATUS
                                 <description>Bindable at service/catalog level.</description>
                                 <lifecycle-order>1</lifecycle-order>
                             </bind-lifecycle-type>
-                            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                             <overridable>true</overridable>
                             <expression>false</expression>
                         </ns4:bound-prop>
@@ -8434,7 +8434,7 @@ exit $APPDRETURNSTATUS
                             <description>Property will not participate in auto-binding.</description>
                             <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                         </prop-auto-bind-type>
-                        <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                        <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                         <readonly>false</readonly>
                         <overridable>true</overridable>
                         <expression>false</expression>
@@ -8458,7 +8458,7 @@ exit $APPDRETURNSTATUS
                                 <description>Bindable at service/catalog level.</description>
                                 <lifecycle-order>1</lifecycle-order>
                             </bind-lifecycle-type>
-                            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                            <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                             <overridable>true</overridable>
                             <expression>false</expression>
                         </ns4:bound-prop>
@@ -9247,7 +9247,7 @@ Removed Repo Install - Using Task</description>
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -9271,7 +9271,7 @@ Removed Repo Install - Using Task</description>
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -9312,7 +9312,7 @@ Removed Repo Install - Using Task</description>
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                            <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -9336,7 +9336,7 @@ Removed Repo Install - Using Task</description>
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -10615,7 +10615,7 @@ exit $APPDRETURNSTATUS
                             <description>Property will not participate in auto-binding.</description>
                             <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                         </prop-auto-bind-type>
-                        <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                        <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                         <readonly>true</readonly>
                         <overridable>false</overridable>
                         <expression>false</expression>
@@ -10639,7 +10639,7 @@ exit $APPDRETURNSTATUS
                                 <description>Bindable at service/catalog level.</description>
                                 <lifecycle-order>1</lifecycle-order>
                             </bind-lifecycle-type>
-                            <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                            <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                             <overridable>false</overridable>
                             <expression>false</expression>
                         </ns4:bound-prop>
@@ -10882,7 +10882,7 @@ exit $APPDRETURNSTATUS
                             <description>Property will not participate in auto-binding.</description>
                             <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                         </prop-auto-bind-type>
-                        <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                         <readonly>false</readonly>
                         <overridable>true</overridable>
                         <expression>false</expression>
@@ -10906,7 +10906,7 @@ exit $APPDRETURNSTATUS
                                 <description>Bindable at service/catalog level.</description>
                                 <lifecycle-order>1</lifecycle-order>
                             </bind-lifecycle-type>
-                            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                             <overridable>true</overridable>
                             <expression>false</expression>
                         </ns4:bound-prop>
@@ -10947,7 +10947,7 @@ exit $APPDRETURNSTATUS
                             <description>Property will not participate in auto-binding.</description>
                             <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                         </prop-auto-bind-type>
-                        <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
+                        <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
                         <readonly>false</readonly>
                         <overridable>true</overridable>
                         <expression>false</expression>
@@ -10995,7 +10995,7 @@ exit $APPDRETURNSTATUS
                                 <description>Bindable at blueprint level.</description>
                                 <lifecycle-order>2</lifecycle-order>
                             </bind-lifecycle-type>
-                            <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
+                            <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
                             <overridable>true</overridable>
                             <expression>false</expression>
                         </ns4:bound-prop>
@@ -11101,7 +11101,7 @@ exit $APPDRETURNSTATUS
                             <description>Property will not participate in auto-binding.</description>
                             <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                         </prop-auto-bind-type>
-                        <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                        <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                         <readonly>false</readonly>
                         <overridable>true</overridable>
                         <expression>false</expression>
@@ -11149,7 +11149,7 @@ exit $APPDRETURNSTATUS
                                 <description>Bindable at blueprint level.</description>
                                 <lifecycle-order>2</lifecycle-order>
                             </bind-lifecycle-type>
-                            <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                            <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                             <overridable>true</overridable>
                             <expression>false</expression>
                         </ns4:bound-prop>
@@ -11303,7 +11303,7 @@ exit $APPDRETURNSTATUS
                             <description>Property will not participate in auto-binding.</description>
                             <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                         </prop-auto-bind-type>
-                        <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                        <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                         <readonly>false</readonly>
                         <overridable>true</overridable>
                         <expression>false</expression>
@@ -11327,7 +11327,7 @@ exit $APPDRETURNSTATUS
                                 <description>Bindable at service/catalog level.</description>
                                 <lifecycle-order>1</lifecycle-order>
                             </bind-lifecycle-type>
-                            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                            <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                             <overridable>true</overridable>
                             <expression>false</expression>
                         </ns4:bound-prop>
@@ -11701,7 +11701,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                            <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                             <readonly>false</readonly>
                             <overridable>false</overridable>
                             <expression>false</expression>
@@ -11725,7 +11725,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                                <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                                 <overridable>false</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -11944,7 +11944,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -11968,7 +11968,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -12293,7 +12293,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                            <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -12317,7 +12317,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -14167,7 +14167,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
+                            <value><![CDATA[https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -14191,7 +14191,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
+                                <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -14215,7 +14215,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at blueprint level.</description>
                                     <lifecycle-order>2</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
+                                <value><![CDATA[https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -14434,7 +14434,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -14458,7 +14458,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -14518,7 +14518,7 @@ exit $APPDRETURNSTATUS
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
+                                <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
                                 <readonly>false</readonly>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
@@ -14542,7 +14542,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
+                                    <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
                                     <overridable>true</overridable>
                                     <expression>false</expression>
                                 </ns4:bound-prop>
@@ -14713,7 +14713,7 @@ exit $APPDRETURNSTATUS
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                                 <readonly>false</readonly>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
@@ -14737,7 +14737,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                                    <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                                     <overridable>true</overridable>
                                     <expression>false</expression>
                                 </ns4:bound-prop>
@@ -18287,7 +18287,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                            <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                             <readonly>true</readonly>
                             <overridable>false</overridable>
                             <expression>false</expression>
@@ -18311,7 +18311,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                                <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                                 <overridable>false</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -19071,7 +19071,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                            <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -19119,7 +19119,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at blueprint level.</description>
                                     <lifecycle-order>2</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -19178,7 +19178,7 @@ exit $APPDRETURNSTATUS
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                                <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                                 <readonly>false</readonly>
                                 <overridable>false</overridable>
                                 <expression>false</expression>
@@ -19202,7 +19202,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                                    <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                                     <overridable>false</overridable>
                                     <expression>false</expression>
                                 </ns4:bound-prop>
@@ -21169,7 +21169,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
+                            <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -21217,7 +21217,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at blueprint level.</description>
                                     <lifecycle-order>2</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
+                                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -21703,7 +21703,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://10.32.12.133/nanotrader/appfiles]]></value>
+                            <value><![CDATA[https://10.32.12.133/nanotrader/appfiles]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -21751,7 +21751,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at blueprint level.</description>
                                     <lifecycle-order>2</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles]]></value>
+                                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -22042,7 +22042,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -22066,7 +22066,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -22107,7 +22107,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                            <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -22131,7 +22131,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -22920,7 +22920,7 @@ Removed Repo Install - Using Task</description>
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <readonly>false</readonly>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
@@ -22944,7 +22944,7 @@ Removed Repo Install - Using Task</description>
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                    <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                     <overridable>true</overridable>
                                     <expression>false</expression>
                                 </ns4:bound-prop>
@@ -22985,7 +22985,7 @@ Removed Repo Install - Using Task</description>
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                                 <readonly>false</readonly>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
@@ -23009,7 +23009,7 @@ Removed Repo Install - Using Task</description>
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                                    <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                                     <overridable>true</overridable>
                                     <expression>false</expression>
                                 </ns4:bound-prop>
@@ -24288,7 +24288,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                            <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                             <readonly>true</readonly>
                             <overridable>false</overridable>
                             <expression>false</expression>
@@ -24312,7 +24312,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                                <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                                 <overridable>false</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -24555,7 +24555,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -24579,7 +24579,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -24620,7 +24620,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
+                            <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -24668,7 +24668,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at blueprint level.</description>
                                     <lifecycle-order>2</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
+                                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -24774,7 +24774,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                            <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -24822,7 +24822,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at blueprint level.</description>
                                     <lifecycle-order>2</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -24976,7 +24976,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                            <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -25000,7 +25000,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -25374,7 +25374,7 @@ exit $APPDRETURNSTATUS
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                                <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                                 <readonly>false</readonly>
                                 <overridable>false</overridable>
                                 <expression>false</expression>
@@ -25398,7 +25398,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                                    <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                                     <overridable>false</overridable>
                                     <expression>false</expression>
                                 </ns4:bound-prop>
@@ -25617,7 +25617,7 @@ exit $APPDRETURNSTATUS
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <readonly>false</readonly>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
@@ -25641,7 +25641,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                    <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                     <overridable>true</overridable>
                                     <expression>false</expression>
                                 </ns4:bound-prop>
@@ -25966,7 +25966,7 @@ exit $APPDRETURNSTATUS
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                                 <readonly>false</readonly>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
@@ -25990,7 +25990,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                                    <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                                     <overridable>true</overridable>
                                     <expression>false</expression>
                                 </ns4:bound-prop>
@@ -31516,7 +31516,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
+                <value><![CDATA[https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -31540,7 +31540,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
+                    <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -31564,7 +31564,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at blueprint level.</description>
                         <lifecycle-order>2</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
+                    <value><![CDATA[https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -31783,7 +31783,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -31807,7 +31807,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                    <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -32512,7 +32512,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                 <readonly>true</readonly>
                 <overridable>false</overridable>
                 <expression>false</expression>
@@ -32536,7 +32536,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                    <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                     <overridable>false</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -33296,7 +33296,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -33344,7 +33344,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at blueprint level.</description>
                         <lifecycle-order>2</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                    <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -33402,7 +33402,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
+                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -33450,7 +33450,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at blueprint level.</description>
                         <lifecycle-order>2</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
+                    <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -33936,7 +33936,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles]]></value>
+                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -33984,7 +33984,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at blueprint level.</description>
                         <lifecycle-order>2</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://10.32.12.133/nanotrader/appfiles]]></value>
+                    <value><![CDATA[https://10.32.12.133/nanotrader/appfiles]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -34275,7 +34275,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -34299,7 +34299,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                    <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -34340,7 +34340,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -34364,7 +34364,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                    <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -34422,7 +34422,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                 <readonly>true</readonly>
                 <overridable>false</overridable>
                 <expression>false</expression>
@@ -34446,7 +34446,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                    <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                     <overridable>false</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -34689,7 +34689,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -34713,7 +34713,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                    <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -34754,7 +34754,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
+                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -34802,7 +34802,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at blueprint level.</description>
                         <lifecycle-order>2</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
+                    <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -34908,7 +34908,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -34956,7 +34956,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at blueprint level.</description>
                         <lifecycle-order>2</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                    <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -35110,7 +35110,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -35134,7 +35134,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                    <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -35467,34 +35467,34 @@ exit $APPDRETURNSTATUS
     "st-tcs_0_":     {
         "host": {"node_array_index": "0"},
         "Spring_Trader_vFabric_tcServer":         {
-            "eula_location": "http://www.vmware.com/download/eula/vfabric_app-platform_eula.html",
+            "eula_location": "https://www.vmware.com/download/eula/vfabric_app-platform_eula.html",
             "vfabric_tcserver": "vfabric-tc-server-standard.noarch",
-            "vfabric_repo": "http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
+            "vfabric_repo": "https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
             "httpport": "3128",
             "httpproxy": "10.113.161.210",
-            "nano_tcserver_template": "http://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar",
-            "nano_war_files": "http://10.32.12.133/nanotrader/appfiles",
+            "nano_tcserver_template": "https://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar",
+            "nano_war_files": "https://10.32.12.133/nanotrader/appfiles",
             "app_name": "springtrader",
             "rmq_host": "${['st-rmq']['host']['ip']}",
             "db_ip": "${#util.all(\"['st-sqlf-loc']['host']['ip']\")}",
             "rmq_port": "5672"
         },
         "VMware_EULA_":         {
-            "eula_location": "http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ",
-            "vfabric_repo": "http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
+            "eula_location": "https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ",
+            "vfabric_repo": "https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
             "httpport": "3128",
             "httpproxy": "10.16.67.187"
         }
     },
     "st-web": {"Spring_Trader_vFabric_Web_Server":     {
         "ws_instance": "springtrader",
-        "eula_location": "http://www.vmware.com/download/eula/vfabric_app-platform_eula.html",
-        "datagen_zip": "http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip",
+        "eula_location": "https://www.vmware.com/download/eula/vfabric_app-platform_eula.html",
+        "datagen_zip": "https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip",
         "vfabric_webserver": "vfabric-web-server",
-        "vfabric_repo": "http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
+        "vfabric_repo": "https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
         "tcs_nodes_port": "8080",
         "httpport": "3128",
-        "web_war_file": "http://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war",
+        "web_war_file": "https://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war",
         "tcs_nodes_ip": "${#util.all(\"['st-tcs']['host']['ip']\")}",
         "httpproxy": "10.113.161.210",
         "ws_ip": "${['self']['host']['ip']}"
@@ -35502,14 +35502,14 @@ exit $APPDRETURNSTATUS
     "st-sql-serv_0_":     {
         "host": {"node_array_index": "0"},
         "VMware_EULA_":         {
-            "eula_location": "http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ",
-            "vfabric_repo": "http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
+            "eula_location": "https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ",
+            "vfabric_repo": "https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
             "httpport": "3128",
             "httpproxy": "10.16.67.187"
         },
         "Spring_Trader_vFabric_SQLFire_Server":         {
             "vfabric_sqlfire": "vfabric-sqlfire.noarch",
-            "datagen_zip": "http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip",
+            "datagen_zip": "https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip",
             "sqlf_peers": "${#util.all(\"['st-sql-serv']['host']['ip']\")}",
             "httpport": "3128",
             "httpproxy": "10.113.161.210",
@@ -35521,8 +35521,8 @@ exit $APPDRETURNSTATUS
     "st-sqlf-loc_0_":     {
         "host": {"node_array_index": "0"},
         "VMware_EULA_":         {
-            "eula_location": "http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ",
-            "vfabric_repo": "http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
+            "eula_location": "https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ",
+            "vfabric_repo": "https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
             "httpport": "3128",
             "httpproxy": "10.16.67.187"
         },
@@ -35536,10 +35536,10 @@ exit $APPDRETURNSTATUS
         }
     },
     "st-rmq": {"Spring_Trader_RabbitMQ":     {
-        "rabbit_rpm": "http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm",
+        "rabbit_rpm": "https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm",
         "httpport": "3128",
         "httpproxy": "10.113.161.210",
-        "epel": "http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-7.noarch.rpm"
+        "epel": "https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-7.noarch.rpm"
     }}
 }]]></context>
             <script-type>
@@ -35998,7 +35998,7 @@ fi
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>datagen_zip</name>
-                        <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                        <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -36091,7 +36091,7 @@ fi
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>eula_location</name>
-                        <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                        <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -36105,7 +36105,7 @@ fi
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>vfabric_repo</name>
-                        <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -36266,7 +36266,7 @@ fi
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                            <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -36290,7 +36290,7 @@ fi
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -36331,7 +36331,7 @@ fi
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -36355,7 +36355,7 @@ fi
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -36886,7 +36886,7 @@ fi
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>eula_location</name>
-                        <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                        <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -36900,7 +36900,7 @@ fi
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>vfabric_repo</name>
-                        <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -37061,7 +37061,7 @@ fi
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                            <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -37085,7 +37085,7 @@ fi
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -37126,7 +37126,7 @@ fi
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -37150,7 +37150,7 @@ fi
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -37697,7 +37697,7 @@ done
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>nano_tcserver_template</name>
-                        <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
+                        <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -37781,7 +37781,7 @@ done
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>nano_war_files</name>
-                        <value><![CDATA[http://10.32.12.133/nanotrader/appfiles]]></value>
+                        <value><![CDATA[https://10.32.12.133/nanotrader/appfiles]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -37823,7 +37823,7 @@ done
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>vfabric_repo</name>
-                        <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -37837,7 +37837,7 @@ done
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>eula_location</name>
-                        <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                        <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -38085,7 +38085,7 @@ echo Generated Sample Data for Spring Trader
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>vfabric_repo</name>
-                        <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -38099,7 +38099,7 @@ echo Generated Sample Data for Spring Trader
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>web_war_file</name>
-                        <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
+                        <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -38127,7 +38127,7 @@ echo Generated Sample Data for Spring Trader
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>datagen_zip</name>
-                        <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                        <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -38155,7 +38155,7 @@ echo Generated Sample Data for Spring Trader
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>eula_location</name>
-                        <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                        <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -38308,7 +38308,7 @@ service rabbitmq-server status
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>epel</name>
-                        <value><![CDATA[http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-7.noarch.rpm]]></value>
+                        <value><![CDATA[https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-7.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -38350,7 +38350,7 @@ service rabbitmq-server status
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>rabbit_rpm</name>
-                        <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -38627,7 +38627,7 @@ fi
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>eula_location</name>
-                        <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                        <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -38641,7 +38641,7 @@ fi
                         <created>2012-11-09T23:05:25+00:00</created>
                         <create-user>admin</create-user>
                         <name>vfabric_repo</name>
-                        <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -38802,7 +38802,7 @@ fi
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                            <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -38826,7 +38826,7 @@ fi
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -38867,7 +38867,7 @@ fi
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -38891,7 +38891,7 @@ fi
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -39809,7 +39809,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
+                            <value><![CDATA[https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -39833,7 +39833,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
+                                <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -39857,7 +39857,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at blueprint level.</description>
                                     <lifecycle-order>2</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
+                                <value><![CDATA[https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -40076,7 +40076,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -40100,7 +40100,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -40160,7 +40160,7 @@ exit $APPDRETURNSTATUS
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
+                                <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
                                 <readonly>false</readonly>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
@@ -40184,7 +40184,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
+                                    <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
                                     <overridable>true</overridable>
                                     <expression>false</expression>
                                 </ns4:bound-prop>
@@ -40355,7 +40355,7 @@ exit $APPDRETURNSTATUS
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                                 <readonly>false</readonly>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
@@ -40379,7 +40379,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                                    <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                                     <overridable>true</overridable>
                                     <expression>false</expression>
                                 </ns4:bound-prop>
@@ -43929,7 +43929,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                            <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                             <readonly>true</readonly>
                             <overridable>false</overridable>
                             <expression>false</expression>
@@ -43953,7 +43953,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                                <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                                 <overridable>false</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -44713,7 +44713,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                            <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -44761,7 +44761,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at blueprint level.</description>
                                     <lifecycle-order>2</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -44820,7 +44820,7 @@ exit $APPDRETURNSTATUS
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                                <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                                 <readonly>false</readonly>
                                 <overridable>false</overridable>
                                 <expression>false</expression>
@@ -44844,7 +44844,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                                    <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                                     <overridable>false</overridable>
                                     <expression>false</expression>
                                 </ns4:bound-prop>
@@ -46811,7 +46811,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
+                            <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -46859,7 +46859,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at blueprint level.</description>
                                     <lifecycle-order>2</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
+                                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -47345,7 +47345,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://10.32.12.133/nanotrader/appfiles]]></value>
+                            <value><![CDATA[https://10.32.12.133/nanotrader/appfiles]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -47393,7 +47393,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at blueprint level.</description>
                                     <lifecycle-order>2</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles]]></value>
+                                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -47684,7 +47684,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -47708,7 +47708,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -47749,7 +47749,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                            <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -47773,7 +47773,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -48562,7 +48562,7 @@ Removed Repo Install - Using Task</description>
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <readonly>false</readonly>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
@@ -48586,7 +48586,7 @@ Removed Repo Install - Using Task</description>
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                    <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                     <overridable>true</overridable>
                                     <expression>false</expression>
                                 </ns4:bound-prop>
@@ -48627,7 +48627,7 @@ Removed Repo Install - Using Task</description>
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                                 <readonly>false</readonly>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
@@ -48651,7 +48651,7 @@ Removed Repo Install - Using Task</description>
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                                    <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                                     <overridable>true</overridable>
                                     <expression>false</expression>
                                 </ns4:bound-prop>
@@ -49930,7 +49930,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                            <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                             <readonly>true</readonly>
                             <overridable>false</overridable>
                             <expression>false</expression>
@@ -49954,7 +49954,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                                <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                                 <overridable>false</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -50197,7 +50197,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -50221,7 +50221,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -50262,7 +50262,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
+                            <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -50310,7 +50310,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at blueprint level.</description>
                                     <lifecycle-order>2</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
+                                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -50416,7 +50416,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                            <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -50464,7 +50464,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at blueprint level.</description>
                                     <lifecycle-order>2</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -50618,7 +50618,7 @@ exit $APPDRETURNSTATUS
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                            <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -50642,7 +50642,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -51016,7 +51016,7 @@ exit $APPDRETURNSTATUS
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                                <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                                 <readonly>false</readonly>
                                 <overridable>false</overridable>
                                 <expression>false</expression>
@@ -51040,7 +51040,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                                    <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                                     <overridable>false</overridable>
                                     <expression>false</expression>
                                 </ns4:bound-prop>
@@ -51259,7 +51259,7 @@ exit $APPDRETURNSTATUS
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <readonly>false</readonly>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
@@ -51283,7 +51283,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                    <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                     <overridable>true</overridable>
                                     <expression>false</expression>
                                 </ns4:bound-prop>
@@ -51608,7 +51608,7 @@ exit $APPDRETURNSTATUS
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                                 <readonly>false</readonly>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
@@ -51632,7 +51632,7 @@ exit $APPDRETURNSTATUS
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                                    <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                                     <overridable>true</overridable>
                                     <expression>false</expression>
                                 </ns4:bound-prop>
@@ -57158,7 +57158,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
+                <value><![CDATA[https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -57182,7 +57182,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
+                    <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -57206,7 +57206,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at blueprint level.</description>
                         <lifecycle-order>2</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
+                    <value><![CDATA[https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -57425,7 +57425,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -57449,7 +57449,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                    <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -58154,7 +58154,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                 <readonly>true</readonly>
                 <overridable>false</overridable>
                 <expression>false</expression>
@@ -58178,7 +58178,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                    <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                     <overridable>false</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -58938,7 +58938,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -58986,7 +58986,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at blueprint level.</description>
                         <lifecycle-order>2</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                    <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -59044,7 +59044,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
+                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -59092,7 +59092,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at blueprint level.</description>
                         <lifecycle-order>2</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
+                    <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -59578,7 +59578,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles]]></value>
+                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -59626,7 +59626,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at blueprint level.</description>
                         <lifecycle-order>2</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://10.32.12.133/nanotrader/appfiles]]></value>
+                    <value><![CDATA[https://10.32.12.133/nanotrader/appfiles]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -59917,7 +59917,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -59941,7 +59941,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                    <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -59982,7 +59982,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -60006,7 +60006,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                    <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -60064,7 +60064,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                 <readonly>true</readonly>
                 <overridable>false</overridable>
                 <expression>false</expression>
@@ -60088,7 +60088,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                    <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                     <overridable>false</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -60331,7 +60331,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -60355,7 +60355,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                    <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -60396,7 +60396,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
+                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -60444,7 +60444,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at blueprint level.</description>
                         <lifecycle-order>2</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
+                    <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -60550,7 +60550,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -60598,7 +60598,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at blueprint level.</description>
                         <lifecycle-order>2</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                    <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -60752,7 +60752,7 @@ exit $APPDRETURNSTATUS
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -60776,7 +60776,7 @@ exit $APPDRETURNSTATUS
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                    <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns4:bound-prop>
@@ -61109,21 +61109,21 @@ exit $APPDRETURNSTATUS
     "st-tcs_0_":     {
         "host": {"node_array_index": "0"},
         "Spring_Trader_vFabric_tcServer":         {
-            "eula_location": "http://www.vmware.com/download/eula/vfabric_app-platform_eula.html",
+            "eula_location": "https://www.vmware.com/download/eula/vfabric_app-platform_eula.html",
             "vfabric_tcserver": "vfabric-tc-server-standard.noarch",
-            "vfabric_repo": "http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
+            "vfabric_repo": "https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
             "httpport": "3128",
             "httpproxy": "10.113.161.210",
-            "nano_tcserver_template": "http://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar",
-            "nano_war_files": "http://10.32.12.133/nanotrader/appfiles",
+            "nano_tcserver_template": "https://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar",
+            "nano_war_files": "https://10.32.12.133/nanotrader/appfiles",
             "app_name": "springtrader",
             "rmq_host": "${['st-rmq']['host']['ip']}",
             "db_ip": "${#util.all(\"['st-sqlf-loc']['host']['ip']\")}",
             "rmq_port": "5672"
         },
         "VMware_EULA_":         {
-            "eula_location": "http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ",
-            "vfabric_repo": "http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
+            "eula_location": "https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ",
+            "vfabric_repo": "https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
             "httpport": "3128",
             "httpproxy": "10.16.67.187"
         }
@@ -61131,21 +61131,21 @@ exit $APPDRETURNSTATUS
     "st-web":     {
         "Spring_Trader_vFabric_Web_Server":         {
             "ws_instance": "springtrader",
-            "eula_location": "http://www.vmware.com/download/eula/vfabric_app-platform_eula.html",
-            "groovy": "http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip",
-            "datagen_zip": "http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip",
+            "eula_location": "https://www.vmware.com/download/eula/vfabric_app-platform_eula.html",
+            "groovy": "https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip",
+            "datagen_zip": "https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip",
             "vfabric_webserver": "vfabric-web-server",
-            "vfabric_repo": "http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
+            "vfabric_repo": "https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
             "tcs_nodes_port": "8080",
             "httpport": "3128",
-            "web_war_file": "http://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war",
+            "web_war_file": "https://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war",
             "tcs_nodes_ip": "${#util.all(\"['st-tcs']['host']['ip']\")}",
             "httpproxy": "10.113.161.210",
             "ws_ip": "${['self']['host']['ip']}"
         },
         "VMware_EULA_":         {
-            "eula_location": "http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ",
-            "vfabric_repo": "http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
+            "eula_location": "https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ",
+            "vfabric_repo": "https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
             "httpport": "3128",
             "httpproxy": "10.16.67.187"
         }
@@ -61153,15 +61153,15 @@ exit $APPDRETURNSTATUS
     "st-sql-serv_0_":     {
         "host": {"node_array_index": "0"},
         "VMware_EULA_":         {
-            "eula_location": "http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ",
-            "vfabric_repo": "http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
+            "eula_location": "https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ",
+            "vfabric_repo": "https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
             "httpport": "3128",
             "httpproxy": "10.16.67.187"
         },
         "Spring_Trader_vFabric_SQLFire_Server":         {
             "vfabric_sqlfire": "vfabric-sqlfire.noarch",
-            "groovy": "http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip",
-            "datagen_zip": "http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip",
+            "groovy": "https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip",
+            "datagen_zip": "https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip",
             "sqlf_peers": "${#util.all(\"['st-sql-serv']['host']['ip']\")}",
             "httpport": "3128",
             "httpproxy": "10.113.161.210",
@@ -61173,8 +61173,8 @@ exit $APPDRETURNSTATUS
     "st-sqlf-loc_0_":     {
         "host": {"node_array_index": "0"},
         "VMware_EULA_":         {
-            "eula_location": "http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ",
-            "vfabric_repo": "http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
+            "eula_location": "https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ",
+            "vfabric_repo": "https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm",
             "httpport": "3128",
             "httpproxy": "10.16.67.187"
         },
@@ -61188,10 +61188,10 @@ exit $APPDRETURNSTATUS
         }
     },
     "st-rmq": {"Spring_Trader_RabbitMQ":     {
-        "rabbit_rpm": "http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm",
+        "rabbit_rpm": "https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm",
         "httpport": "3128",
         "httpproxy": "10.113.161.210",
-        "epel": "http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm"
+        "epel": "https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm"
     }}
 }]]></context>
             <script-type>
@@ -61502,7 +61502,7 @@ service rabbitmq-server status
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>epel</name>
-                        <value><![CDATA[http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
+                        <value><![CDATA[https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -61544,7 +61544,7 @@ service rabbitmq-server status
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>rabbit_rpm</name>
-                        <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -61821,7 +61821,7 @@ fi
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>eula_location</name>
-                        <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                        <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -61835,7 +61835,7 @@ fi
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>vfabric_repo</name>
-                        <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -61996,7 +61996,7 @@ fi
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                            <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -62020,7 +62020,7 @@ fi
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -62061,7 +62061,7 @@ fi
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -62085,7 +62085,7 @@ fi
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -62616,7 +62616,7 @@ fi
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>eula_location</name>
-                        <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                        <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -62630,7 +62630,7 @@ fi
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>vfabric_repo</name>
-                        <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -62791,7 +62791,7 @@ fi
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                            <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -62815,7 +62815,7 @@ fi
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -62856,7 +62856,7 @@ fi
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -62880,7 +62880,7 @@ fi
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -63427,7 +63427,7 @@ fi
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>groovy</name>
-                        <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                        <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -63539,7 +63539,7 @@ fi
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>datagen_zip</name>
-                        <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                        <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -63718,7 +63718,7 @@ done
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>nano_tcserver_template</name>
-                        <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
+                        <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/nanotrader-template.tar]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -63802,7 +63802,7 @@ done
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>nano_war_files</name>
-                        <value><![CDATA[http://10.32.12.133/nanotrader/appfiles]]></value>
+                        <value><![CDATA[https://10.32.12.133/nanotrader/appfiles]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -63844,7 +63844,7 @@ done
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>vfabric_repo</name>
-                        <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -63858,7 +63858,7 @@ done
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>eula_location</name>
-                        <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                        <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -63951,7 +63951,7 @@ fi
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>eula_location</name>
-                        <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                        <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -63965,7 +63965,7 @@ fi
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>vfabric_repo</name>
-                        <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -64126,7 +64126,7 @@ fi
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                            <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -64150,7 +64150,7 @@ fi
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -64191,7 +64191,7 @@ fi
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -64215,7 +64215,7 @@ fi
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -64746,7 +64746,7 @@ fi
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>eula_location</name>
-                        <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                        <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -64760,7 +64760,7 @@ fi
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>vfabric_repo</name>
-                        <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -64921,7 +64921,7 @@ fi
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                            <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -64945,7 +64945,7 @@ fi
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
+                                <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html ]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -64986,7 +64986,7 @@ fi
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -65010,7 +65010,7 @@ fi
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns4:bound-prop>
@@ -65590,7 +65590,7 @@ echo Generated Sample Data for Spring Trader
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>groovy</name>
-                        <value><![CDATA[http://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
+                        <value><![CDATA[https://dist.groovy.codehaus.org/distributions/groovy-binary-2.0.6.zip]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -65632,7 +65632,7 @@ echo Generated Sample Data for Spring Trader
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>vfabric_repo</name>
-                        <value><![CDATA[http://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://repo.vmware.com/pub/rhel6/vfabric/5.1/vfabric-5.1-repo-5.1-1.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -65646,7 +65646,7 @@ echo Generated Sample Data for Spring Trader
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>web_war_file</name>
-                        <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
+                        <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/spring-nanotrader-web-0.0.1.BUILD-SNAPSHOT.war]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -65674,7 +65674,7 @@ echo Generated Sample Data for Spring Trader
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>datagen_zip</name>
-                        <value><![CDATA[http://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
+                        <value><![CDATA[https://10.32.12.133/nanotrader/appfiles/DataGenerator.zip]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -65702,7 +65702,7 @@ echo Generated Sample Data for Spring Trader
                         <created>2012-12-30T02:47:57+00:00</created>
                         <create-user>admin</create-user>
                         <name>eula_location</name>
-                        <value><![CDATA[http://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
+                        <value><![CDATA[https://www.vmware.com/download/eula/vfabric_app-platform_eula.html]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>

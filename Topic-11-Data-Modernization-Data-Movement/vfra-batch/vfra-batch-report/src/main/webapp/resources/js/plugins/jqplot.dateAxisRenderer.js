@@ -7,8 +7,8 @@
  *
  * Copyright (c) 2009-2012 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
- * under both the MIT (http://www.opensource.org/licenses/mit-license.php) and GPL 
- * version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html) licenses. This means that you can 
+ * under both the MIT (https://www.opensource.org/licenses/mit-license.php) and GPL 
+ * version 2.0 (https://www.gnu.org/licenses/gpl-2.0.html) licenses. This means that you can 
  * choose the license that best suits your project and use it accordingly. 
  *
  * Although not required, the author would appreciate an email letting him 
@@ -22,8 +22,8 @@
  *
  *     version 2007.04.27
  *     author Ash Searle
- *     http://hexmen.com/blog/2007/03/printf-sprintf/
- *     http://hexmen.com/js/sprintf.js
+ *     https://hexmen.com/blog/2007/03/printf-sprintf/
+ *     https://hexmen.com/js/sprintf.js
  *     The author (Ash Searle) has placed this code in the public domain:
  *     "This code is unrestricted: you are free to use it however you like."
  * 
@@ -37,7 +37,7 @@
      * should not be overridden.
      * 
      * Thanks to Ken Synder for his enhanced Date instance methods which are
-     * included with this code <http://kendsnyder.com/sandbox/date/>.
+     * included with this code <https://kendsnyder.com/sandbox/date/>.
      * 
      * To use this renderer, include the plugin in your source
      * > <script type="text/javascript" language="javascript" src="plugins/jqplot.dateAxisRenderer.js"></script>

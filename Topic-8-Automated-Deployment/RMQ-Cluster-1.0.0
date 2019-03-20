@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ns25:export-package
-    xmlns:ns10="http://www.vmware.com/darwin/schema/beans/cloud/provider"
-    xmlns:ns8="http://www.vmware.com/darwin/schema/beans/catalog/component"
-    xmlns:ns17="http://www.vmware.com/darwin/schema/beans/update/profile"
-    xmlns:ns15="http://www.vmware.com/darwin/schema/beans/flow"
-    xmlns:ns24="http://www.vmware.com/darwin/schema/beans/notification"
-    xmlns:ns7="http://www.vmware.com/darwin/schema/beans/entity"
-    xmlns:ns13="http://www.vmware.com/darwin/schema/beans/cloud/tunnel"
-    xmlns:ns21="http://www.vmware.com/darwin/schema/beans/security/user"
-    xmlns:ns23="http://www.vmware.com/darwin/schema/beans/ssl"
-    xmlns:ns20="http://www.vmware.com/darwin/schema/beans/security/ldap"
-    xmlns:ns14="http://www.vmware.com/darwin/schema/beans/deployment/environment"
-    xmlns:ns22="http://www.vmware.com/darwin/schema/beans/networking"
-    xmlns:ns2="http://www.vmware.com/darwin/schema/beans/response"
-    xmlns:ns27="http://www.vmware.com/darwin/schema/beans/api"
-    xmlns:ns18="http://www.vmware.com/darwin/schema/beans/deployment"
-    xmlns:ns6="http://www.vmware.com/darwin/schema/beans/metatag"
-    xmlns:ns5="http://www.vmware.com/darwin/schema/beans/props"
-    xmlns:ns11="http://www.vmware.com/darwin/schema/beans/physical/template"
-    xmlns:ns26="http://www.vmware.com/darwin/schema/beans/license"
-    xmlns:ns25="http://www.vmware.com/darwin/schema/beans/exim"
-    xmlns:ns16="http://www.vmware.com/darwin/schema/beans/deployment/profile"
-    xmlns:ns19="http://www.vmware.com/darwin/schema/beans/driver/location"
-    xmlns:ns9="http://www.vmware.com/darwin/schema/beans/scripts"
-    xmlns:ns12="http://www.vmware.com/darwin/schema/beans/blueprint"
-    xmlns:ns4="http://www.vmware.com/darwin/schema/beans/application" xmlns:ns3="http://www.vmware.com/darwin/schema/beans/security">
+    xmlns:ns10="https://www.vmware.com/darwin/schema/beans/cloud/provider"
+    xmlns:ns8="https://www.vmware.com/darwin/schema/beans/catalog/component"
+    xmlns:ns17="https://www.vmware.com/darwin/schema/beans/update/profile"
+    xmlns:ns15="https://www.vmware.com/darwin/schema/beans/flow"
+    xmlns:ns24="https://www.vmware.com/darwin/schema/beans/notification"
+    xmlns:ns7="https://www.vmware.com/darwin/schema/beans/entity"
+    xmlns:ns13="https://www.vmware.com/darwin/schema/beans/cloud/tunnel"
+    xmlns:ns21="https://www.vmware.com/darwin/schema/beans/security/user"
+    xmlns:ns23="https://www.vmware.com/darwin/schema/beans/ssl"
+    xmlns:ns20="https://www.vmware.com/darwin/schema/beans/security/ldap"
+    xmlns:ns14="https://www.vmware.com/darwin/schema/beans/deployment/environment"
+    xmlns:ns22="https://www.vmware.com/darwin/schema/beans/networking"
+    xmlns:ns2="https://www.vmware.com/darwin/schema/beans/response"
+    xmlns:ns27="https://www.vmware.com/darwin/schema/beans/api"
+    xmlns:ns18="https://www.vmware.com/darwin/schema/beans/deployment"
+    xmlns:ns6="https://www.vmware.com/darwin/schema/beans/metatag"
+    xmlns:ns5="https://www.vmware.com/darwin/schema/beans/props"
+    xmlns:ns11="https://www.vmware.com/darwin/schema/beans/physical/template"
+    xmlns:ns26="https://www.vmware.com/darwin/schema/beans/license"
+    xmlns:ns25="https://www.vmware.com/darwin/schema/beans/exim"
+    xmlns:ns16="https://www.vmware.com/darwin/schema/beans/deployment/profile"
+    xmlns:ns19="https://www.vmware.com/darwin/schema/beans/driver/location"
+    xmlns:ns9="https://www.vmware.com/darwin/schema/beans/scripts"
+    xmlns:ns12="https://www.vmware.com/darwin/schema/beans/blueprint"
+    xmlns:ns4="https://www.vmware.com/darwin/schema/beans/application" xmlns:ns3="https://www.vmware.com/darwin/schema/beans/security">
     <errors>false</errors>
     <application-director-version>vFabric Application Director CLI BETA BUILD [5.0.0-832745]</application-director-version>
     <application-versions>
@@ -519,7 +519,7 @@
                             <description>Property will not participate in auto-binding.</description>
                             <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                         </prop-auto-bind-type>
-                        <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
+                        <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
                         <readonly>false</readonly>
                         <overridable>true</overridable>
                         <expression>false</expression>
@@ -543,7 +543,7 @@
                                 <description>Bindable at service/catalog level.</description>
                                 <lifecycle-order>1</lifecycle-order>
                             </bind-lifecycle-type>
-                            <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
+                            <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
                             <overridable>true</overridable>
                             <expression>false</expression>
                         </ns5:bound-prop>
@@ -584,7 +584,7 @@
                             <description>Property will not participate in auto-binding.</description>
                             <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                         </prop-auto-bind-type>
-                        <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                         <readonly>false</readonly>
                         <overridable>true</overridable>
                         <expression>false</expression>
@@ -608,7 +608,7 @@
                                 <description>Bindable at service/catalog level.</description>
                                 <lifecycle-order>1</lifecycle-order>
                             </bind-lifecycle-type>
-                            <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                             <overridable>true</overridable>
                             <expression>false</expression>
                         </ns5:bound-prop>
@@ -712,7 +712,7 @@
                         <create-user>admin</create-user>
                         <name>Nanotrader RabbitMQ</name>
                         <description>RabbitMQ Server for Nanotrader support for RHEL 6.1 by way of
-rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm</description>
+rpm -Uvh https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm</description>
                         <revision>0</revision>
                         <major>1</major>
                         <minor>0</minor>
@@ -822,7 +822,7 @@ rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noar
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
+                            <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -846,7 +846,7 @@ rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noar
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
+                                <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns5:bound-prop>
@@ -887,7 +887,7 @@ rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noar
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -911,7 +911,7 @@ rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noar
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns5:bound-prop>
@@ -3606,7 +3606,7 @@ cat /tmp/hosts &gt;&gt; /etc/hosts
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
+                            <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -3630,7 +3630,7 @@ cat /tmp/hosts &gt;&gt; /etc/hosts
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
+                                <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns5:bound-prop>
@@ -3671,7 +3671,7 @@ cat /tmp/hosts &gt;&gt; /etc/hosts
                                 <description>Property will not participate in auto-binding.</description>
                                 <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                             </prop-auto-bind-type>
-                            <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                            <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                             <readonly>false</readonly>
                             <overridable>true</overridable>
                             <expression>false</expression>
@@ -3695,7 +3695,7 @@ cat /tmp/hosts &gt;&gt; /etc/hosts
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                 </bind-lifecycle-type>
-                                <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
                             </ns5:bound-prop>
@@ -3799,7 +3799,7 @@ cat /tmp/hosts &gt;&gt; /etc/hosts
                             <create-user>admin</create-user>
                             <name>Nanotrader RabbitMQ</name>
                             <description>RabbitMQ Server for Nanotrader support for RHEL 6.1 by way of
-rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm</description>
+rpm -Uvh https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm</description>
                             <revision>0</revision>
                             <major>1</major>
                             <minor>0</minor>
@@ -3909,7 +3909,7 @@ rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noar
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
+                                <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
                                 <readonly>false</readonly>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
@@ -3933,7 +3933,7 @@ rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noar
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
+                                    <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
                                     <overridable>true</overridable>
                                     <expression>false</expression>
                                 </ns5:bound-prop>
@@ -3974,7 +3974,7 @@ rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noar
                                     <description>Property will not participate in auto-binding.</description>
                                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                                 </prop-auto-bind-type>
-                                <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                                <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                                 <readonly>false</readonly>
                                 <overridable>true</overridable>
                                 <expression>false</expression>
@@ -3998,7 +3998,7 @@ rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noar
                                     <description>Bindable at service/catalog level.</description>
                                     <lifecycle-order>1</lifecycle-order>
                                     </bind-lifecycle-type>
-                                    <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                                    <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                                     <overridable>true</overridable>
                                     <expression>false</expression>
                                 </ns5:bound-prop>
@@ -7122,7 +7122,7 @@ cat /tmp/hosts &gt;&gt; /etc/hosts
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
+                <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -7146,7 +7146,7 @@ cat /tmp/hosts &gt;&gt; /etc/hosts
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
+                    <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns5:bound-prop>
@@ -7187,7 +7187,7 @@ cat /tmp/hosts &gt;&gt; /etc/hosts
                     <description>Property will not participate in auto-binding.</description>
                     <prop-auto-bind-type-enum>NONE</prop-auto-bind-type-enum>
                 </prop-auto-bind-type>
-                <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                 <readonly>false</readonly>
                 <overridable>true</overridable>
                 <expression>false</expression>
@@ -7211,7 +7211,7 @@ cat /tmp/hosts &gt;&gt; /etc/hosts
                         <description>Bindable at service/catalog level.</description>
                         <lifecycle-order>1</lifecycle-order>
                     </bind-lifecycle-type>
-                    <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                    <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                     <overridable>true</overridable>
                     <expression>false</expression>
                 </ns5:bound-prop>
@@ -7838,10 +7838,10 @@ cat /tmp/hosts &gt;&gt; /etc/hosts
             <context><![CDATA[{
     "nano-rmq_0_":     {
         "Nanotrader_RabbitMQ":         {
-            "rabbit_rpm": "http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm",
+            "rabbit_rpm": "https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm",
             "httpport": "3128",
             "httpproxy": "proxy.vmware.com",
-            "epel": "http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm"
+            "epel": "https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm"
         },
         "host": {"node_array_index": "0"},
         "cluster":         {
@@ -7857,10 +7857,10 @@ cat /tmp/hosts &gt;&gt; /etc/hosts
     },
     "nano-rmq_1_":     {
         "Nanotrader_RabbitMQ":         {
-            "rabbit_rpm": "http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm",
+            "rabbit_rpm": "https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm",
             "httpport": "3128",
             "httpproxy": "proxy.vmware.com",
-            "epel": "http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm"
+            "epel": "https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm"
         },
         "host": {"node_array_index": "1"},
         "cluster":         {
@@ -8126,7 +8126,7 @@ service rabbitmq-server status
                         <created>2012-09-19T19:11:20+00:00</created>
                         <create-user>admin</create-user>
                         <name>epel</name>
-                        <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
+                        <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -8140,7 +8140,7 @@ service rabbitmq-server status
                         <created>2012-09-19T19:11:20+00:00</created>
                         <create-user>admin</create-user>
                         <name>rabbit_rpm</name>
-                        <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -8509,7 +8509,7 @@ service rabbitmq-server status
                         <created>2012-09-19T19:11:20+00:00</created>
                         <create-user>admin</create-user>
                         <name>epel</name>
-                        <value><![CDATA[http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
+                        <value><![CDATA[https://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
@@ -8523,7 +8523,7 @@ service rabbitmq-server status
                         <created>2012-09-19T19:11:20+00:00</created>
                         <create-user>admin</create-user>
                         <name>rabbit_rpm</name>
-                        <value><![CDATA[http://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
+                        <value><![CDATA[https://www.rabbitmq.com/releases/rabbitmq-server/v2.8.6/rabbitmq-server-2.8.6-1.noarch.rpm]]></value>
                         <secured>false</secured>
                         <expression>false</expression>
                         <type>String</type>
