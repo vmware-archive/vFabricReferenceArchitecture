@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 <!-- Copyright (c) 2013 VMware, Inc. All rights reserved. -->
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -192,7 +192,7 @@
 		<repository>
 			<id>org.springframework.maven.milestone</id>
 			<name>Spring Maven Milestone Repository</name>
-			<url>http://maven.springframework.org/milestone</url>
+			<url>https://maven.springframework.org/milestone</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
@@ -200,7 +200,7 @@
 		<repository>
 			<id>repository.springframework.maven.release</id>
 			<name>Spring Framework Maven Snapshot Repository</name>
-			<url>http://repo.springsource.org/snapshot</url>
+			<url>https://repo.springsource.org/snapshot</url>
 		</repository>
 	</repositories>
 

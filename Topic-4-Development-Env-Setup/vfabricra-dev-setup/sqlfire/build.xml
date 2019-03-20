@@ -187,7 +187,7 @@
 	</target>
 
 	<target name="fetch-deps">
-		<echo>**** Please download vFabric SQLFire from http://www.vmware.com/products/application-platform/vfabric-sqlfire/overview.html and place it in your repository (Currently set to ${vfra.repo})</echo>
+		<echo>**** Please download vFabric SQLFire from https://www.vmware.com/products/application-platform/vfabric-sqlfire/overview.html and place it in your repository (Currently set to ${vfra.repo})</echo>
 	</target>
 	
 	<target name="clean-processes" depends="init-props" description="Forcibly clean up running processes so that clean target works regardless of state. " >
