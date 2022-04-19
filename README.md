@@ -1,3 +1,6 @@
+vFabricReferenceArchitecture is no longer actively maintained by VMware, Inc.
+=============================================================================
+
 vFabric Reference Architecture materials are available at VMWare.com
 ==========================================================================
 
